@@ -250,9 +250,9 @@ static void* Swig_malloc(int c) {
 }
 
 
-#include "halite.hpp"
-#include "networking/Networking.cpp"
-#include "core/Halite.cpp"
+#include "../halite.hpp"
+#include "../networking/Networking.cpp"
+#include "../core/Halite.cpp"
 
 
 #include <string>
@@ -350,14 +350,14 @@ SwigDirector_GameEndCallback::SwigDirector_GameEndCallback(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_GameEndCallback_halite_67d15dab8d7ac32b(intgo);
+extern "C" void Swiggo_DeleteDirector_GameEndCallback_halite_2007760261f40110(intgo);
 SwigDirector_GameEndCallback::~SwigDirector_GameEndCallback()
 {
-  Swiggo_DeleteDirector_GameEndCallback_halite_67d15dab8d7ac32b(go_val);
+  Swiggo_DeleteDirector_GameEndCallback_halite_2007760261f40110(go_val);
   delete swig_mem;
 }
 
-extern "C" bool Swig_DirectorGameEndCallback_callback_run_halite_67d15dab8d7ac32b(int, intgo arg2, _gostring_ arg3);
+extern "C" bool Swig_DirectorGameEndCallback_callback_run_halite_2007760261f40110(int, intgo arg2, _gostring_ arg3);
 bool SwigDirector_GameEndCallback::run(int turn, std::string board) {
   bool c_result;
   bool result;
@@ -366,7 +366,7 @@ bool SwigDirector_GameEndCallback::run(int turn, std::string board) {
   
   swig_arg2 = (int)turn; 
   swig_arg3 = Swig_AllocateString((&board)->data(), (&board)->length()); 
-  result = Swig_DirectorGameEndCallback_callback_run_halite_67d15dab8d7ac32b(go_val, swig_arg2, swig_arg3);
+  result = Swig_DirectorGameEndCallback_callback_run_halite_2007760261f40110(go_val, swig_arg2, swig_arg3);
   c_result = (bool)result; 
   return c_result;
 }
@@ -376,28 +376,28 @@ SwigDirector_TimeoutCallback::SwigDirector_TimeoutCallback(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_TimeoutCallback_halite_67d15dab8d7ac32b(intgo);
+extern "C" void Swiggo_DeleteDirector_TimeoutCallback_halite_2007760261f40110(intgo);
 SwigDirector_TimeoutCallback::~SwigDirector_TimeoutCallback()
 {
-  Swiggo_DeleteDirector_TimeoutCallback_halite_67d15dab8d7ac32b(go_val);
+  Swiggo_DeleteDirector_TimeoutCallback_halite_2007760261f40110(go_val);
   delete swig_mem;
 }
 
-extern "C" void Swig_DirectorTimeoutCallback_callback_run_halite_67d15dab8d7ac32b(int, intgo arg2, _gostring_ arg3);
+extern "C" void Swig_DirectorTimeoutCallback_callback_run_halite_2007760261f40110(int, intgo arg2, _gostring_ arg3);
 void SwigDirector_TimeoutCallback::run(int playerTag, std::string playerName) {
   intgo swig_arg2;
   _gostring_ swig_arg3;
   
   swig_arg2 = (int)playerTag; 
   swig_arg3 = Swig_AllocateString((&playerName)->data(), (&playerName)->length()); 
-  Swig_DirectorTimeoutCallback_callback_run_halite_67d15dab8d7ac32b(go_val, swig_arg2, swig_arg3);
+  Swig_DirectorTimeoutCallback_callback_run_halite_2007760261f40110(go_val, swig_arg2, swig_arg3);
 }
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void _wrap_Swig_free_halite_67d15dab8d7ac32b(void *_swig_go_0) {
+void _wrap_Swig_free_halite_2007760261f40110(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -407,7 +407,7 @@ void _wrap_Swig_free_halite_67d15dab8d7ac32b(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_halite_67d15dab8d7ac32b(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_halite_2007760261f40110(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -420,7 +420,7 @@ void *_wrap_Swig_malloc_halite_67d15dab8d7ac32b(intgo _swig_go_0) {
 }
 
 
-void _wrap_quiet_output_set_halite_67d15dab8d7ac32b(bool _swig_go_0) {
+void _wrap_quiet_output_set_halite_2007760261f40110(bool _swig_go_0) {
   bool arg1 ;
   
   arg1 = (bool)_swig_go_0; 
@@ -430,7 +430,7 @@ void _wrap_quiet_output_set_halite_67d15dab8d7ac32b(bool _swig_go_0) {
 }
 
 
-bool _wrap_quiet_output_get_halite_67d15dab8d7ac32b() {
+bool _wrap_quiet_output_get_halite_2007760261f40110() {
   bool result;
   bool _swig_go_result;
   
@@ -441,7 +441,7 @@ bool _wrap_quiet_output_get_halite_67d15dab8d7ac32b() {
 }
 
 
-_gostring_ _wrap_randomMap_halite_67d15dab8d7ac32b(short _swig_go_0, short _swig_go_1, char _swig_go_2, intgo _swig_go_3) {
+_gostring_ _wrap_randomMap_halite_2007760261f40110(short _swig_go_0, short _swig_go_1, char _swig_go_2, intgo _swig_go_3) {
   short arg1 ;
   short arg2 ;
   unsigned char arg3 ;
@@ -460,7 +460,7 @@ _gostring_ _wrap_randomMap_halite_67d15dab8d7ac32b(short _swig_go_0, short _swig
 }
 
 
-GameStatistics *_wrap_rawRunGame_halite_67d15dab8d7ac32b(intgo _swig_go_0, short _swig_go_1, short _swig_go_2, intgo _swig_go_3, bool _swig_go_4, std::vector< UniConnection > *_swig_go_5, GameEndCallback *_swig_go_6) {
+GameStatistics *_wrap_rawRunGame_halite_2007760261f40110(intgo _swig_go_0, short _swig_go_1, short _swig_go_2, intgo _swig_go_3, bool _swig_go_4, std::vector< UniConnection > *_swig_go_5, GameEndCallback *_swig_go_6) {
   unsigned int arg1 ;
   short arg2 ;
   short arg3 ;
@@ -492,7 +492,7 @@ GameStatistics *_wrap_rawRunGame_halite_67d15dab8d7ac32b(intgo _swig_go_0, short
 }
 
 
-GameEndCallback *_wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_67d15dab8d7ac32b(intgo _swig_go_0) {
+GameEndCallback *_wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_2007760261f40110(intgo _swig_go_0) {
   int arg1 ;
   GameEndCallback *result = 0 ;
   GameEndCallback *_swig_go_result;
@@ -505,7 +505,7 @@ GameEndCallback *_wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_67
 }
 
 
-void _wrap_DeleteDirectorGameEndCallback_halite_67d15dab8d7ac32b(GameEndCallback *_swig_go_0) {
+void _wrap_DeleteDirectorGameEndCallback_halite_2007760261f40110(GameEndCallback *_swig_go_0) {
   GameEndCallback *arg1 = (GameEndCallback *) 0 ;
   
   arg1 = *(GameEndCallback **)&_swig_go_0; 
@@ -515,7 +515,7 @@ void _wrap_DeleteDirectorGameEndCallback_halite_67d15dab8d7ac32b(GameEndCallback
 }
 
 
-bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_67d15dab8d7ac32b(SwigDirector_GameEndCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(SwigDirector_GameEndCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   SwigDirector_GameEndCallback *arg1 = (SwigDirector_GameEndCallback *) 0 ;
   int arg2 ;
   std::string arg3 ;
@@ -532,7 +532,7 @@ bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_67d15dab8d7ac32b(Swig
 }
 
 
-void _wrap_delete_GameEndCallback_halite_67d15dab8d7ac32b(GameEndCallback *_swig_go_0) {
+void _wrap_delete_GameEndCallback_halite_2007760261f40110(GameEndCallback *_swig_go_0) {
   GameEndCallback *arg1 = (GameEndCallback *) 0 ;
   
   arg1 = *(GameEndCallback **)&_swig_go_0; 
@@ -542,7 +542,7 @@ void _wrap_delete_GameEndCallback_halite_67d15dab8d7ac32b(GameEndCallback *_swig
 }
 
 
-bool _wrap_GameEndCallback_run_halite_67d15dab8d7ac32b(GameEndCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap_GameEndCallback_run_halite_2007760261f40110(GameEndCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   GameEndCallback *arg1 = (GameEndCallback *) 0 ;
   int arg2 ;
   std::string arg3 ;
@@ -559,7 +559,7 @@ bool _wrap_GameEndCallback_run_halite_67d15dab8d7ac32b(GameEndCallback *_swig_go
 }
 
 
-GameEndCallback *_wrap_new_GameEndCallback_halite_67d15dab8d7ac32b() {
+GameEndCallback *_wrap_new_GameEndCallback_halite_2007760261f40110() {
   GameEndCallback *result = 0 ;
   GameEndCallback *_swig_go_result;
   
@@ -570,7 +570,7 @@ GameEndCallback *_wrap_new_GameEndCallback_halite_67d15dab8d7ac32b() {
 }
 
 
-TimeoutCallback *_wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_67d15dab8d7ac32b(intgo _swig_go_0) {
+TimeoutCallback *_wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_2007760261f40110(intgo _swig_go_0) {
   int arg1 ;
   TimeoutCallback *result = 0 ;
   TimeoutCallback *_swig_go_result;
@@ -583,7 +583,7 @@ TimeoutCallback *_wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_67
 }
 
 
-void _wrap_DeleteDirectorTimeoutCallback_halite_67d15dab8d7ac32b(TimeoutCallback *_swig_go_0) {
+void _wrap_DeleteDirectorTimeoutCallback_halite_2007760261f40110(TimeoutCallback *_swig_go_0) {
   TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
   
   arg1 = *(TimeoutCallback **)&_swig_go_0; 
@@ -593,7 +593,7 @@ void _wrap_DeleteDirectorTimeoutCallback_halite_67d15dab8d7ac32b(TimeoutCallback
 }
 
 
-void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_67d15dab8d7ac32b(SwigDirector_TimeoutCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(SwigDirector_TimeoutCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   SwigDirector_TimeoutCallback *arg1 = (SwigDirector_TimeoutCallback *) 0 ;
   int arg2 ;
   std::string arg3 ;
@@ -607,7 +607,7 @@ void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_67d15dab8d7ac32b(Swig
 }
 
 
-void _wrap_delete_TimeoutCallback_halite_67d15dab8d7ac32b(TimeoutCallback *_swig_go_0) {
+void _wrap_delete_TimeoutCallback_halite_2007760261f40110(TimeoutCallback *_swig_go_0) {
   TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
   
   arg1 = *(TimeoutCallback **)&_swig_go_0; 
@@ -617,7 +617,7 @@ void _wrap_delete_TimeoutCallback_halite_67d15dab8d7ac32b(TimeoutCallback *_swig
 }
 
 
-void _wrap_TimeoutCallback_run_halite_67d15dab8d7ac32b(TimeoutCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_TimeoutCallback_run_halite_2007760261f40110(TimeoutCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
   int arg2 ;
   std::string arg3 ;
@@ -631,7 +631,7 @@ void _wrap_TimeoutCallback_run_halite_67d15dab8d7ac32b(TimeoutCallback *_swig_go
 }
 
 
-TimeoutCallback *_wrap_new_TimeoutCallback_halite_67d15dab8d7ac32b() {
+TimeoutCallback *_wrap_new_TimeoutCallback_halite_2007760261f40110() {
   TimeoutCallback *result = 0 ;
   TimeoutCallback *_swig_go_result;
   
@@ -642,7 +642,7 @@ TimeoutCallback *_wrap_new_TimeoutCallback_halite_67d15dab8d7ac32b() {
 }
 
 
-std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_0_halite_67d15dab8d7ac32b() {
+std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_0_halite_2007760261f40110() {
   std::vector< UniConnection > *result = 0 ;
   std::vector< UniConnection > *_swig_go_result;
   
@@ -653,7 +653,7 @@ std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_0_halite_67d15
 }
 
 
-std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_1_halite_67d15dab8d7ac32b(long long _swig_go_0) {
+std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_1_halite_2007760261f40110(long long _swig_go_0) {
   std::vector< UniConnection >::size_type arg1 ;
   std::vector< UniConnection > *result = 0 ;
   std::vector< UniConnection > *_swig_go_result;
@@ -666,7 +666,7 @@ std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_1_halite_67d15
 }
 
 
-long long _wrap_UniConnectionVector_size_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0) {
+long long _wrap_UniConnectionVector_size_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   std::vector< UniConnection >::size_type result;
   long long _swig_go_result;
@@ -679,7 +679,7 @@ long long _wrap_UniConnectionVector_size_halite_67d15dab8d7ac32b(std::vector< Un
 }
 
 
-long long _wrap_UniConnectionVector_capacity_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0) {
+long long _wrap_UniConnectionVector_capacity_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   std::vector< UniConnection >::size_type result;
   long long _swig_go_result;
@@ -692,7 +692,7 @@ long long _wrap_UniConnectionVector_capacity_halite_67d15dab8d7ac32b(std::vector
 }
 
 
-void _wrap_UniConnectionVector_reserve_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0, long long _swig_go_1) {
+void _wrap_UniConnectionVector_reserve_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0, long long _swig_go_1) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   std::vector< UniConnection >::size_type arg2 ;
   
@@ -704,7 +704,7 @@ void _wrap_UniConnectionVector_reserve_halite_67d15dab8d7ac32b(std::vector< UniC
 }
 
 
-bool _wrap_UniConnectionVector_isEmpty_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0) {
+bool _wrap_UniConnectionVector_isEmpty_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -717,7 +717,7 @@ bool _wrap_UniConnectionVector_isEmpty_halite_67d15dab8d7ac32b(std::vector< UniC
 }
 
 
-void _wrap_UniConnectionVector_clear_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0) {
+void _wrap_UniConnectionVector_clear_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   
   arg1 = *(std::vector< UniConnection > **)&_swig_go_0; 
@@ -727,7 +727,7 @@ void _wrap_UniConnectionVector_clear_halite_67d15dab8d7ac32b(std::vector< UniCon
 }
 
 
-void _wrap_UniConnectionVector_add_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0, UniConnection *_swig_go_1) {
+void _wrap_UniConnectionVector_add_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0, UniConnection *_swig_go_1) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   std::vector< UniConnection >::value_type *arg2 = 0 ;
   
@@ -739,7 +739,7 @@ void _wrap_UniConnectionVector_add_halite_67d15dab8d7ac32b(std::vector< UniConne
 }
 
 
-UniConnection *_wrap_UniConnectionVector_get_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0, intgo _swig_go_1) {
+UniConnection *_wrap_UniConnectionVector_get_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0, intgo _swig_go_1) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   int arg2 ;
   std::vector< UniConnection >::value_type *result = 0 ;
@@ -762,7 +762,7 @@ UniConnection *_wrap_UniConnectionVector_get_halite_67d15dab8d7ac32b(std::vector
 }
 
 
-void _wrap_UniConnectionVector_set_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0, intgo _swig_go_1, UniConnection *_swig_go_2) {
+void _wrap_UniConnectionVector_set_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0, intgo _swig_go_1, UniConnection *_swig_go_2) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   int arg2 ;
   std::vector< UniConnection >::value_type *arg3 = 0 ;
@@ -784,7 +784,7 @@ void _wrap_UniConnectionVector_set_halite_67d15dab8d7ac32b(std::vector< UniConne
 }
 
 
-void _wrap_delete_UniConnectionVector_halite_67d15dab8d7ac32b(std::vector< UniConnection > *_swig_go_0) {
+void _wrap_delete_UniConnectionVector_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   
   arg1 = *(std::vector< UniConnection > **)&_swig_go_0; 

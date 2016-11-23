@@ -36,35 +36,35 @@ typedef long long swig_type_4;
 typedef long long swig_type_5;
 typedef long long swig_type_6;
 typedef long long swig_type_7;
-extern void _wrap_Swig_free_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern uintptr_t _wrap_Swig_malloc_halite_67d15dab8d7ac32b(swig_intgo arg1);
-extern void _wrap_quiet_output_set_halite_67d15dab8d7ac32b(_Bool arg1);
-extern _Bool _wrap_quiet_output_get_halite_67d15dab8d7ac32b(void);
-extern swig_type_1 _wrap_randomMap_halite_67d15dab8d7ac32b(short arg1, short arg2, char arg3, swig_intgo arg4);
-extern uintptr_t _wrap_rawRunGame_halite_67d15dab8d7ac32b(swig_intgo arg1, short arg2, short arg3, swig_intgo arg4, _Bool arg5, uintptr_t arg6, uintptr_t arg7);
-extern uintptr_t _wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_67d15dab8d7ac32b(int);
-extern void _wrap_DeleteDirectorGameEndCallback_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern _Bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_67d15dab8d7ac32b(uintptr_t, swig_intgo turn, swig_type_2 board);
-extern void _wrap_delete_GameEndCallback_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern _Bool _wrap_GameEndCallback_run_halite_67d15dab8d7ac32b(uintptr_t arg1, swig_intgo arg2, swig_type_2 arg3);
-extern uintptr_t _wrap_new_GameEndCallback_halite_67d15dab8d7ac32b(void);
-extern uintptr_t _wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_67d15dab8d7ac32b(int);
-extern void _wrap_DeleteDirectorTimeoutCallback_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_67d15dab8d7ac32b(uintptr_t, swig_intgo playerTag, swig_type_3 playerName);
-extern void _wrap_delete_TimeoutCallback_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern void _wrap_TimeoutCallback_run_halite_67d15dab8d7ac32b(uintptr_t arg1, swig_intgo arg2, swig_type_3 arg3);
-extern uintptr_t _wrap_new_TimeoutCallback_halite_67d15dab8d7ac32b(void);
-extern uintptr_t _wrap_new_UniConnectionVector__SWIG_0_halite_67d15dab8d7ac32b(void);
-extern uintptr_t _wrap_new_UniConnectionVector__SWIG_1_halite_67d15dab8d7ac32b(swig_type_4 arg1);
-extern swig_type_5 _wrap_UniConnectionVector_size_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern swig_type_6 _wrap_UniConnectionVector_capacity_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern void _wrap_UniConnectionVector_reserve_halite_67d15dab8d7ac32b(uintptr_t arg1, swig_type_7 arg2);
-extern _Bool _wrap_UniConnectionVector_isEmpty_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern void _wrap_UniConnectionVector_clear_halite_67d15dab8d7ac32b(uintptr_t arg1);
-extern void _wrap_UniConnectionVector_add_halite_67d15dab8d7ac32b(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_UniConnectionVector_get_halite_67d15dab8d7ac32b(uintptr_t arg1, swig_intgo arg2);
-extern void _wrap_UniConnectionVector_set_halite_67d15dab8d7ac32b(uintptr_t arg1, swig_intgo arg2, uintptr_t arg3);
-extern void _wrap_delete_UniConnectionVector_halite_67d15dab8d7ac32b(uintptr_t arg1);
+extern void _wrap_Swig_free_halite_2007760261f40110(uintptr_t arg1);
+extern uintptr_t _wrap_Swig_malloc_halite_2007760261f40110(swig_intgo arg1);
+extern void _wrap_quiet_output_set_halite_2007760261f40110(_Bool arg1);
+extern _Bool _wrap_quiet_output_get_halite_2007760261f40110(void);
+extern swig_type_1 _wrap_randomMap_halite_2007760261f40110(short arg1, short arg2, char arg3, swig_intgo arg4);
+extern uintptr_t _wrap_rawRunGame_halite_2007760261f40110(swig_intgo arg1, short arg2, short arg3, swig_intgo arg4, _Bool arg5, uintptr_t arg6, uintptr_t arg7);
+extern uintptr_t _wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_2007760261f40110(int);
+extern void _wrap_DeleteDirectorGameEndCallback_halite_2007760261f40110(uintptr_t arg1);
+extern _Bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(uintptr_t, swig_intgo turn, swig_type_2 board);
+extern void _wrap_delete_GameEndCallback_halite_2007760261f40110(uintptr_t arg1);
+extern _Bool _wrap_GameEndCallback_run_halite_2007760261f40110(uintptr_t arg1, swig_intgo arg2, swig_type_2 arg3);
+extern uintptr_t _wrap_new_GameEndCallback_halite_2007760261f40110(void);
+extern uintptr_t _wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_2007760261f40110(int);
+extern void _wrap_DeleteDirectorTimeoutCallback_halite_2007760261f40110(uintptr_t arg1);
+extern void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(uintptr_t, swig_intgo playerTag, swig_type_3 playerName);
+extern void _wrap_delete_TimeoutCallback_halite_2007760261f40110(uintptr_t arg1);
+extern void _wrap_TimeoutCallback_run_halite_2007760261f40110(uintptr_t arg1, swig_intgo arg2, swig_type_3 arg3);
+extern uintptr_t _wrap_new_TimeoutCallback_halite_2007760261f40110(void);
+extern uintptr_t _wrap_new_UniConnectionVector__SWIG_0_halite_2007760261f40110(void);
+extern uintptr_t _wrap_new_UniConnectionVector__SWIG_1_halite_2007760261f40110(swig_type_4 arg1);
+extern swig_type_5 _wrap_UniConnectionVector_size_halite_2007760261f40110(uintptr_t arg1);
+extern swig_type_6 _wrap_UniConnectionVector_capacity_halite_2007760261f40110(uintptr_t arg1);
+extern void _wrap_UniConnectionVector_reserve_halite_2007760261f40110(uintptr_t arg1, swig_type_7 arg2);
+extern _Bool _wrap_UniConnectionVector_isEmpty_halite_2007760261f40110(uintptr_t arg1);
+extern void _wrap_UniConnectionVector_clear_halite_2007760261f40110(uintptr_t arg1);
+extern void _wrap_UniConnectionVector_add_halite_2007760261f40110(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_UniConnectionVector_get_halite_2007760261f40110(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_UniConnectionVector_set_halite_2007760261f40110(uintptr_t arg1, swig_intgo arg2, uintptr_t arg3);
+extern void _wrap_delete_UniConnectionVector_halite_2007760261f40110(uintptr_t arg1);
 #undef intgo
 */
 import "C"
@@ -97,24 +97,24 @@ func swigCopyString(s string) string {
 
 func Swig_free(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_Swig_free_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0))
+	C._wrap_Swig_free_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
 }
 
 func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 	var swig_r uintptr
 	_swig_i_0 := arg1
-	swig_r = (uintptr)(C._wrap_Swig_malloc_halite_67d15dab8d7ac32b(C.swig_intgo(_swig_i_0)))
+	swig_r = (uintptr)(C._wrap_Swig_malloc_halite_2007760261f40110(C.swig_intgo(_swig_i_0)))
 	return swig_r
 }
 
 func SetQuiet_output(arg1 bool) {
 	_swig_i_0 := arg1
-	C._wrap_quiet_output_set_halite_67d15dab8d7ac32b(C._Bool(_swig_i_0))
+	C._wrap_quiet_output_set_halite_2007760261f40110(C._Bool(_swig_i_0))
 }
 
 func GetQuiet_output() (_swig_ret bool) {
 	var swig_r bool
-	swig_r = (bool)(C._wrap_quiet_output_get_halite_67d15dab8d7ac32b())
+	swig_r = (bool)(C._wrap_quiet_output_get_halite_2007760261f40110())
 	return swig_r
 }
 
@@ -124,7 +124,7 @@ func RandomMap(arg1 int16, arg2 int16, arg3 byte, arg4 uint) (_swig_ret string) 
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r_p := C._wrap_randomMap_halite_67d15dab8d7ac32b(C.short(_swig_i_0), C.short(_swig_i_1), C.char(_swig_i_2), C.swig_intgo(_swig_i_3))
+	swig_r_p := C._wrap_randomMap_halite_2007760261f40110(C.short(_swig_i_0), C.short(_swig_i_1), C.char(_swig_i_2), C.swig_intgo(_swig_i_3))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
 	swig_r_1 = swigCopyString(swig_r)
@@ -140,7 +140,7 @@ func RawRunGame(arg1 uint, arg2 int16, arg3 int16, arg4 uint, arg5 bool, arg6 Un
 	_swig_i_4 := arg5
 	_swig_i_5 := arg6.Swigcptr()
 	_swig_i_6 := arg7.Swigcptr()
-	swig_r = (GameStatistics)(SwigcptrGameStatistics(C._wrap_rawRunGame_halite_67d15dab8d7ac32b(C.swig_intgo(_swig_i_0), C.short(_swig_i_1), C.short(_swig_i_2), C.swig_intgo(_swig_i_3), C._Bool(_swig_i_4), C.uintptr_t(_swig_i_5), C.uintptr_t(_swig_i_6))))
+	swig_r = (GameStatistics)(SwigcptrGameStatistics(C._wrap_rawRunGame_halite_2007760261f40110(C.swig_intgo(_swig_i_0), C.short(_swig_i_1), C.short(_swig_i_2), C.swig_intgo(_swig_i_3), C._Bool(_swig_i_4), C.uintptr_t(_swig_i_5), C.uintptr_t(_swig_i_6))))
 	return swig_r
 }
 
@@ -162,17 +162,17 @@ func (p *_swig_DirectorGameEndCallback) DirectorInterface() interface{} {
 
 func NewDirectorGameEndCallback(v interface{}) GameEndCallback {
 	p := &_swig_DirectorGameEndCallback{0, v}
-	p.SwigcptrGameEndCallback = SwigcptrGameEndCallback(C._wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_67d15dab8d7ac32b(C.int(swigDirectorAdd(p))))
+	p.SwigcptrGameEndCallback = SwigcptrGameEndCallback(C._wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_2007760261f40110(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorGameEndCallback(arg1 GameEndCallback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorGameEndCallback_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorGameEndCallback_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_GameEndCallback_halite_67d15dab8d7ac32b
-func Swiggo_DeleteDirector_GameEndCallback_halite_67d15dab8d7ac32b(c int) {
+//export Swiggo_DeleteDirector_GameEndCallback_halite_2007760261f40110
+func Swiggo_DeleteDirector_GameEndCallback_halite_2007760261f40110(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorGameEndCallback).SwigcptrGameEndCallback = 0
 	swigDirectorDelete(c)
 }
@@ -188,7 +188,7 @@ func (swig_p *_swig_DirectorGameEndCallback) Run(turn int, board string) bool {
 	var swig_r bool
 	_swig_i_0 := turn
 	_swig_i_1 := board
-	swig_r = (bool)(C._wrap__swig_DirectorGameEndCallback_upcall_Run_halite_67d15dab8d7ac32b(C.uintptr_t(swig_p.SwigcptrGameEndCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(C.uintptr_t(swig_p.SwigcptrGameEndCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
@@ -199,15 +199,15 @@ func DirectorGameEndCallbackRun(p GameEndCallback, arg2 int, arg3 string) bool {
 	var swig_r bool
 	_swig_i_0 := arg2
 	_swig_i_1 := arg3
-	swig_r = (bool)(C._wrap__swig_DirectorGameEndCallback_upcall_Run_halite_67d15dab8d7ac32b(C.uintptr_t(p.(*_swig_DirectorGameEndCallback).SwigcptrGameEndCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(C.uintptr_t(p.(*_swig_DirectorGameEndCallback).SwigcptrGameEndCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
 	return swig_r
 }
 
-//export Swig_DirectorGameEndCallback_callback_run_halite_67d15dab8d7ac32b
-func Swig_DirectorGameEndCallback_callback_run_halite_67d15dab8d7ac32b(swig_c int, arg2 int, arg3 string) (swig_result bool) {
+//export Swig_DirectorGameEndCallback_callback_run_halite_2007760261f40110
+func Swig_DirectorGameEndCallback_callback_run_halite_2007760261f40110(swig_c int, arg2 int, arg3 string) (swig_result bool) {
 	var swig_r bool
 	var _swig_i_1 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorGameEndCallback)
@@ -231,7 +231,7 @@ func (p SwigcptrGameEndCallback) DirectorInterface() interface{} {
 
 func DeleteGameEndCallback(arg1 GameEndCallback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_GameEndCallback_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_GameEndCallback_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrGameEndCallback) Run(arg2 int, arg3 string) (_swig_ret bool) {
@@ -239,7 +239,7 @@ func (arg1 SwigcptrGameEndCallback) Run(arg2 int, arg3 string) (_swig_ret bool) 
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_GameEndCallback_run_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_2))))
+	swig_r = (bool)(C._wrap_GameEndCallback_run_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -248,7 +248,7 @@ func (arg1 SwigcptrGameEndCallback) Run(arg2 int, arg3 string) (_swig_ret bool) 
 
 func NewGameEndCallback() (_swig_ret GameEndCallback) {
 	var swig_r GameEndCallback
-	swig_r = (GameEndCallback)(SwigcptrGameEndCallback(C._wrap_new_GameEndCallback_halite_67d15dab8d7ac32b()))
+	swig_r = (GameEndCallback)(SwigcptrGameEndCallback(C._wrap_new_GameEndCallback_halite_2007760261f40110()))
 	return swig_r
 }
 
@@ -277,17 +277,17 @@ func (p *_swig_DirectorTimeoutCallback) DirectorInterface() interface{} {
 
 func NewDirectorTimeoutCallback(v interface{}) TimeoutCallback {
 	p := &_swig_DirectorTimeoutCallback{0, v}
-	p.SwigcptrTimeoutCallback = SwigcptrTimeoutCallback(C._wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_67d15dab8d7ac32b(C.int(swigDirectorAdd(p))))
+	p.SwigcptrTimeoutCallback = SwigcptrTimeoutCallback(C._wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_2007760261f40110(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorTimeoutCallback(arg1 TimeoutCallback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorTimeoutCallback_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorTimeoutCallback_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_TimeoutCallback_halite_67d15dab8d7ac32b
-func Swiggo_DeleteDirector_TimeoutCallback_halite_67d15dab8d7ac32b(c int) {
+//export Swiggo_DeleteDirector_TimeoutCallback_halite_2007760261f40110
+func Swiggo_DeleteDirector_TimeoutCallback_halite_2007760261f40110(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorTimeoutCallback).SwigcptrTimeoutCallback = 0
 	swigDirectorDelete(c)
 }
@@ -303,7 +303,7 @@ func (swig_p *_swig_DirectorTimeoutCallback) Run(playerTag int, playerName strin
 	}
 	_swig_i_0 := playerTag
 	_swig_i_1 := playerName
-	C._wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_67d15dab8d7ac32b(C.uintptr_t(swig_p.SwigcptrTimeoutCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(C.uintptr_t(swig_p.SwigcptrTimeoutCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
@@ -312,14 +312,14 @@ func (swig_p *_swig_DirectorTimeoutCallback) Run(playerTag int, playerName strin
 func DirectorTimeoutCallbackRun(p TimeoutCallback, arg2 int, arg3 string) {
 	_swig_i_0 := arg2
 	_swig_i_1 := arg3
-	C._wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_67d15dab8d7ac32b(C.uintptr_t(p.(*_swig_DirectorTimeoutCallback).SwigcptrTimeoutCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(C.uintptr_t(p.(*_swig_DirectorTimeoutCallback).SwigcptrTimeoutCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
 }
 
-//export Swig_DirectorTimeoutCallback_callback_run_halite_67d15dab8d7ac32b
-func Swig_DirectorTimeoutCallback_callback_run_halite_67d15dab8d7ac32b(swig_c int, arg2 int, arg3 string) {
+//export Swig_DirectorTimeoutCallback_callback_run_halite_2007760261f40110
+func Swig_DirectorTimeoutCallback_callback_run_halite_2007760261f40110(swig_c int, arg2 int, arg3 string) {
 	var _swig_i_1 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorTimeoutCallback)
 	_swig_i_1 = swigCopyString(arg3)
@@ -341,14 +341,14 @@ func (p SwigcptrTimeoutCallback) DirectorInterface() interface{} {
 
 func DeleteTimeoutCallback(arg1 TimeoutCallback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_TimeoutCallback_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_TimeoutCallback_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrTimeoutCallback) Run(arg2 int, arg3 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_TimeoutCallback_run_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_TimeoutCallback_run_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -356,7 +356,7 @@ func (arg1 SwigcptrTimeoutCallback) Run(arg2 int, arg3 string) {
 
 func NewTimeoutCallback() (_swig_ret TimeoutCallback) {
 	var swig_r TimeoutCallback
-	swig_r = (TimeoutCallback)(SwigcptrTimeoutCallback(C._wrap_new_TimeoutCallback_halite_67d15dab8d7ac32b()))
+	swig_r = (TimeoutCallback)(SwigcptrTimeoutCallback(C._wrap_new_TimeoutCallback_halite_2007760261f40110()))
 	return swig_r
 }
 
@@ -378,14 +378,14 @@ func (p SwigcptrUniConnectionVector) SwigIsUniConnectionVector() {
 
 func NewUniConnectionVector__SWIG_0() (_swig_ret UniConnectionVector) {
 	var swig_r UniConnectionVector
-	swig_r = (UniConnectionVector)(SwigcptrUniConnectionVector(C._wrap_new_UniConnectionVector__SWIG_0_halite_67d15dab8d7ac32b()))
+	swig_r = (UniConnectionVector)(SwigcptrUniConnectionVector(C._wrap_new_UniConnectionVector__SWIG_0_halite_2007760261f40110()))
 	return swig_r
 }
 
 func NewUniConnectionVector__SWIG_1(arg1 int64) (_swig_ret UniConnectionVector) {
 	var swig_r UniConnectionVector
 	_swig_i_0 := arg1
-	swig_r = (UniConnectionVector)(SwigcptrUniConnectionVector(C._wrap_new_UniConnectionVector__SWIG_1_halite_67d15dab8d7ac32b(C.swig_type_4(_swig_i_0))))
+	swig_r = (UniConnectionVector)(SwigcptrUniConnectionVector(C._wrap_new_UniConnectionVector__SWIG_1_halite_2007760261f40110(C.swig_type_4(_swig_i_0))))
 	return swig_r
 }
 
@@ -403,46 +403,46 @@ func NewUniConnectionVector(a ...interface{}) UniConnectionVector {
 func (arg1 SwigcptrUniConnectionVector) Size() (_swig_ret int64) {
 	var swig_r int64
 	_swig_i_0 := arg1
-	swig_r = (int64)(C._wrap_UniConnectionVector_size_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0)))
+	swig_r = (int64)(C._wrap_UniConnectionVector_size_halite_2007760261f40110(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrUniConnectionVector) Capacity() (_swig_ret int64) {
 	var swig_r int64
 	_swig_i_0 := arg1
-	swig_r = (int64)(C._wrap_UniConnectionVector_capacity_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0)))
+	swig_r = (int64)(C._wrap_UniConnectionVector_capacity_halite_2007760261f40110(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrUniConnectionVector) Reserve(arg2 int64) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_UniConnectionVector_reserve_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0), C.swig_type_7(_swig_i_1))
+	C._wrap_UniConnectionVector_reserve_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_type_7(_swig_i_1))
 }
 
 func (arg1 SwigcptrUniConnectionVector) IsEmpty() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_UniConnectionVector_isEmpty_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_UniConnectionVector_isEmpty_halite_2007760261f40110(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrUniConnectionVector) Clear() {
 	_swig_i_0 := arg1
-	C._wrap_UniConnectionVector_clear_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0))
+	C._wrap_UniConnectionVector_clear_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrUniConnectionVector) Add(arg2 UniConnection) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_UniConnectionVector_add_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_UniConnectionVector_add_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrUniConnectionVector) Get(arg2 int) (_swig_ret UniConnection) {
 	var swig_r UniConnection
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (UniConnection)(SwigcptrUniConnection(C._wrap_UniConnectionVector_get_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))))
+	swig_r = (UniConnection)(SwigcptrUniConnection(C._wrap_UniConnectionVector_get_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))))
 	return swig_r
 }
 
@@ -450,12 +450,12 @@ func (arg1 SwigcptrUniConnectionVector) Set(arg2 int, arg3 UniConnection) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3.Swigcptr()
-	C._wrap_UniConnectionVector_set_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.uintptr_t(_swig_i_2))
+	C._wrap_UniConnectionVector_set_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.uintptr_t(_swig_i_2))
 }
 
 func DeleteUniConnectionVector(arg1 UniConnectionVector) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_UniConnectionVector_halite_67d15dab8d7ac32b(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_UniConnectionVector_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
 }
 
 type UniConnectionVector interface {

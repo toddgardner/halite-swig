@@ -22,6 +22,11 @@ Then edit halite.go and add:
 
 To the big block comment before `import "C"`. Can't find a better way at the moment.
 
+## Py3
+
+```shell
+swig -v -c++ -python -py3 halite.i 
+```
 
 # Current things
 
