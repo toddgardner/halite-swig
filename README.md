@@ -2,7 +2,7 @@
 
 A swig wrapper for Halite core game logic. Can be used simulate board states, generate test boards, and run in process games.
 
-Currently only supports go and a very limited interface, hoping to hack more in here.
+Currently only supports go & python, and a very limited interface, hoping to hack more in here.
 
 # Generating swig
 
@@ -25,7 +25,11 @@ To the big block comment before `import "C"`. Can't find a better way at the mom
 ## Py3
 
 ```shell
+# build halite.py
 swig -v -c++ -python -py3 halite.i 
+python3 setup.py build_ext --inplace
+# verify halite.py
+python3 halite_test.py
 ```
 
 # Current things
