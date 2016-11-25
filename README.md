@@ -25,8 +25,11 @@ To the big block comment before `import "C"`. Can't find a better way at the mom
 ## Py3
 
 ```shell
+# build halite.py
 swig -v -c++ -python -py3 halite.i 
 python3 setup.py build_ext --inplace
+# verify halite.py
+python3 halite_test.py
 ```
 
 # Current things
