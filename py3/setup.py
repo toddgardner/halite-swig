@@ -8,7 +8,12 @@ from distutils.core import setup, Extension
 
 halite_module = Extension(
   '_halite',
-  sources=['halite_wrap.cxx'],
+  sources=[
+      'halite_wrap.cxx',
+      'wrapped/core/Halite.cpp',
+      'wrapped/halite-core.cpp',
+      'wrapped/networking/Networking.cpp',
+  ],
   extra_compile_args=['-std=c++11'])
 
 setup (

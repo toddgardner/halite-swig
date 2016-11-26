@@ -11,8 +11,8 @@ Currently only supports go & python, and a very limited interface, hoping to hac
 Install swig > 3.0, then run:
 
 ```shell
-cd go
-swig -v -go -cgo -c++ -intgosize 64 halite.i 
+cd src/halite
+swig -v -go -cgo -c++ -intgosize 64 -I../.. halite.i 
 ```
 
 Then edit halite.go and add:
@@ -34,7 +34,7 @@ go build -v && go test -v
 
 ```shell
 # build halite.py
-swig -v -c++ -python -py3 halite.i 
+swig -v -c++ -python -py3 -I.. halite.i 
 python3 setup.py build_ext --inplace
 # verify halite.py
 python3 halite_test.py

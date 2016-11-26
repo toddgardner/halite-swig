@@ -1,6 +1,3 @@
-#include <vector>
-#include <chrono>
-
 #include "core/hlt.hpp"
 #include "core/Halite.hpp"
 #include "networking/Networking.hpp"

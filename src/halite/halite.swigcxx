@@ -1,0 +1,22 @@
+%module(directors="1") halite
+
+%rename(LocationLess) operator<(const Location & l1, const Location & l2);
+%rename(LocationEquals) operator==(const Location & l1, const Location & l2);
+
+%rename(playerStatistics) GameStatistics::player_statistics;
+%rename(outputFilename) GameStatistics::output_filename;
+%rename(timeoutTags) GameStatistics::timeout_tags;
+%rename(timeoutLogFilenames) GameStatistics::timeout_log_filenames;
+
+%rename(averageTerritoryCount) PlayerStatistics::average_territory_count;
+%rename(averageStrengthCount) PlayerStatistics::average_strength_count;
+%rename(averageProductionCount) PlayerStatistics::average_production_count;
+%rename(stillPercentage) PlayerStatistics::still_percentage;
+%rename(initResponseTime) PlayerStatistics::init_response_time;
+%rename(averageFrameResponseTime) PlayerStatistics::average_frame_response_time;
+
+%rename(wrappedRunGame) runGame(unsigned int, short, short, unsigned int, bool, std::vector<UniConnection>, GameEndCallback*);
+%rename(wrappedUpdateMap) updateMap(hlt::Map &, const std::vector< std::map<hlt::Location, unsigned char> > &);
+
+%include "wrapped/halite-core.i"
+

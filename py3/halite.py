@@ -169,30 +169,799 @@ class SwigPyIterator(_object):
 SwigPyIterator_swigregister = _halite.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
 
+class UniConnectionVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, UniConnectionVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, UniConnectionVector, name)
+    __repr__ = _swig_repr
 
-def randomMap(width: 'short', height: 'short', numberOfPlayers: 'unsigned char', seed: 'unsigned int') -> "hlt::Map":
-    return _halite.randomMap(width, height, numberOfPlayers, seed)
-randomMap = _halite.randomMap
+    def iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.UniConnectionVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
 
-def randomMapString(width: 'short', height: 'short', numberOfPlayers: 'unsigned char', seed: 'unsigned int') -> "std::string":
-    return _halite.randomMapString(width, height, numberOfPlayers, seed)
-randomMapString = _halite.randomMapString
+    def __nonzero__(self) -> "bool":
+        return _halite.UniConnectionVector___nonzero__(self)
 
-def randomSeed() -> "unsigned int":
-    return _halite.randomSeed()
-randomSeed = _halite.randomSeed
+    def __bool__(self) -> "bool":
+        return _halite.UniConnectionVector___bool__(self)
 
-def blankMap(width: 'short', height: 'short') -> "hlt::Map":
-    return _halite.blankMap(width, height)
-blankMap = _halite.blankMap
+    def __len__(self) -> "std::vector< UniConnection >::size_type":
+        return _halite.UniConnectionVector___len__(self)
 
-def runGame(id: 'unsigned int', width: 'short', height: 'short', seed: 'unsigned int', ignore_timeout: 'bool', connections: 'UniConnectionVector', callback: 'GameEndCallback') -> "GameStatistics":
-    return _halite.runGame(id, width, height, seed, ignore_timeout, connections, callback)
-runGame = _halite.runGame
+    def __getslice__(self, i: 'std::vector< UniConnection >::difference_type', j: 'std::vector< UniConnection >::difference_type') -> "std::vector< UniConnection,std::allocator< UniConnection > > *":
+        return _halite.UniConnectionVector___getslice__(self, i, j)
 
-def updateMap(game_map: 'Map', player_moves: 'std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > const &') -> "void":
-    return _halite.updateMap(game_map, player_moves)
-updateMap = _halite.updateMap
+    def __setslice__(self, *args) -> "void":
+        return _halite.UniConnectionVector___setslice__(self, *args)
+
+    def __delslice__(self, i: 'std::vector< UniConnection >::difference_type', j: 'std::vector< UniConnection >::difference_type') -> "void":
+        return _halite.UniConnectionVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args) -> "void":
+        return _halite.UniConnectionVector___delitem__(self, *args)
+
+    def __getitem__(self, *args) -> "std::vector< UniConnection >::value_type const &":
+        return _halite.UniConnectionVector___getitem__(self, *args)
+
+    def __setitem__(self, *args) -> "void":
+        return _halite.UniConnectionVector___setitem__(self, *args)
+
+    def pop(self) -> "std::vector< UniConnection >::value_type":
+        return _halite.UniConnectionVector_pop(self)
+
+    def append(self, x: 'UniConnection') -> "void":
+        return _halite.UniConnectionVector_append(self, x)
+
+    def empty(self) -> "bool":
+        return _halite.UniConnectionVector_empty(self)
+
+    def size(self) -> "std::vector< UniConnection >::size_type":
+        return _halite.UniConnectionVector_size(self)
+
+    def swap(self, v: 'UniConnectionVector') -> "void":
+        return _halite.UniConnectionVector_swap(self, v)
+
+    def begin(self) -> "std::vector< UniConnection >::iterator":
+        return _halite.UniConnectionVector_begin(self)
+
+    def end(self) -> "std::vector< UniConnection >::iterator":
+        return _halite.UniConnectionVector_end(self)
+
+    def rbegin(self) -> "std::vector< UniConnection >::reverse_iterator":
+        return _halite.UniConnectionVector_rbegin(self)
+
+    def rend(self) -> "std::vector< UniConnection >::reverse_iterator":
+        return _halite.UniConnectionVector_rend(self)
+
+    def clear(self) -> "void":
+        return _halite.UniConnectionVector_clear(self)
+
+    def get_allocator(self) -> "std::vector< UniConnection >::allocator_type":
+        return _halite.UniConnectionVector_get_allocator(self)
+
+    def pop_back(self) -> "void":
+        return _halite.UniConnectionVector_pop_back(self)
+
+    def erase(self, *args) -> "std::vector< UniConnection >::iterator":
+        return _halite.UniConnectionVector_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _halite.new_UniConnectionVector(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x: 'UniConnection') -> "void":
+        return _halite.UniConnectionVector_push_back(self, x)
+
+    def front(self) -> "std::vector< UniConnection >::value_type const &":
+        return _halite.UniConnectionVector_front(self)
+
+    def back(self) -> "std::vector< UniConnection >::value_type const &":
+        return _halite.UniConnectionVector_back(self)
+
+    def assign(self, n: 'std::vector< UniConnection >::size_type', x: 'UniConnection') -> "void":
+        return _halite.UniConnectionVector_assign(self, n, x)
+
+    def resize(self, *args) -> "void":
+        return _halite.UniConnectionVector_resize(self, *args)
+
+    def insert(self, *args) -> "void":
+        return _halite.UniConnectionVector_insert(self, *args)
+
+    def reserve(self, n: 'std::vector< UniConnection >::size_type') -> "void":
+        return _halite.UniConnectionVector_reserve(self, n)
+
+    def capacity(self) -> "std::vector< UniConnection >::size_type":
+        return _halite.UniConnectionVector_capacity(self)
+    __swig_destroy__ = _halite.delete_UniConnectionVector
+    __del__ = lambda self: None
+UniConnectionVector_swigregister = _halite.UniConnectionVector_swigregister
+UniConnectionVector_swigregister(UniConnectionVector)
+
+class RowVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, RowVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, RowVector, name)
+    __repr__ = _swig_repr
+
+    def iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.RowVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self) -> "bool":
+        return _halite.RowVector___nonzero__(self)
+
+    def __bool__(self) -> "bool":
+        return _halite.RowVector___bool__(self)
+
+    def __len__(self) -> "std::vector< hlt::Site >::size_type":
+        return _halite.RowVector___len__(self)
+
+    def __getslice__(self, i: 'std::vector< hlt::Site >::difference_type', j: 'std::vector< hlt::Site >::difference_type') -> "std::vector< hlt::Site,std::allocator< hlt::Site > > *":
+        return _halite.RowVector___getslice__(self, i, j)
+
+    def __setslice__(self, *args) -> "void":
+        return _halite.RowVector___setslice__(self, *args)
+
+    def __delslice__(self, i: 'std::vector< hlt::Site >::difference_type', j: 'std::vector< hlt::Site >::difference_type') -> "void":
+        return _halite.RowVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args) -> "void":
+        return _halite.RowVector___delitem__(self, *args)
+
+    def __getitem__(self, *args) -> "std::vector< hlt::Site >::value_type const &":
+        return _halite.RowVector___getitem__(self, *args)
+
+    def __setitem__(self, *args) -> "void":
+        return _halite.RowVector___setitem__(self, *args)
+
+    def pop(self) -> "std::vector< hlt::Site >::value_type":
+        return _halite.RowVector_pop(self)
+
+    def append(self, x: 'Site') -> "void":
+        return _halite.RowVector_append(self, x)
+
+    def empty(self) -> "bool":
+        return _halite.RowVector_empty(self)
+
+    def size(self) -> "std::vector< hlt::Site >::size_type":
+        return _halite.RowVector_size(self)
+
+    def swap(self, v: 'RowVector') -> "void":
+        return _halite.RowVector_swap(self, v)
+
+    def begin(self) -> "std::vector< hlt::Site >::iterator":
+        return _halite.RowVector_begin(self)
+
+    def end(self) -> "std::vector< hlt::Site >::iterator":
+        return _halite.RowVector_end(self)
+
+    def rbegin(self) -> "std::vector< hlt::Site >::reverse_iterator":
+        return _halite.RowVector_rbegin(self)
+
+    def rend(self) -> "std::vector< hlt::Site >::reverse_iterator":
+        return _halite.RowVector_rend(self)
+
+    def clear(self) -> "void":
+        return _halite.RowVector_clear(self)
+
+    def get_allocator(self) -> "std::vector< hlt::Site >::allocator_type":
+        return _halite.RowVector_get_allocator(self)
+
+    def pop_back(self) -> "void":
+        return _halite.RowVector_pop_back(self)
+
+    def erase(self, *args) -> "std::vector< hlt::Site >::iterator":
+        return _halite.RowVector_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _halite.new_RowVector(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x: 'Site') -> "void":
+        return _halite.RowVector_push_back(self, x)
+
+    def front(self) -> "std::vector< hlt::Site >::value_type const &":
+        return _halite.RowVector_front(self)
+
+    def back(self) -> "std::vector< hlt::Site >::value_type const &":
+        return _halite.RowVector_back(self)
+
+    def assign(self, n: 'std::vector< hlt::Site >::size_type', x: 'Site') -> "void":
+        return _halite.RowVector_assign(self, n, x)
+
+    def resize(self, *args) -> "void":
+        return _halite.RowVector_resize(self, *args)
+
+    def insert(self, *args) -> "void":
+        return _halite.RowVector_insert(self, *args)
+
+    def reserve(self, n: 'std::vector< hlt::Site >::size_type') -> "void":
+        return _halite.RowVector_reserve(self, n)
+
+    def capacity(self) -> "std::vector< hlt::Site >::size_type":
+        return _halite.RowVector_capacity(self)
+    __swig_destroy__ = _halite.delete_RowVector
+    __del__ = lambda self: None
+RowVector_swigregister = _halite.RowVector_swigregister
+RowVector_swigregister(RowVector)
+
+class BoardVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, BoardVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, BoardVector, name)
+    __repr__ = _swig_repr
+
+    def iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.BoardVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self) -> "bool":
+        return _halite.BoardVector___nonzero__(self)
+
+    def __bool__(self) -> "bool":
+        return _halite.BoardVector___bool__(self)
+
+    def __len__(self) -> "std::vector< std::vector< hlt::Site > >::size_type":
+        return _halite.BoardVector___len__(self)
+
+    def __getslice__(self, i: 'std::vector< std::vector< hlt::Site > >::difference_type', j: 'std::vector< std::vector< hlt::Site > >::difference_type') -> "std::vector< std::vector< hlt::Site,std::allocator< hlt::Site > >,std::allocator< std::vector< hlt::Site,std::allocator< hlt::Site > > > > *":
+        return _halite.BoardVector___getslice__(self, i, j)
+
+    def __setslice__(self, *args) -> "void":
+        return _halite.BoardVector___setslice__(self, *args)
+
+    def __delslice__(self, i: 'std::vector< std::vector< hlt::Site > >::difference_type', j: 'std::vector< std::vector< hlt::Site > >::difference_type') -> "void":
+        return _halite.BoardVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args) -> "void":
+        return _halite.BoardVector___delitem__(self, *args)
+
+    def __getitem__(self, *args) -> "std::vector< std::vector< hlt::Site > >::value_type const &":
+        return _halite.BoardVector___getitem__(self, *args)
+
+    def __setitem__(self, *args) -> "void":
+        return _halite.BoardVector___setitem__(self, *args)
+
+    def pop(self) -> "std::vector< std::vector< hlt::Site > >::value_type":
+        return _halite.BoardVector_pop(self)
+
+    def append(self, x: 'RowVector') -> "void":
+        return _halite.BoardVector_append(self, x)
+
+    def empty(self) -> "bool":
+        return _halite.BoardVector_empty(self)
+
+    def size(self) -> "std::vector< std::vector< hlt::Site > >::size_type":
+        return _halite.BoardVector_size(self)
+
+    def swap(self, v: 'BoardVector') -> "void":
+        return _halite.BoardVector_swap(self, v)
+
+    def begin(self) -> "std::vector< std::vector< hlt::Site > >::iterator":
+        return _halite.BoardVector_begin(self)
+
+    def end(self) -> "std::vector< std::vector< hlt::Site > >::iterator":
+        return _halite.BoardVector_end(self)
+
+    def rbegin(self) -> "std::vector< std::vector< hlt::Site > >::reverse_iterator":
+        return _halite.BoardVector_rbegin(self)
+
+    def rend(self) -> "std::vector< std::vector< hlt::Site > >::reverse_iterator":
+        return _halite.BoardVector_rend(self)
+
+    def clear(self) -> "void":
+        return _halite.BoardVector_clear(self)
+
+    def get_allocator(self) -> "std::vector< std::vector< hlt::Site > >::allocator_type":
+        return _halite.BoardVector_get_allocator(self)
+
+    def pop_back(self) -> "void":
+        return _halite.BoardVector_pop_back(self)
+
+    def erase(self, *args) -> "std::vector< std::vector< hlt::Site > >::iterator":
+        return _halite.BoardVector_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _halite.new_BoardVector(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x: 'RowVector') -> "void":
+        return _halite.BoardVector_push_back(self, x)
+
+    def front(self) -> "std::vector< std::vector< hlt::Site > >::value_type const &":
+        return _halite.BoardVector_front(self)
+
+    def back(self) -> "std::vector< std::vector< hlt::Site > >::value_type const &":
+        return _halite.BoardVector_back(self)
+
+    def assign(self, n: 'std::vector< std::vector< hlt::Site > >::size_type', x: 'RowVector') -> "void":
+        return _halite.BoardVector_assign(self, n, x)
+
+    def resize(self, *args) -> "void":
+        return _halite.BoardVector_resize(self, *args)
+
+    def insert(self, *args) -> "void":
+        return _halite.BoardVector_insert(self, *args)
+
+    def reserve(self, n: 'std::vector< std::vector< hlt::Site > >::size_type') -> "void":
+        return _halite.BoardVector_reserve(self, n)
+
+    def capacity(self) -> "std::vector< std::vector< hlt::Site > >::size_type":
+        return _halite.BoardVector_capacity(self)
+    __swig_destroy__ = _halite.delete_BoardVector
+    __del__ = lambda self: None
+BoardVector_swigregister = _halite.BoardVector_swigregister
+BoardVector_swigregister(BoardVector)
+
+class PlayerStatisticsVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, PlayerStatisticsVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, PlayerStatisticsVector, name)
+    __repr__ = _swig_repr
+
+    def iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.PlayerStatisticsVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self) -> "bool":
+        return _halite.PlayerStatisticsVector___nonzero__(self)
+
+    def __bool__(self) -> "bool":
+        return _halite.PlayerStatisticsVector___bool__(self)
+
+    def __len__(self) -> "std::vector< PlayerStatistics >::size_type":
+        return _halite.PlayerStatisticsVector___len__(self)
+
+    def __getslice__(self, i: 'std::vector< PlayerStatistics >::difference_type', j: 'std::vector< PlayerStatistics >::difference_type') -> "std::vector< PlayerStatistics,std::allocator< PlayerStatistics > > *":
+        return _halite.PlayerStatisticsVector___getslice__(self, i, j)
+
+    def __setslice__(self, *args) -> "void":
+        return _halite.PlayerStatisticsVector___setslice__(self, *args)
+
+    def __delslice__(self, i: 'std::vector< PlayerStatistics >::difference_type', j: 'std::vector< PlayerStatistics >::difference_type') -> "void":
+        return _halite.PlayerStatisticsVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args) -> "void":
+        return _halite.PlayerStatisticsVector___delitem__(self, *args)
+
+    def __getitem__(self, *args) -> "std::vector< PlayerStatistics >::value_type const &":
+        return _halite.PlayerStatisticsVector___getitem__(self, *args)
+
+    def __setitem__(self, *args) -> "void":
+        return _halite.PlayerStatisticsVector___setitem__(self, *args)
+
+    def pop(self) -> "std::vector< PlayerStatistics >::value_type":
+        return _halite.PlayerStatisticsVector_pop(self)
+
+    def append(self, x: 'PlayerStatistics') -> "void":
+        return _halite.PlayerStatisticsVector_append(self, x)
+
+    def empty(self) -> "bool":
+        return _halite.PlayerStatisticsVector_empty(self)
+
+    def size(self) -> "std::vector< PlayerStatistics >::size_type":
+        return _halite.PlayerStatisticsVector_size(self)
+
+    def swap(self, v: 'PlayerStatisticsVector') -> "void":
+        return _halite.PlayerStatisticsVector_swap(self, v)
+
+    def begin(self) -> "std::vector< PlayerStatistics >::iterator":
+        return _halite.PlayerStatisticsVector_begin(self)
+
+    def end(self) -> "std::vector< PlayerStatistics >::iterator":
+        return _halite.PlayerStatisticsVector_end(self)
+
+    def rbegin(self) -> "std::vector< PlayerStatistics >::reverse_iterator":
+        return _halite.PlayerStatisticsVector_rbegin(self)
+
+    def rend(self) -> "std::vector< PlayerStatistics >::reverse_iterator":
+        return _halite.PlayerStatisticsVector_rend(self)
+
+    def clear(self) -> "void":
+        return _halite.PlayerStatisticsVector_clear(self)
+
+    def get_allocator(self) -> "std::vector< PlayerStatistics >::allocator_type":
+        return _halite.PlayerStatisticsVector_get_allocator(self)
+
+    def pop_back(self) -> "void":
+        return _halite.PlayerStatisticsVector_pop_back(self)
+
+    def erase(self, *args) -> "std::vector< PlayerStatistics >::iterator":
+        return _halite.PlayerStatisticsVector_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _halite.new_PlayerStatisticsVector(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x: 'PlayerStatistics') -> "void":
+        return _halite.PlayerStatisticsVector_push_back(self, x)
+
+    def front(self) -> "std::vector< PlayerStatistics >::value_type const &":
+        return _halite.PlayerStatisticsVector_front(self)
+
+    def back(self) -> "std::vector< PlayerStatistics >::value_type const &":
+        return _halite.PlayerStatisticsVector_back(self)
+
+    def assign(self, n: 'std::vector< PlayerStatistics >::size_type', x: 'PlayerStatistics') -> "void":
+        return _halite.PlayerStatisticsVector_assign(self, n, x)
+
+    def resize(self, *args) -> "void":
+        return _halite.PlayerStatisticsVector_resize(self, *args)
+
+    def insert(self, *args) -> "void":
+        return _halite.PlayerStatisticsVector_insert(self, *args)
+
+    def reserve(self, n: 'std::vector< PlayerStatistics >::size_type') -> "void":
+        return _halite.PlayerStatisticsVector_reserve(self, n)
+
+    def capacity(self) -> "std::vector< PlayerStatistics >::size_type":
+        return _halite.PlayerStatisticsVector_capacity(self)
+    __swig_destroy__ = _halite.delete_PlayerStatisticsVector
+    __del__ = lambda self: None
+PlayerStatisticsVector_swigregister = _halite.PlayerStatisticsVector_swigregister
+PlayerStatisticsVector_swigregister(PlayerStatisticsVector)
+
+class StringVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, StringVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, StringVector, name)
+    __repr__ = _swig_repr
+
+    def iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.StringVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self) -> "bool":
+        return _halite.StringVector___nonzero__(self)
+
+    def __bool__(self) -> "bool":
+        return _halite.StringVector___bool__(self)
+
+    def __len__(self) -> "std::vector< std::string >::size_type":
+        return _halite.StringVector___len__(self)
+
+    def __getslice__(self, i: 'std::vector< std::string >::difference_type', j: 'std::vector< std::string >::difference_type') -> "std::vector< std::string,std::allocator< std::string > > *":
+        return _halite.StringVector___getslice__(self, i, j)
+
+    def __setslice__(self, *args) -> "void":
+        return _halite.StringVector___setslice__(self, *args)
+
+    def __delslice__(self, i: 'std::vector< std::string >::difference_type', j: 'std::vector< std::string >::difference_type') -> "void":
+        return _halite.StringVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args) -> "void":
+        return _halite.StringVector___delitem__(self, *args)
+
+    def __getitem__(self, *args) -> "std::vector< std::string >::value_type const &":
+        return _halite.StringVector___getitem__(self, *args)
+
+    def __setitem__(self, *args) -> "void":
+        return _halite.StringVector___setitem__(self, *args)
+
+    def pop(self) -> "std::vector< std::string >::value_type":
+        return _halite.StringVector_pop(self)
+
+    def append(self, x: 'std::vector< std::string >::value_type const &') -> "void":
+        return _halite.StringVector_append(self, x)
+
+    def empty(self) -> "bool":
+        return _halite.StringVector_empty(self)
+
+    def size(self) -> "std::vector< std::string >::size_type":
+        return _halite.StringVector_size(self)
+
+    def swap(self, v: 'StringVector') -> "void":
+        return _halite.StringVector_swap(self, v)
+
+    def begin(self) -> "std::vector< std::string >::iterator":
+        return _halite.StringVector_begin(self)
+
+    def end(self) -> "std::vector< std::string >::iterator":
+        return _halite.StringVector_end(self)
+
+    def rbegin(self) -> "std::vector< std::string >::reverse_iterator":
+        return _halite.StringVector_rbegin(self)
+
+    def rend(self) -> "std::vector< std::string >::reverse_iterator":
+        return _halite.StringVector_rend(self)
+
+    def clear(self) -> "void":
+        return _halite.StringVector_clear(self)
+
+    def get_allocator(self) -> "std::vector< std::string >::allocator_type":
+        return _halite.StringVector_get_allocator(self)
+
+    def pop_back(self) -> "void":
+        return _halite.StringVector_pop_back(self)
+
+    def erase(self, *args) -> "std::vector< std::string >::iterator":
+        return _halite.StringVector_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _halite.new_StringVector(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x: 'std::vector< std::string >::value_type const &') -> "void":
+        return _halite.StringVector_push_back(self, x)
+
+    def front(self) -> "std::vector< std::string >::value_type const &":
+        return _halite.StringVector_front(self)
+
+    def back(self) -> "std::vector< std::string >::value_type const &":
+        return _halite.StringVector_back(self)
+
+    def assign(self, n: 'std::vector< std::string >::size_type', x: 'std::vector< std::string >::value_type const &') -> "void":
+        return _halite.StringVector_assign(self, n, x)
+
+    def resize(self, *args) -> "void":
+        return _halite.StringVector_resize(self, *args)
+
+    def insert(self, *args) -> "void":
+        return _halite.StringVector_insert(self, *args)
+
+    def reserve(self, n: 'std::vector< std::string >::size_type') -> "void":
+        return _halite.StringVector_reserve(self, n)
+
+    def capacity(self) -> "std::vector< std::string >::size_type":
+        return _halite.StringVector_capacity(self)
+    __swig_destroy__ = _halite.delete_StringVector
+    __del__ = lambda self: None
+StringVector_swigregister = _halite.StringVector_swigregister
+StringVector_swigregister(StringVector)
+
+class LocationToMoveMap(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, LocationToMoveMap, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, LocationToMoveMap, name)
+    __repr__ = _swig_repr
+
+    def iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.LocationToMoveMap_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self) -> "bool":
+        return _halite.LocationToMoveMap___nonzero__(self)
+
+    def __bool__(self) -> "bool":
+        return _halite.LocationToMoveMap___bool__(self)
+
+    def __len__(self) -> "std::map< hlt::Location,unsigned char >::size_type":
+        return _halite.LocationToMoveMap___len__(self)
+    def __iter__(self):
+        return self.key_iterator()
+    def iterkeys(self):
+        return self.key_iterator()
+    def itervalues(self):
+        return self.value_iterator()
+    def iteritems(self):
+        return self.iterator()
+
+    def __getitem__(self, key: 'Location') -> "std::map< hlt::Location,unsigned char >::mapped_type const &":
+        return _halite.LocationToMoveMap___getitem__(self, key)
+
+    def __delitem__(self, key: 'Location') -> "void":
+        return _halite.LocationToMoveMap___delitem__(self, key)
+
+    def has_key(self, key: 'Location') -> "bool":
+        return _halite.LocationToMoveMap_has_key(self, key)
+
+    def keys(self) -> "PyObject *":
+        return _halite.LocationToMoveMap_keys(self)
+
+    def values(self) -> "PyObject *":
+        return _halite.LocationToMoveMap_values(self)
+
+    def items(self) -> "PyObject *":
+        return _halite.LocationToMoveMap_items(self)
+
+    def __contains__(self, key: 'Location') -> "bool":
+        return _halite.LocationToMoveMap___contains__(self, key)
+
+    def key_iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.LocationToMoveMap_key_iterator(self)
+
+    def value_iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.LocationToMoveMap_value_iterator(self)
+
+    def __setitem__(self, *args) -> "void":
+        return _halite.LocationToMoveMap___setitem__(self, *args)
+
+    def asdict(self) -> "PyObject *":
+        return _halite.LocationToMoveMap_asdict(self)
+
+    def __init__(self, *args):
+        this = _halite.new_LocationToMoveMap(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def empty(self) -> "bool":
+        return _halite.LocationToMoveMap_empty(self)
+
+    def size(self) -> "std::map< hlt::Location,unsigned char >::size_type":
+        return _halite.LocationToMoveMap_size(self)
+
+    def swap(self, v: 'LocationToMoveMap') -> "void":
+        return _halite.LocationToMoveMap_swap(self, v)
+
+    def begin(self) -> "std::map< hlt::Location,unsigned char >::iterator":
+        return _halite.LocationToMoveMap_begin(self)
+
+    def end(self) -> "std::map< hlt::Location,unsigned char >::iterator":
+        return _halite.LocationToMoveMap_end(self)
+
+    def rbegin(self) -> "std::map< hlt::Location,unsigned char >::reverse_iterator":
+        return _halite.LocationToMoveMap_rbegin(self)
+
+    def rend(self) -> "std::map< hlt::Location,unsigned char >::reverse_iterator":
+        return _halite.LocationToMoveMap_rend(self)
+
+    def clear(self) -> "void":
+        return _halite.LocationToMoveMap_clear(self)
+
+    def get_allocator(self) -> "std::map< hlt::Location,unsigned char >::allocator_type":
+        return _halite.LocationToMoveMap_get_allocator(self)
+
+    def count(self, x: 'Location') -> "std::map< hlt::Location,unsigned char >::size_type":
+        return _halite.LocationToMoveMap_count(self, x)
+
+    def erase(self, *args) -> "void":
+        return _halite.LocationToMoveMap_erase(self, *args)
+
+    def find(self, x: 'Location') -> "std::map< hlt::Location,unsigned char >::iterator":
+        return _halite.LocationToMoveMap_find(self, x)
+
+    def lower_bound(self, x: 'Location') -> "std::map< hlt::Location,unsigned char >::iterator":
+        return _halite.LocationToMoveMap_lower_bound(self, x)
+
+    def upper_bound(self, x: 'Location') -> "std::map< hlt::Location,unsigned char >::iterator":
+        return _halite.LocationToMoveMap_upper_bound(self, x)
+    __swig_destroy__ = _halite.delete_LocationToMoveMap
+    __del__ = lambda self: None
+LocationToMoveMap_swigregister = _halite.LocationToMoveMap_swigregister
+LocationToMoveMap_swigregister(LocationToMoveMap)
+
+class PlayerMovesVector(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, PlayerMovesVector, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, PlayerMovesVector, name)
+    __repr__ = _swig_repr
+
+    def iterator(self) -> "swig::SwigPyIterator *":
+        return _halite.PlayerMovesVector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self) -> "bool":
+        return _halite.PlayerMovesVector___nonzero__(self)
+
+    def __bool__(self) -> "bool":
+        return _halite.PlayerMovesVector___bool__(self)
+
+    def __len__(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::size_type":
+        return _halite.PlayerMovesVector___len__(self)
+
+    def __getslice__(self, i: 'std::vector< std::map< hlt::Location,unsigned char > >::difference_type', j: 'std::vector< std::map< hlt::Location,unsigned char > >::difference_type') -> "std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > *":
+        return _halite.PlayerMovesVector___getslice__(self, i, j)
+
+    def __setslice__(self, *args) -> "void":
+        return _halite.PlayerMovesVector___setslice__(self, *args)
+
+    def __delslice__(self, i: 'std::vector< std::map< hlt::Location,unsigned char > >::difference_type', j: 'std::vector< std::map< hlt::Location,unsigned char > >::difference_type') -> "void":
+        return _halite.PlayerMovesVector___delslice__(self, i, j)
+
+    def __delitem__(self, *args) -> "void":
+        return _halite.PlayerMovesVector___delitem__(self, *args)
+
+    def __getitem__(self, *args) -> "std::vector< std::map< hlt::Location,unsigned char > >::value_type const &":
+        return _halite.PlayerMovesVector___getitem__(self, *args)
+
+    def __setitem__(self, *args) -> "void":
+        return _halite.PlayerMovesVector___setitem__(self, *args)
+
+    def pop(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::value_type":
+        return _halite.PlayerMovesVector_pop(self)
+
+    def append(self, x: 'LocationToMoveMap') -> "void":
+        return _halite.PlayerMovesVector_append(self, x)
+
+    def empty(self) -> "bool":
+        return _halite.PlayerMovesVector_empty(self)
+
+    def size(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::size_type":
+        return _halite.PlayerMovesVector_size(self)
+
+    def swap(self, v: 'PlayerMovesVector') -> "void":
+        return _halite.PlayerMovesVector_swap(self, v)
+
+    def begin(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::iterator":
+        return _halite.PlayerMovesVector_begin(self)
+
+    def end(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::iterator":
+        return _halite.PlayerMovesVector_end(self)
+
+    def rbegin(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::reverse_iterator":
+        return _halite.PlayerMovesVector_rbegin(self)
+
+    def rend(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::reverse_iterator":
+        return _halite.PlayerMovesVector_rend(self)
+
+    def clear(self) -> "void":
+        return _halite.PlayerMovesVector_clear(self)
+
+    def get_allocator(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::allocator_type":
+        return _halite.PlayerMovesVector_get_allocator(self)
+
+    def pop_back(self) -> "void":
+        return _halite.PlayerMovesVector_pop_back(self)
+
+    def erase(self, *args) -> "std::vector< std::map< hlt::Location,unsigned char > >::iterator":
+        return _halite.PlayerMovesVector_erase(self, *args)
+
+    def __init__(self, *args):
+        this = _halite.new_PlayerMovesVector(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def push_back(self, x: 'LocationToMoveMap') -> "void":
+        return _halite.PlayerMovesVector_push_back(self, x)
+
+    def front(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::value_type const &":
+        return _halite.PlayerMovesVector_front(self)
+
+    def back(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::value_type const &":
+        return _halite.PlayerMovesVector_back(self)
+
+    def assign(self, n: 'std::vector< std::map< hlt::Location,unsigned char > >::size_type', x: 'LocationToMoveMap') -> "void":
+        return _halite.PlayerMovesVector_assign(self, n, x)
+
+    def resize(self, *args) -> "void":
+        return _halite.PlayerMovesVector_resize(self, *args)
+
+    def insert(self, *args) -> "void":
+        return _halite.PlayerMovesVector_insert(self, *args)
+
+    def reserve(self, n: 'std::vector< std::map< hlt::Location,unsigned char > >::size_type') -> "void":
+        return _halite.PlayerMovesVector_reserve(self, n)
+
+    def capacity(self) -> "std::vector< std::map< hlt::Location,unsigned char > >::size_type":
+        return _halite.PlayerMovesVector_capacity(self)
+    __swig_destroy__ = _halite.delete_PlayerMovesVector
+    __del__ = lambda self: None
+PlayerMovesVector_swigregister = _halite.PlayerMovesVector_swigregister
+PlayerMovesVector_swigregister(PlayerMovesVector)
+
 class GameEndCallback(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, GameEndCallback, name, value)
@@ -221,7 +990,6 @@ class GameEndCallback(_object):
         return weakref_proxy(self)
 GameEndCallback_swigregister = _halite.GameEndCallback_swigregister
 GameEndCallback_swigregister(GameEndCallback)
-cvar = _halite.cvar
 
 class TimeoutCallback(_object):
     __swig_setmethods__ = {}
@@ -286,6 +1054,7 @@ class Color(_object):
     __del__ = lambda self: None
 Color_swigregister = _halite.Color_swigregister
 Color_swigregister(Color)
+cvar = _halite.cvar
 
 class PlayerStatistics(_object):
     __swig_setmethods__ = {}
@@ -523,7 +1292,7 @@ class Networking(_object):
     def handleInitNetworking(self, playerTag: 'unsigned char', m: 'Map', ignoreTimeout: 'bool', playerName: 'std::string *') -> "int":
         return _halite.Networking_handleInitNetworking(self, playerTag, m, ignoreTimeout, playerName)
 
-    def handleFrameNetworking(self, playerTag: 'unsigned char', turnNumber: 'unsigned short const &', m: 'Map', ignoreTimeout: 'bool', moves: 'std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > *') -> "int":
+    def handleFrameNetworking(self, playerTag: 'unsigned char', turnNumber: 'unsigned short const &', m: 'Map', ignoreTimeout: 'bool', moves: 'LocationToMoveMap') -> "int":
         return _halite.Networking_handleFrameNetworking(self, playerTag, turnNumber, m, ignoreTimeout, moves)
 
     def killPlayer(self, playerTag: 'unsigned char') -> "void":
@@ -564,119 +1333,30 @@ def Networking_serializeMap(map: 'Map') -> "std::string":
     return _halite.Networking_serializeMap(map)
 Networking_serializeMap = _halite.Networking_serializeMap
 
-class UniConnectionVector(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, UniConnectionVector, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, UniConnectionVector, name)
-    __repr__ = _swig_repr
 
-    def iterator(self) -> "swig::SwigPyIterator *":
-        return _halite.UniConnectionVector_iterator(self)
-    def __iter__(self):
-        return self.iterator()
+def randomMap(width: 'short', height: 'short', numberOfPlayers: 'unsigned char', seed: 'unsigned int') -> "hlt::Map":
+    return _halite.randomMap(width, height, numberOfPlayers, seed)
+randomMap = _halite.randomMap
 
-    def __nonzero__(self) -> "bool":
-        return _halite.UniConnectionVector___nonzero__(self)
+def randomMapString(width: 'short', height: 'short', numberOfPlayers: 'unsigned char', seed: 'unsigned int') -> "std::string":
+    return _halite.randomMapString(width, height, numberOfPlayers, seed)
+randomMapString = _halite.randomMapString
 
-    def __bool__(self) -> "bool":
-        return _halite.UniConnectionVector___bool__(self)
+def randomSeed() -> "unsigned int":
+    return _halite.randomSeed()
+randomSeed = _halite.randomSeed
 
-    def __len__(self) -> "std::vector< UniConnection >::size_type":
-        return _halite.UniConnectionVector___len__(self)
+def blankMap(width: 'short', height: 'short') -> "hlt::Map":
+    return _halite.blankMap(width, height)
+blankMap = _halite.blankMap
 
-    def __getslice__(self, i: 'std::vector< UniConnection >::difference_type', j: 'std::vector< UniConnection >::difference_type') -> "std::vector< UniConnection,std::allocator< UniConnection > > *":
-        return _halite.UniConnectionVector___getslice__(self, i, j)
+def runGame(id: 'unsigned int', width: 'short', height: 'short', seed: 'unsigned int', ignore_timeout: 'bool', connections: 'UniConnectionVector', callback: 'GameEndCallback') -> "GameStatistics":
+    return _halite.runGame(id, width, height, seed, ignore_timeout, connections, callback)
+runGame = _halite.runGame
 
-    def __setslice__(self, *args) -> "void":
-        return _halite.UniConnectionVector___setslice__(self, *args)
-
-    def __delslice__(self, i: 'std::vector< UniConnection >::difference_type', j: 'std::vector< UniConnection >::difference_type') -> "void":
-        return _halite.UniConnectionVector___delslice__(self, i, j)
-
-    def __delitem__(self, *args) -> "void":
-        return _halite.UniConnectionVector___delitem__(self, *args)
-
-    def __getitem__(self, *args) -> "std::vector< UniConnection >::value_type const &":
-        return _halite.UniConnectionVector___getitem__(self, *args)
-
-    def __setitem__(self, *args) -> "void":
-        return _halite.UniConnectionVector___setitem__(self, *args)
-
-    def pop(self) -> "std::vector< UniConnection >::value_type":
-        return _halite.UniConnectionVector_pop(self)
-
-    def append(self, x: 'UniConnection') -> "void":
-        return _halite.UniConnectionVector_append(self, x)
-
-    def empty(self) -> "bool":
-        return _halite.UniConnectionVector_empty(self)
-
-    def size(self) -> "std::vector< UniConnection >::size_type":
-        return _halite.UniConnectionVector_size(self)
-
-    def swap(self, v: 'UniConnectionVector') -> "void":
-        return _halite.UniConnectionVector_swap(self, v)
-
-    def begin(self) -> "std::vector< UniConnection >::iterator":
-        return _halite.UniConnectionVector_begin(self)
-
-    def end(self) -> "std::vector< UniConnection >::iterator":
-        return _halite.UniConnectionVector_end(self)
-
-    def rbegin(self) -> "std::vector< UniConnection >::reverse_iterator":
-        return _halite.UniConnectionVector_rbegin(self)
-
-    def rend(self) -> "std::vector< UniConnection >::reverse_iterator":
-        return _halite.UniConnectionVector_rend(self)
-
-    def clear(self) -> "void":
-        return _halite.UniConnectionVector_clear(self)
-
-    def get_allocator(self) -> "std::vector< UniConnection >::allocator_type":
-        return _halite.UniConnectionVector_get_allocator(self)
-
-    def pop_back(self) -> "void":
-        return _halite.UniConnectionVector_pop_back(self)
-
-    def erase(self, *args) -> "std::vector< UniConnection >::iterator":
-        return _halite.UniConnectionVector_erase(self, *args)
-
-    def __init__(self, *args):
-        this = _halite.new_UniConnectionVector(*args)
-        try:
-            self.this.append(this)
-        except __builtin__.Exception:
-            self.this = this
-
-    def push_back(self, x: 'UniConnection') -> "void":
-        return _halite.UniConnectionVector_push_back(self, x)
-
-    def front(self) -> "std::vector< UniConnection >::value_type const &":
-        return _halite.UniConnectionVector_front(self)
-
-    def back(self) -> "std::vector< UniConnection >::value_type const &":
-        return _halite.UniConnectionVector_back(self)
-
-    def assign(self, n: 'std::vector< UniConnection >::size_type', x: 'UniConnection') -> "void":
-        return _halite.UniConnectionVector_assign(self, n, x)
-
-    def resize(self, *args) -> "void":
-        return _halite.UniConnectionVector_resize(self, *args)
-
-    def insert(self, *args) -> "void":
-        return _halite.UniConnectionVector_insert(self, *args)
-
-    def reserve(self, n: 'std::vector< UniConnection >::size_type') -> "void":
-        return _halite.UniConnectionVector_reserve(self, n)
-
-    def capacity(self) -> "std::vector< UniConnection >::size_type":
-        return _halite.UniConnectionVector_capacity(self)
-    __swig_destroy__ = _halite.delete_UniConnectionVector
-    __del__ = lambda self: None
-UniConnectionVector_swigregister = _halite.UniConnectionVector_swigregister
-UniConnectionVector_swigregister(UniConnectionVector)
-
+def updateMap(game_map: 'Map', player_moves: 'PlayerMovesVector') -> "void":
+    return _halite.updateMap(game_map, player_moves)
+updateMap = _halite.updateMap
 # This file is compatible with both classic and new-style classes.
 
 

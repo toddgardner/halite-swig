@@ -1,5 +1,3 @@
 %module(directors="1") halite
 
-%include "../halite-core.i"
-
-%template(UniConnectionVector) std::vector<UniConnection>;
+%include "../wrapped/halite-core.i"
