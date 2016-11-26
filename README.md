@@ -8,24 +8,10 @@ Currently only supports go & python, and a very limited interface, hoping to hac
 
 ## Go
 
-Install swig > 3.0, then run:
+The swig/go integration should auto pull and build the C++ code for you
 
 ```shell
 cd src/halite
-swig -v -go -cgo -c++ -intgosize 64 -I../.. halite.i 
-```
-
-Then edit halite.go and add:
-
-```
-#cgo CXXFLAGS: --std=c++11
-```
-
-To the big block comment before `import "C"`. Can't find a better way at the moment.
-
-Verify with tests:
-
-```shell
 go build -v && go test -v
 ```
 
@@ -34,7 +20,7 @@ go build -v && go test -v
 
 ```shell
 # build halite.py
-swig -v -c++ -python -py3 -I.. halite.i 
+swig -v -c++ -python -py3 halite.i 
 python3 setup.py build_ext --inplace
 # verify halite.py
 python3 halite_test.py
