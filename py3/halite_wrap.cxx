@@ -3452,22 +3452,35 @@ namespace Swig {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_GameEndCallback swig_types[0]
-#define SWIGTYPE_p_GameStatistics swig_types[1]
-#define SWIGTYPE_p_TimeoutCallback swig_types[2]
-#define SWIGTYPE_p_UniConnection swig_types[3]
-#define SWIGTYPE_p_allocator_type swig_types[4]
-#define SWIGTYPE_p_char swig_types[5]
-#define SWIGTYPE_p_difference_type swig_types[6]
-#define SWIGTYPE_p_p_PyObject swig_types[7]
-#define SWIGTYPE_p_size_type swig_types[8]
-#define SWIGTYPE_p_std__allocatorT_UniConnection_t swig_types[9]
-#define SWIGTYPE_p_std__invalid_argument swig_types[10]
-#define SWIGTYPE_p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t swig_types[11]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[12]
-#define SWIGTYPE_p_value_type swig_types[13]
-static swig_type_info *swig_types[15];
-static swig_module_info swig_module = {swig_types, 14, 0, 0, 0, 0};
+#define SWIGTYPE_p_Color swig_types[0]
+#define SWIGTYPE_p_GameEndCallback swig_types[1]
+#define SWIGTYPE_p_GameStatistics swig_types[2]
+#define SWIGTYPE_p_Networking swig_types[3]
+#define SWIGTYPE_p_PlayerStatistics swig_types[4]
+#define SWIGTYPE_p_TimeoutCallback swig_types[5]
+#define SWIGTYPE_p_UniConnection swig_types[6]
+#define SWIGTYPE_p_allocator_type swig_types[7]
+#define SWIGTYPE_p_char swig_types[8]
+#define SWIGTYPE_p_difference_type swig_types[9]
+#define SWIGTYPE_p_hlt__Location swig_types[10]
+#define SWIGTYPE_p_hlt__Map swig_types[11]
+#define SWIGTYPE_p_hlt__Site swig_types[12]
+#define SWIGTYPE_p_p_PyObject swig_types[13]
+#define SWIGTYPE_p_size_type swig_types[14]
+#define SWIGTYPE_p_std__allocatorT_UniConnection_t swig_types[15]
+#define SWIGTYPE_p_std__invalid_argument swig_types[16]
+#define SWIGTYPE_p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t swig_types[17]
+#define SWIGTYPE_p_std__setT_unsigned_short_t swig_types[18]
+#define SWIGTYPE_p_std__string swig_types[19]
+#define SWIGTYPE_p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t swig_types[20]
+#define SWIGTYPE_p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t swig_types[21]
+#define SWIGTYPE_p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t swig_types[22]
+#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[23]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t swig_types[24]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[25]
+#define SWIGTYPE_p_value_type swig_types[26]
+static swig_type_info *swig_types[28];
+static swig_module_info swig_module = {swig_types, 27, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -4080,6 +4093,15 @@ SWIG_AsVal_ptrdiff_t (PyObject * obj, ptrdiff_t *val)
 #include <vector>
 
 
+#include <utility>
+
+
+#include <map>
+
+
+#include <algorithm>
+
+
 SWIGINTERN int
 SWIG_AsVal_bool (PyObject *obj, bool *val)
 {
@@ -4188,6 +4210,13 @@ SWIGINTERNINLINE PyObject *
 SWIG_From_std_string  (const std::string& s)
 {
   return SWIG_FromCharPtrAndSize(s.data(), s.size());
+}
+
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_unsigned_SS_int  (unsigned int value)
+{
+  return PyInt_FromSize_t((size_t) value);
 }
 
 
@@ -4355,6 +4384,94 @@ SWIGINTERNINLINE PyObject*
   SWIG_From_int  (int value)
 {
   return PyInt_FromLong((long) value);
+}
+
+
+/* Getting isfinite working pre C99 across multiple platforms is non-trivial. Users can provide SWIG_isfinite on older platforms. */
+#ifndef SWIG_isfinite
+/* isfinite() is a macro for C99, but a function in namespace std for C++11. */
+# if defined(isfinite)
+#  define SWIG_isfinite(X) (isfinite(X))
+# elif defined __cplusplus && __cplusplus >= 201103L
+#  define SWIG_isfinite(X) (std::isfinite(X))
+# elif defined(_MSC_VER)
+#  define SWIG_isfinite(X) (_finite(X))
+# elif defined(__sun) && defined(__SVR4)
+#  include <ieeefp.h>
+#  define SWIG_isfinite(X) (finite(X))
+# endif
+#endif
+
+
+/* Accept infinite as a valid float value unless we are unable to check if a value is finite */
+#ifdef SWIG_isfinite
+# define SWIG_Float_Overflow_Check(X) ((X < -FLT_MAX || X > FLT_MAX) && SWIG_isfinite(X))
+#else
+# define SWIG_Float_Overflow_Check(X) ((X < -FLT_MAX || X > FLT_MAX))
+#endif
+
+
+SWIGINTERN int
+SWIG_AsVal_float (PyObject * obj, float *val)
+{
+  double v;
+  int res = SWIG_AsVal_double (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if (SWIG_Float_Overflow_Check(v)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< float >(v);
+    }
+  }  
+  return res;
+}
+
+
+  #define SWIG_From_double   PyFloat_FromDouble 
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_float  (float value)
+{    
+  return SWIG_From_double  (value);
+}
+
+
+SWIGINTERN int
+SWIG_AsVal_unsigned_SS_short (PyObject * obj, unsigned short *val)
+{
+  unsigned long v;
+  int res = SWIG_AsVal_unsigned_SS_long (obj, &v);
+  if (SWIG_IsOK(res)) {
+    if ((v > USHRT_MAX)) {
+      return SWIG_OverflowError;
+    } else {
+      if (val) *val = static_cast< unsigned short >(v);
+    }
+  }  
+  return res;
+}
+
+
+SWIGINTERNINLINE PyObject* 
+SWIG_From_unsigned_SS_long  (unsigned long value)
+{
+  return (value > LONG_MAX) ?
+    PyLong_FromUnsignedLong(value) : PyInt_FromLong(static_cast< long >(value));
+}
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_unsigned_SS_short  (unsigned short value)
+{    
+  return SWIG_From_unsigned_SS_long  (value);
+}
+
+
+SWIGINTERNINLINE PyObject *
+SWIG_From_unsigned_SS_char  (unsigned char value)
+{    
+  return SWIG_From_unsigned_SS_long  (value);
 }
 
 
@@ -5501,14 +5618,6 @@ SWIGINTERN std::vector< UniConnection >::size_type std_vector_Sl_UniConnection_S
       return self->size();
     }
 
-SWIGINTERNINLINE PyObject* 
-SWIG_From_unsigned_SS_long  (unsigned long value)
-{
-  return (value > LONG_MAX) ?
-    PyLong_FromUnsignedLong(value) : PyInt_FromLong(static_cast< long >(value));
-}
-
-
 #ifdef SWIG_LONG_LONG_AVAILABLE
 SWIGINTERNINLINE PyObject* 
 SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
@@ -6593,7 +6702,7 @@ SWIGINTERN PyObject *_wrap_randomMap(PyObject *SWIGUNUSEDPARM(self), PyObject *a
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
   PyObject * obj3 = 0 ;
-  std::string result;
+  hlt::Map result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOOO:randomMap",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
   ecode1 = SWIG_AsVal_short(obj0, &val1);
@@ -6616,7 +6725,56 @@ SWIGINTERN PyObject *_wrap_randomMap(PyObject *SWIGUNUSEDPARM(self), PyObject *a
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "randomMap" "', argument " "4"" of type '" "unsigned int""'");
   } 
   arg4 = static_cast< unsigned int >(val4);
-  result = halite::randomMap(arg1,arg2,arg3,arg4);
+  result = randomMap(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_NewPointerObj((new hlt::Map(static_cast< const hlt::Map& >(result))), SWIGTYPE_p_hlt__Map, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_randomMapString(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  short arg1 ;
+  short arg2 ;
+  unsigned char arg3 ;
+  unsigned int arg4 ;
+  short val1 ;
+  int ecode1 = 0 ;
+  short val2 ;
+  int ecode2 = 0 ;
+  unsigned char val3 ;
+  int ecode3 = 0 ;
+  unsigned int val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:randomMapString",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_short(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "randomMapString" "', argument " "1"" of type '" "short""'");
+  } 
+  arg1 = static_cast< short >(val1);
+  ecode2 = SWIG_AsVal_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "randomMapString" "', argument " "2"" of type '" "short""'");
+  } 
+  arg2 = static_cast< short >(val2);
+  ecode3 = SWIG_AsVal_unsigned_SS_char(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "randomMapString" "', argument " "3"" of type '" "unsigned char""'");
+  } 
+  arg3 = static_cast< unsigned char >(val3);
+  ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "randomMapString" "', argument " "4"" of type '" "unsigned int""'");
+  } 
+  arg4 = static_cast< unsigned int >(val4);
+  result = randomMapString(arg1,arg2,arg3,arg4);
   resultobj = SWIG_From_std_string(static_cast< std::string >(result));
   return resultobj;
 fail:
@@ -6624,7 +6782,51 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_rawRunGame(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_randomSeed(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  unsigned int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)":randomSeed")) SWIG_fail;
+  result = (unsigned int)randomSeed();
+  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_blankMap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  short arg1 ;
+  short arg2 ;
+  short val1 ;
+  int ecode1 = 0 ;
+  short val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  hlt::Map result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:blankMap",&obj0,&obj1)) SWIG_fail;
+  ecode1 = SWIG_AsVal_short(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "blankMap" "', argument " "1"" of type '" "short""'");
+  } 
+  arg1 = static_cast< short >(val1);
+  ecode2 = SWIG_AsVal_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "blankMap" "', argument " "2"" of type '" "short""'");
+  } 
+  arg2 = static_cast< short >(val2);
+  result = blankMap(arg1,arg2);
+  resultobj = SWIG_NewPointerObj((new hlt::Map(static_cast< const hlt::Map& >(result))), SWIGTYPE_p_hlt__Map, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_runGame(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   unsigned int arg1 ;
   short arg2 ;
@@ -6656,39 +6858,39 @@ SWIGINTERN PyObject *_wrap_rawRunGame(PyObject *SWIGUNUSEDPARM(self), PyObject *
   PyObject * obj6 = 0 ;
   GameStatistics result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OOOOOOO:rawRunGame",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOOO:runGame",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
   ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
   if (!SWIG_IsOK(ecode1)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "rawRunGame" "', argument " "1"" of type '" "unsigned int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "runGame" "', argument " "1"" of type '" "unsigned int""'");
   } 
   arg1 = static_cast< unsigned int >(val1);
   ecode2 = SWIG_AsVal_short(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "rawRunGame" "', argument " "2"" of type '" "short""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "runGame" "', argument " "2"" of type '" "short""'");
   } 
   arg2 = static_cast< short >(val2);
   ecode3 = SWIG_AsVal_short(obj2, &val3);
   if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "rawRunGame" "', argument " "3"" of type '" "short""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "runGame" "', argument " "3"" of type '" "short""'");
   } 
   arg3 = static_cast< short >(val3);
   ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
   if (!SWIG_IsOK(ecode4)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "rawRunGame" "', argument " "4"" of type '" "unsigned int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "runGame" "', argument " "4"" of type '" "unsigned int""'");
   } 
   arg4 = static_cast< unsigned int >(val4);
   ecode5 = SWIG_AsVal_bool(obj4, &val5);
   if (!SWIG_IsOK(ecode5)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "rawRunGame" "', argument " "5"" of type '" "bool""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "runGame" "', argument " "5"" of type '" "bool""'");
   } 
   arg5 = static_cast< bool >(val5);
   {
     res6 = SWIG_ConvertPtr(obj5, &argp6, SWIGTYPE_p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t,  0  | 0);
     if (!SWIG_IsOK(res6)) {
-      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "rawRunGame" "', argument " "6"" of type '" "std::vector< UniConnection,std::allocator< UniConnection > >""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "runGame" "', argument " "6"" of type '" "std::vector< UniConnection,std::allocator< UniConnection > >""'"); 
     }  
     if (!argp6) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "rawRunGame" "', argument " "6"" of type '" "std::vector< UniConnection,std::allocator< UniConnection > >""'");
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "runGame" "', argument " "6"" of type '" "std::vector< UniConnection,std::allocator< UniConnection > >""'");
     } else {
       std::vector< UniConnection,std::allocator< UniConnection > > * temp = reinterpret_cast< std::vector< UniConnection,std::allocator< UniConnection > > * >(argp6);
       arg6 = *temp;
@@ -6697,11 +6899,47 @@ SWIGINTERN PyObject *_wrap_rawRunGame(PyObject *SWIGUNUSEDPARM(self), PyObject *
   }
   res7 = SWIG_ConvertPtr(obj6, &argp7,SWIGTYPE_p_GameEndCallback, 0 |  0 );
   if (!SWIG_IsOK(res7)) {
-    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "rawRunGame" "', argument " "7"" of type '" "GameEndCallback *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "runGame" "', argument " "7"" of type '" "GameEndCallback *""'"); 
   }
   arg7 = reinterpret_cast< GameEndCallback * >(argp7);
-  result = halite::rawRunGame(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+  result = runGame(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
   resultobj = SWIG_NewPointerObj((new GameStatistics(static_cast< const GameStatistics& >(result))), SWIGTYPE_p_GameStatistics, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_updateMap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = 0 ;
+  std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:updateMap",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_hlt__Map,  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "updateMap" "', argument " "1"" of type '" "hlt::Map &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "updateMap" "', argument " "1"" of type '" "hlt::Map &""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "updateMap" "', argument " "2"" of type '" "std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "updateMap" "', argument " "2"" of type '" "std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > * >(argp2);
+  updateMap(*arg1,(std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > const &)*arg2);
+  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
@@ -6962,6 +7200,2664 @@ SWIGINTERN PyObject *TimeoutCallback_swigregister(PyObject *SWIGUNUSEDPARM(self)
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_TimeoutCallback, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_Color_r_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Color *arg1 = (Color *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Color_r_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Color, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Color_r_set" "', argument " "1"" of type '" "Color *""'"); 
+  }
+  arg1 = reinterpret_cast< Color * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Color_r_set" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  if (arg1) (arg1)->r = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Color_r_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Color *arg1 = (Color *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Color_r_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Color, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Color_r_get" "', argument " "1"" of type '" "Color *""'"); 
+  }
+  arg1 = reinterpret_cast< Color * >(argp1);
+  result = (float) ((arg1)->r);
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Color_g_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Color *arg1 = (Color *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Color_g_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Color, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Color_g_set" "', argument " "1"" of type '" "Color *""'"); 
+  }
+  arg1 = reinterpret_cast< Color * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Color_g_set" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  if (arg1) (arg1)->g = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Color_g_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Color *arg1 = (Color *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Color_g_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Color, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Color_g_get" "', argument " "1"" of type '" "Color *""'"); 
+  }
+  arg1 = reinterpret_cast< Color * >(argp1);
+  result = (float) ((arg1)->g);
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Color_b_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Color *arg1 = (Color *) 0 ;
+  float arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  float val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Color_b_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Color, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Color_b_set" "', argument " "1"" of type '" "Color *""'"); 
+  }
+  arg1 = reinterpret_cast< Color * >(argp1);
+  ecode2 = SWIG_AsVal_float(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Color_b_set" "', argument " "2"" of type '" "float""'");
+  } 
+  arg2 = static_cast< float >(val2);
+  if (arg1) (arg1)->b = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Color_b_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Color *arg1 = (Color *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  float result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Color_b_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Color, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Color_b_get" "', argument " "1"" of type '" "Color *""'"); 
+  }
+  arg1 = reinterpret_cast< Color * >(argp1);
+  result = (float) ((arg1)->b);
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Color(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Color *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Color")) SWIG_fail;
+  result = (Color *)new Color();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Color, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Color(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Color *arg1 = (Color *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Color",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Color, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Color" "', argument " "1"" of type '" "Color *""'"); 
+  }
+  arg1 = reinterpret_cast< Color * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Color_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_Color, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_tag_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:PlayerStatistics_tag_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_tag_set" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PlayerStatistics_tag_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->tag = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_tag_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:PlayerStatistics_tag_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_tag_get" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  result = (int) ((arg1)->tag);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_rank_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:PlayerStatistics_rank_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_rank_set" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PlayerStatistics_rank_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->rank = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_rank_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:PlayerStatistics_rank_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_rank_get" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  result = (int) ((arg1)->rank);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_average_territory_count_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:PlayerStatistics_average_territory_count_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_average_territory_count_set" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PlayerStatistics_average_territory_count_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->average_territory_count = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_average_territory_count_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:PlayerStatistics_average_territory_count_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_average_territory_count_get" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  result = (double) ((arg1)->average_territory_count);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_average_strength_count_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:PlayerStatistics_average_strength_count_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_average_strength_count_set" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PlayerStatistics_average_strength_count_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->average_strength_count = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_average_strength_count_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:PlayerStatistics_average_strength_count_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_average_strength_count_get" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  result = (double) ((arg1)->average_strength_count);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_average_production_count_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:PlayerStatistics_average_production_count_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_average_production_count_set" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PlayerStatistics_average_production_count_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->average_production_count = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_average_production_count_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:PlayerStatistics_average_production_count_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_average_production_count_get" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  result = (double) ((arg1)->average_production_count);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_still_percentage_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:PlayerStatistics_still_percentage_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_still_percentage_set" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PlayerStatistics_still_percentage_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->still_percentage = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_still_percentage_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:PlayerStatistics_still_percentage_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_still_percentage_get" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  result = (double) ((arg1)->still_percentage);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_init_response_time_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:PlayerStatistics_init_response_time_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_init_response_time_set" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PlayerStatistics_init_response_time_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->init_response_time = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_init_response_time_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:PlayerStatistics_init_response_time_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_init_response_time_get" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  result = (int) ((arg1)->init_response_time);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_average_frame_response_time_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:PlayerStatistics_average_frame_response_time_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_average_frame_response_time_set" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "PlayerStatistics_average_frame_response_time_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->average_frame_response_time = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_PlayerStatistics_average_frame_response_time_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:PlayerStatistics_average_frame_response_time_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "PlayerStatistics_average_frame_response_time_get" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  result = (double) ((arg1)->average_frame_response_time);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_PlayerStatistics(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_PlayerStatistics")) SWIG_fail;
+  result = (PlayerStatistics *)new PlayerStatistics();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_PlayerStatistics, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_PlayerStatistics(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_PlayerStatistics",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_PlayerStatistics, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_PlayerStatistics" "', argument " "1"" of type '" "PlayerStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< PlayerStatistics * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *PlayerStatistics_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_PlayerStatistics, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_GameStatistics_player_statistics_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::vector< PlayerStatistics,std::allocator< PlayerStatistics > > *arg2 = (std::vector< PlayerStatistics,std::allocator< PlayerStatistics > > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:GameStatistics_player_statistics_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameStatistics_player_statistics_set" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GameStatistics_player_statistics_set" "', argument " "2"" of type '" "std::vector< PlayerStatistics,std::allocator< PlayerStatistics > > *""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< PlayerStatistics,std::allocator< PlayerStatistics > > * >(argp2);
+  if (arg1) (arg1)->player_statistics = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameStatistics_player_statistics_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< PlayerStatistics,std::allocator< PlayerStatistics > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:GameStatistics_player_statistics_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameStatistics_player_statistics_get" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  result = (std::vector< PlayerStatistics,std::allocator< PlayerStatistics > > *)& ((arg1)->player_statistics);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameStatistics_output_filename_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::string *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res2 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:GameStatistics_output_filename_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameStatistics_output_filename_set" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    res2 = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GameStatistics_output_filename_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameStatistics_output_filename_set" "', argument " "2"" of type '" "std::string const &""'"); 
+    }
+    arg2 = ptr;
+  }
+  if (arg1) (arg1)->output_filename = *arg2;
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res2)) delete arg2;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameStatistics_output_filename_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:GameStatistics_output_filename_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameStatistics_output_filename_get" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  result = (std::string *) & ((arg1)->output_filename);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(*result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameStatistics_timeout_tags_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::set< unsigned short > arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:GameStatistics_timeout_tags_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameStatistics_timeout_tags_set" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__setT_unsigned_short_t,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GameStatistics_timeout_tags_set" "', argument " "2"" of type '" "std::set< unsigned short >""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameStatistics_timeout_tags_set" "', argument " "2"" of type '" "std::set< unsigned short >""'");
+    } else {
+      std::set< unsigned short > * temp = reinterpret_cast< std::set< unsigned short > * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  if (arg1) (arg1)->timeout_tags = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameStatistics_timeout_tags_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::set< unsigned short > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:GameStatistics_timeout_tags_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameStatistics_timeout_tags_get" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  result =  ((arg1)->timeout_tags);
+  resultobj = SWIG_NewPointerObj((new std::set< unsigned short >(static_cast< const std::set< unsigned short >& >(result))), SWIGTYPE_p_std__setT_unsigned_short_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameStatistics_timeout_log_filenames_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::vector< std::string,std::allocator< std::string > > *arg2 = (std::vector< std::string,std::allocator< std::string > > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:GameStatistics_timeout_log_filenames_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameStatistics_timeout_log_filenames_set" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GameStatistics_timeout_log_filenames_set" "', argument " "2"" of type '" "std::vector< std::string,std::allocator< std::string > > *""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< std::string,std::allocator< std::string > > * >(argp2);
+  if (arg1) (arg1)->timeout_log_filenames = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameStatistics_timeout_log_filenames_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::string,std::allocator< std::string > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:GameStatistics_timeout_log_filenames_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameStatistics_timeout_log_filenames_get" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  result = (std::vector< std::string,std::allocator< std::string > > *)& ((arg1)->timeout_log_filenames);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_GameStatistics(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_GameStatistics")) SWIG_fail;
+  result = (GameStatistics *)new GameStatistics();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_GameStatistics, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_GameStatistics(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_GameStatistics",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameStatistics, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_GameStatistics" "', argument " "1"" of type '" "GameStatistics *""'"); 
+  }
+  arg1 = reinterpret_cast< GameStatistics * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *GameStatistics_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_GameStatistics, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_Location_x_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  unsigned short arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned short val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Location_x_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Location, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Location_x_set" "', argument " "1"" of type '" "hlt::Location *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Location * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Location_x_set" "', argument " "2"" of type '" "unsigned short""'");
+  } 
+  arg2 = static_cast< unsigned short >(val2);
+  if (arg1) (arg1)->x = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Location_x_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned short result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Location_x_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Location, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Location_x_get" "', argument " "1"" of type '" "hlt::Location *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Location * >(argp1);
+  result = (unsigned short) ((arg1)->x);
+  resultobj = SWIG_From_unsigned_SS_short(static_cast< unsigned short >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Location_y_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  unsigned short arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned short val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Location_y_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Location, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Location_y_set" "', argument " "1"" of type '" "hlt::Location *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Location * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Location_y_set" "', argument " "2"" of type '" "unsigned short""'");
+  } 
+  arg2 = static_cast< unsigned short >(val2);
+  if (arg1) (arg1)->y = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Location_y_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned short result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Location_y_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Location, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Location_y_get" "', argument " "1"" of type '" "hlt::Location *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Location * >(argp1);
+  result = (unsigned short) ((arg1)->y);
+  resultobj = SWIG_From_unsigned_SS_short(static_cast< unsigned short >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Location(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Location *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Location")) SWIG_fail;
+  result = (hlt::Location *)new hlt::Location();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Location, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Location(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Location",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Location, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Location" "', argument " "1"" of type '" "hlt::Location *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Location * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Location_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_hlt__Location, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap___lt__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Location *arg1 = 0 ;
+  hlt::Location *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__lt__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_hlt__Location,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__lt__" "', argument " "1"" of type '" "hlt::Location const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lt__" "', argument " "1"" of type '" "hlt::Location const &""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Location * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_hlt__Location,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__lt__" "', argument " "2"" of type '" "hlt::Location const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__lt__" "', argument " "2"" of type '" "hlt::Location const &""'"); 
+  }
+  arg2 = reinterpret_cast< hlt::Location * >(argp2);
+  result = (bool)hlt::operator <((hlt::Location const &)*arg1,(hlt::Location const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Location *arg1 = 0 ;
+  hlt::Location *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:__eq__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_hlt__Location,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__eq__" "', argument " "1"" of type '" "hlt::Location const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__eq__" "', argument " "1"" of type '" "hlt::Location const &""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Location * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_hlt__Location,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__eq__" "', argument " "2"" of type '" "hlt::Location const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__eq__" "', argument " "2"" of type '" "hlt::Location const &""'"); 
+  }
+  arg2 = reinterpret_cast< hlt::Location * >(argp2);
+  result = (bool)hlt::operator ==((hlt::Location const &)*arg1,(hlt::Location const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Site_owner_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Site_owner_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Site, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Site_owner_set" "', argument " "1"" of type '" "hlt::Site *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Site * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Site_owner_set" "', argument " "2"" of type '" "unsigned char""'");
+  } 
+  arg2 = static_cast< unsigned char >(val2);
+  if (arg1) (arg1)->owner = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Site_owner_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned char result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Site_owner_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Site, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Site_owner_get" "', argument " "1"" of type '" "hlt::Site *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Site * >(argp1);
+  result = (unsigned char) ((arg1)->owner);
+  resultobj = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Site_strength_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Site_strength_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Site, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Site_strength_set" "', argument " "1"" of type '" "hlt::Site *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Site * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Site_strength_set" "', argument " "2"" of type '" "unsigned char""'");
+  } 
+  arg2 = static_cast< unsigned char >(val2);
+  if (arg1) (arg1)->strength = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Site_strength_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned char result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Site_strength_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Site, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Site_strength_get" "', argument " "1"" of type '" "hlt::Site *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Site * >(argp1);
+  result = (unsigned char) ((arg1)->strength);
+  resultobj = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Site_production_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Site_production_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Site, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Site_production_set" "', argument " "1"" of type '" "hlt::Site *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Site * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Site_production_set" "', argument " "2"" of type '" "unsigned char""'");
+  } 
+  arg2 = static_cast< unsigned char >(val2);
+  if (arg1) (arg1)->production = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Site_production_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned char result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Site_production_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Site, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Site_production_get" "', argument " "1"" of type '" "hlt::Site *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Site * >(argp1);
+  result = (unsigned char) ((arg1)->production);
+  resultobj = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Site(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Site *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Site")) SWIG_fail;
+  result = (hlt::Site *)new hlt::Site();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Site, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Site(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Site",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Site, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Site" "', argument " "1"" of type '" "hlt::Site *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Site * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Site_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_hlt__Site, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_Map_contents_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  std::vector< std::vector< hlt::Site,std::allocator< hlt::Site > >,std::allocator< std::vector< hlt::Site,std::allocator< hlt::Site > > > > *arg2 = (std::vector< std::vector< hlt::Site,std::allocator< hlt::Site > >,std::allocator< std::vector< hlt::Site,std::allocator< hlt::Site > > > > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Map_contents_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_contents_set" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Map_contents_set" "', argument " "2"" of type '" "std::vector< std::vector< hlt::Site,std::allocator< hlt::Site > >,std::allocator< std::vector< hlt::Site,std::allocator< hlt::Site > > > > *""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< std::vector< hlt::Site,std::allocator< hlt::Site > >,std::allocator< std::vector< hlt::Site,std::allocator< hlt::Site > > > > * >(argp2);
+  if (arg1) (arg1)->contents = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_contents_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::vector< hlt::Site,std::allocator< hlt::Site > >,std::allocator< std::vector< hlt::Site,std::allocator< hlt::Site > > > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Map_contents_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_contents_get" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  result = (std::vector< std::vector< hlt::Site,std::allocator< hlt::Site > >,std::allocator< std::vector< hlt::Site,std::allocator< hlt::Site > > > > *)& ((arg1)->contents);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_width_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  unsigned short arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned short val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Map_width_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_width_set" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Map_width_set" "', argument " "2"" of type '" "unsigned short""'");
+  } 
+  arg2 = static_cast< unsigned short >(val2);
+  if (arg1) (arg1)->map_width = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_width_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned short result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Map_width_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_width_get" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  result = (unsigned short) ((arg1)->map_width);
+  resultobj = SWIG_From_unsigned_SS_short(static_cast< unsigned short >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_height_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  unsigned short arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned short val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Map_height_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_height_set" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Map_height_set" "', argument " "2"" of type '" "unsigned short""'");
+  } 
+  arg2 = static_cast< unsigned short >(val2);
+  if (arg1) (arg1)->map_height = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_height_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  unsigned short result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Map_height_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_height_get" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  result = (unsigned short) ((arg1)->map_height);
+  resultobj = SWIG_From_unsigned_SS_short(static_cast< unsigned short >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Map__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Map")) SWIG_fail;
+  result = (hlt::Map *)new hlt::Map();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Map, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Map__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  short arg1 ;
+  short arg2 ;
+  short val1 ;
+  int ecode1 = 0 ;
+  short val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  hlt::Map *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_Map",&obj0,&obj1)) SWIG_fail;
+  ecode1 = SWIG_AsVal_short(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Map" "', argument " "1"" of type '" "short""'");
+  } 
+  arg1 = static_cast< short >(val1);
+  ecode2 = SWIG_AsVal_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Map" "', argument " "2"" of type '" "short""'");
+  } 
+  arg2 = static_cast< short >(val2);
+  result = (hlt::Map *)new hlt::Map(arg1,arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Map, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Map__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  hlt::Map *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_Map",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_hlt__Map,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Map" "', argument " "1"" of type '" "hlt::Map const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Map" "', argument " "1"" of type '" "hlt::Map const &""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  result = (hlt::Map *)new hlt::Map((hlt::Map const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Map, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Map__SWIG_3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  short arg1 ;
+  short arg2 ;
+  unsigned char arg3 ;
+  unsigned int arg4 ;
+  short val1 ;
+  int ecode1 = 0 ;
+  short val2 ;
+  int ecode2 = 0 ;
+  unsigned char val3 ;
+  int ecode3 = 0 ;
+  unsigned int val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  hlt::Map *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_Map",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_short(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Map" "', argument " "1"" of type '" "short""'");
+  } 
+  arg1 = static_cast< short >(val1);
+  ecode2 = SWIG_AsVal_short(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Map" "', argument " "2"" of type '" "short""'");
+  } 
+  arg2 = static_cast< short >(val2);
+  ecode3 = SWIG_AsVal_unsigned_SS_char(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Map" "', argument " "3"" of type '" "unsigned char""'");
+  } 
+  arg3 = static_cast< unsigned char >(val3);
+  ecode4 = SWIG_AsVal_unsigned_SS_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Map" "', argument " "4"" of type '" "unsigned int""'");
+  } 
+  arg4 = static_cast< unsigned int >(val4);
+  result = (hlt::Map *)new hlt::Map(arg1,arg2,arg3,arg4);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Map, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Map(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[5] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_Map__SWIG_0(self, args);
+  }
+  if (argc == 1) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_hlt__Map, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_Map__SWIG_2(self, args);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      int res = SWIG_AsVal_short(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_short(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_new_Map__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      int res = SWIG_AsVal_short(argv[0], NULL);
+      _v = SWIG_CheckState(res);
+    }
+    if (_v) {
+      {
+        int res = SWIG_AsVal_short(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        {
+          int res = SWIG_AsVal_unsigned_SS_char(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          {
+            int res = SWIG_AsVal_unsigned_SS_int(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            return _wrap_new_Map__SWIG_3(self, args);
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Map'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    hlt::Map::Map()\n"
+    "    hlt::Map::Map(short,short)\n"
+    "    hlt::Map::Map(hlt::Map const &)\n"
+    "    hlt::Map::Map(short,short,unsigned char,unsigned int)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_inBounds(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Map_inBounds",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_inBounds" "', argument " "1"" of type '" "hlt::Map const *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_hlt__Location,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Map_inBounds" "', argument " "2"" of type '" "hlt::Location""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Map_inBounds" "', argument " "2"" of type '" "hlt::Location""'");
+    } else {
+      hlt::Location * temp = reinterpret_cast< hlt::Location * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  result = (bool)((hlt::Map const *)arg1)->inBounds(arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_getDistance(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  hlt::Location arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  float result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Map_getDistance",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_getDistance" "', argument " "1"" of type '" "hlt::Map const *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_hlt__Location,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Map_getDistance" "', argument " "2"" of type '" "hlt::Location""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Map_getDistance" "', argument " "2"" of type '" "hlt::Location""'");
+    } else {
+      hlt::Location * temp = reinterpret_cast< hlt::Location * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  {
+    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_hlt__Location,  0  | 0);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Map_getDistance" "', argument " "3"" of type '" "hlt::Location""'"); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Map_getDistance" "', argument " "3"" of type '" "hlt::Location""'");
+    } else {
+      hlt::Location * temp = reinterpret_cast< hlt::Location * >(argp3);
+      arg3 = *temp;
+      if (SWIG_IsNewObj(res3)) delete temp;
+    }
+  }
+  result = (float)((hlt::Map const *)arg1)->getDistance(arg2,arg3);
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_getAngle(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  hlt::Location arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  float result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Map_getAngle",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_getAngle" "', argument " "1"" of type '" "hlt::Map const *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_hlt__Location,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Map_getAngle" "', argument " "2"" of type '" "hlt::Location""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Map_getAngle" "', argument " "2"" of type '" "hlt::Location""'");
+    } else {
+      hlt::Location * temp = reinterpret_cast< hlt::Location * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  {
+    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_hlt__Location,  0  | 0);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Map_getAngle" "', argument " "3"" of type '" "hlt::Location""'"); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Map_getAngle" "', argument " "3"" of type '" "hlt::Location""'");
+    } else {
+      hlt::Location * temp = reinterpret_cast< hlt::Location * >(argp3);
+      arg3 = *temp;
+      if (SWIG_IsNewObj(res3)) delete temp;
+    }
+  }
+  result = (float)((hlt::Map const *)arg1)->getAngle(arg2,arg3);
+  resultobj = SWIG_From_float(static_cast< float >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_getLocation(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  unsigned char arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  unsigned char val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  hlt::Location result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Map_getLocation",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_getLocation" "', argument " "1"" of type '" "hlt::Map const *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_hlt__Location,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Map_getLocation" "', argument " "2"" of type '" "hlt::Location""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Map_getLocation" "', argument " "2"" of type '" "hlt::Location""'");
+    } else {
+      hlt::Location * temp = reinterpret_cast< hlt::Location * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_char(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Map_getLocation" "', argument " "3"" of type '" "unsigned char""'");
+  } 
+  arg3 = static_cast< unsigned char >(val3);
+  result = ((hlt::Map const *)arg1)->getLocation(arg2,arg3);
+  resultobj = SWIG_NewPointerObj((new hlt::Location(static_cast< const hlt::Location& >(result))), SWIGTYPE_p_hlt__Location, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_getSite__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  unsigned char arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  unsigned char val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  hlt::Site *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Map_getSite",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_getSite" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_hlt__Location,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Map_getSite" "', argument " "2"" of type '" "hlt::Location""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Map_getSite" "', argument " "2"" of type '" "hlt::Location""'");
+    } else {
+      hlt::Location * temp = reinterpret_cast< hlt::Location * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  ecode3 = SWIG_AsVal_unsigned_SS_char(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Map_getSite" "', argument " "3"" of type '" "unsigned char""'");
+  } 
+  arg3 = static_cast< unsigned char >(val3);
+  result = (hlt::Site *) &(arg1)->getSite(arg2,arg3);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Site, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_getSite__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  hlt::Site *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Map_getSite",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Map_getSite" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_hlt__Location,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Map_getSite" "', argument " "2"" of type '" "hlt::Location""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Map_getSite" "', argument " "2"" of type '" "hlt::Location""'");
+    } else {
+      hlt::Location * temp = reinterpret_cast< hlt::Location * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  result = (hlt::Site *) &(arg1)->getSite(arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Site, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Map_getSite(PyObject *self, PyObject *args) {
+  Py_ssize_t argc;
+  PyObject *argv[4] = {
+    0
+  };
+  Py_ssize_t ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 2) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_hlt__Map, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_hlt__Location, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        return _wrap_Map_getSite__SWIG_1(self, args);
+      }
+    }
+  }
+  if (argc == 3) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_hlt__Map, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_hlt__Location, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        {
+          int res = SWIG_AsVal_unsigned_SS_char(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+        if (_v) {
+          return _wrap_Map_getSite__SWIG_0(self, args);
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'Map_getSite'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    hlt::Map::getSite(hlt::Location,unsigned char)\n"
+    "    hlt::Map::getSite(hlt::Location)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Map(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Map",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_hlt__Map, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Map" "', argument " "1"" of type '" "hlt::Map *""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Map_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_hlt__Map, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_ppmToMap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::string arg1 ;
+  int arg2 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  hlt::Map result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:ppmToMap",&obj0,&obj1)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj0, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "ppmToMap" "', argument " "1"" of type '" "std::string""'"); 
+    }
+    arg1 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ppmToMap" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  result = hlt::ppmToMap(arg1,arg2);
+  resultobj = SWIG_NewPointerObj((new hlt::Map(static_cast< const hlt::Map& >(result))), SWIGTYPE_p_hlt__Map, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_UniConnection_read_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:UniConnection_read_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UniConnection, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UniConnection_read_set" "', argument " "1"" of type '" "UniConnection *""'"); 
+  }
+  arg1 = reinterpret_cast< UniConnection * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "UniConnection_read_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->read = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_UniConnection_read_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:UniConnection_read_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UniConnection, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UniConnection_read_get" "', argument " "1"" of type '" "UniConnection *""'"); 
+  }
+  arg1 = reinterpret_cast< UniConnection * >(argp1);
+  result = (int) ((arg1)->read);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_UniConnection_write_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:UniConnection_write_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UniConnection, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UniConnection_write_set" "', argument " "1"" of type '" "UniConnection *""'"); 
+  }
+  arg1 = reinterpret_cast< UniConnection * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "UniConnection_write_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->write = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_UniConnection_write_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:UniConnection_write_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UniConnection, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "UniConnection_write_get" "', argument " "1"" of type '" "UniConnection *""'"); 
+  }
+  arg1 = reinterpret_cast< UniConnection * >(argp1);
+  result = (int) ((arg1)->write);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_UniConnection(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  UniConnection *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_UniConnection")) SWIG_fail;
+  result = (UniConnection *)new UniConnection();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_UniConnection, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_UniConnection(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_UniConnection",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_UniConnection, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_UniConnection" "', argument " "1"" of type '" "UniConnection *""'"); 
+  }
+  arg1 = reinterpret_cast< UniConnection * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *UniConnection_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_UniConnection, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_Networking_startAndConnectBot(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  std::string arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Networking_startAndConnectBot",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_startAndConnectBot" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  {
+    std::string *ptr = (std::string *)0;
+    int res = SWIG_AsPtr_std_string(obj1, &ptr);
+    if (!SWIG_IsOK(res) || !ptr) {
+      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "Networking_startAndConnectBot" "', argument " "2"" of type '" "std::string""'"); 
+    }
+    arg2 = *ptr;
+    if (SWIG_IsNewObj(res)) delete ptr;
+  }
+  (arg1)->startAndConnectBot(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_handleInitNetworking(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  unsigned char arg2 ;
+  hlt::Map *arg3 = 0 ;
+  bool arg4 ;
+  std::string *arg5 = (std::string *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  bool val4 ;
+  int ecode4 = 0 ;
+  void *argp5 = 0 ;
+  int res5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOO:Networking_handleInitNetworking",&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_handleInitNetworking" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Networking_handleInitNetworking" "', argument " "2"" of type '" "unsigned char""'");
+  } 
+  arg2 = static_cast< unsigned char >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_hlt__Map,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Networking_handleInitNetworking" "', argument " "3"" of type '" "hlt::Map const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Networking_handleInitNetworking" "', argument " "3"" of type '" "hlt::Map const &""'"); 
+  }
+  arg3 = reinterpret_cast< hlt::Map * >(argp3);
+  ecode4 = SWIG_AsVal_bool(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Networking_handleInitNetworking" "', argument " "4"" of type '" "bool""'");
+  } 
+  arg4 = static_cast< bool >(val4);
+  res5 = SWIG_ConvertPtr(obj4, &argp5,SWIGTYPE_p_std__string, 0 |  0 );
+  if (!SWIG_IsOK(res5)) {
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "Networking_handleInitNetworking" "', argument " "5"" of type '" "std::string *""'"); 
+  }
+  arg5 = reinterpret_cast< std::string * >(argp5);
+  result = (int)(arg1)->handleInitNetworking(arg2,(hlt::Map const &)*arg3,arg4,arg5);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_handleFrameNetworking(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  unsigned char arg2 ;
+  unsigned short *arg3 = 0 ;
+  hlt::Map *arg4 = 0 ;
+  bool arg5 ;
+  std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > *arg6 = (std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  unsigned short temp3 ;
+  unsigned short val3 ;
+  int ecode3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  bool val5 ;
+  int ecode5 = 0 ;
+  void *argp6 = 0 ;
+  int res6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:Networking_handleFrameNetworking",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_handleFrameNetworking" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Networking_handleFrameNetworking" "', argument " "2"" of type '" "unsigned char""'");
+  } 
+  arg2 = static_cast< unsigned char >(val2);
+  ecode3 = SWIG_AsVal_unsigned_SS_short(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Networking_handleFrameNetworking" "', argument " "3"" of type '" "unsigned short""'");
+  } 
+  temp3 = static_cast< unsigned short >(val3);
+  arg3 = &temp3;
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_hlt__Map,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "Networking_handleFrameNetworking" "', argument " "4"" of type '" "hlt::Map const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Networking_handleFrameNetworking" "', argument " "4"" of type '" "hlt::Map const &""'"); 
+  }
+  arg4 = reinterpret_cast< hlt::Map * >(argp4);
+  ecode5 = SWIG_AsVal_bool(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "Networking_handleFrameNetworking" "', argument " "5"" of type '" "bool""'");
+  } 
+  arg5 = static_cast< bool >(val5);
+  res6 = SWIG_ConvertPtr(obj5, &argp6,SWIGTYPE_p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res6)) {
+    SWIG_exception_fail(SWIG_ArgError(res6), "in method '" "Networking_handleFrameNetworking" "', argument " "6"" of type '" "std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > *""'"); 
+  }
+  arg6 = reinterpret_cast< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > * >(argp6);
+  result = (int)(arg1)->handleFrameNetworking(arg2,(unsigned short const &)*arg3,(hlt::Map const &)*arg4,arg5,arg6);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_killPlayer(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  unsigned char arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Networking_killPlayer",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_killPlayer" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Networking_killPlayer" "', argument " "2"" of type '" "unsigned char""'");
+  } 
+  arg2 = static_cast< unsigned char >(val2);
+  (arg1)->killPlayer(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_isProcessDead(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  unsigned char arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Networking_isProcessDead",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_isProcessDead" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Networking_isProcessDead" "', argument " "2"" of type '" "unsigned char""'");
+  } 
+  arg2 = static_cast< unsigned char >(val2);
+  result = (bool)(arg1)->isProcessDead(arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_numberOfPlayers(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Networking_numberOfPlayers",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_numberOfPlayers" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  result = (int)(arg1)->numberOfPlayers();
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_player_logs_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  std::vector< std::string,std::allocator< std::string > > *arg2 = (std::vector< std::string,std::allocator< std::string > > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Networking_player_logs_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_player_logs_set" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Networking_player_logs_set" "', argument " "2"" of type '" "std::vector< std::string,std::allocator< std::string > > *""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< std::string,std::allocator< std::string > > * >(argp2);
+  if (arg1) (arg1)->player_logs = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_player_logs_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::vector< std::string,std::allocator< std::string > > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Networking_player_logs_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_player_logs_get" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  result = (std::vector< std::string,std::allocator< std::string > > *)& ((arg1)->player_logs);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_serializeMap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  hlt::Map *arg1 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  std::string result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Networking_serializeMap",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_hlt__Map,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_serializeMap" "', argument " "1"" of type '" "hlt::Map const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Networking_serializeMap" "', argument " "1"" of type '" "hlt::Map const &""'"); 
+  }
+  arg1 = reinterpret_cast< hlt::Map * >(argp1);
+  result = Networking::serializeMap((hlt::Map const &)*arg1);
+  resultobj = SWIG_From_std_string(static_cast< std::string >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_addLocalBot(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  UniConnection arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Networking_addLocalBot",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_addLocalBot" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  {
+    res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_UniConnection,  0  | 0);
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Networking_addLocalBot" "', argument " "2"" of type '" "UniConnection""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Networking_addLocalBot" "', argument " "2"" of type '" "UniConnection""'");
+    } else {
+      UniConnection * temp = reinterpret_cast< UniConnection * >(argp2);
+      arg2 = *temp;
+      if (SWIG_IsNewObj(res2)) delete temp;
+    }
+  }
+  (arg1)->addLocalBot(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Networking_stopManagingProcesses(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Networking_stopManagingProcesses",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Networking_stopManagingProcesses" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  (arg1)->stopManagingProcesses();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Networking(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Networking")) SWIG_fail;
+  result = (Networking *)new Networking();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Networking, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Networking(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Networking *arg1 = (Networking *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Networking",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Networking, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Networking" "', argument " "1"" of type '" "Networking *""'"); 
+  }
+  arg1 = reinterpret_cast< Networking * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Networking_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_Networking, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -8902,7 +11798,11 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
 	 { (char *)"randomMap", _wrap_randomMap, METH_VARARGS, NULL},
-	 { (char *)"rawRunGame", _wrap_rawRunGame, METH_VARARGS, NULL},
+	 { (char *)"randomMapString", _wrap_randomMapString, METH_VARARGS, NULL},
+	 { (char *)"randomSeed", _wrap_randomSeed, METH_VARARGS, NULL},
+	 { (char *)"blankMap", _wrap_blankMap, METH_VARARGS, NULL},
+	 { (char *)"runGame", _wrap_runGame, METH_VARARGS, NULL},
+	 { (char *)"updateMap", _wrap_updateMap, METH_VARARGS, NULL},
 	 { (char *)"delete_GameEndCallback", _wrap_delete_GameEndCallback, METH_VARARGS, NULL},
 	 { (char *)"GameEndCallback_run", _wrap_GameEndCallback_run, METH_VARARGS, NULL},
 	 { (char *)"new_GameEndCallback", _wrap_new_GameEndCallback, METH_VARARGS, NULL},
@@ -8913,6 +11813,99 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"new_TimeoutCallback", _wrap_new_TimeoutCallback, METH_VARARGS, NULL},
 	 { (char *)"disown_TimeoutCallback", _wrap_disown_TimeoutCallback, METH_VARARGS, NULL},
 	 { (char *)"TimeoutCallback_swigregister", TimeoutCallback_swigregister, METH_VARARGS, NULL},
+	 { (char *)"Color_r_set", _wrap_Color_r_set, METH_VARARGS, NULL},
+	 { (char *)"Color_r_get", _wrap_Color_r_get, METH_VARARGS, NULL},
+	 { (char *)"Color_g_set", _wrap_Color_g_set, METH_VARARGS, NULL},
+	 { (char *)"Color_g_get", _wrap_Color_g_get, METH_VARARGS, NULL},
+	 { (char *)"Color_b_set", _wrap_Color_b_set, METH_VARARGS, NULL},
+	 { (char *)"Color_b_get", _wrap_Color_b_get, METH_VARARGS, NULL},
+	 { (char *)"new_Color", _wrap_new_Color, METH_VARARGS, NULL},
+	 { (char *)"delete_Color", _wrap_delete_Color, METH_VARARGS, NULL},
+	 { (char *)"Color_swigregister", Color_swigregister, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_tag_set", _wrap_PlayerStatistics_tag_set, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_tag_get", _wrap_PlayerStatistics_tag_get, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_rank_set", _wrap_PlayerStatistics_rank_set, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_rank_get", _wrap_PlayerStatistics_rank_get, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_average_territory_count_set", _wrap_PlayerStatistics_average_territory_count_set, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_average_territory_count_get", _wrap_PlayerStatistics_average_territory_count_get, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_average_strength_count_set", _wrap_PlayerStatistics_average_strength_count_set, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_average_strength_count_get", _wrap_PlayerStatistics_average_strength_count_get, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_average_production_count_set", _wrap_PlayerStatistics_average_production_count_set, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_average_production_count_get", _wrap_PlayerStatistics_average_production_count_get, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_still_percentage_set", _wrap_PlayerStatistics_still_percentage_set, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_still_percentage_get", _wrap_PlayerStatistics_still_percentage_get, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_init_response_time_set", _wrap_PlayerStatistics_init_response_time_set, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_init_response_time_get", _wrap_PlayerStatistics_init_response_time_get, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_average_frame_response_time_set", _wrap_PlayerStatistics_average_frame_response_time_set, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_average_frame_response_time_get", _wrap_PlayerStatistics_average_frame_response_time_get, METH_VARARGS, NULL},
+	 { (char *)"new_PlayerStatistics", _wrap_new_PlayerStatistics, METH_VARARGS, NULL},
+	 { (char *)"delete_PlayerStatistics", _wrap_delete_PlayerStatistics, METH_VARARGS, NULL},
+	 { (char *)"PlayerStatistics_swigregister", PlayerStatistics_swigregister, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_player_statistics_set", _wrap_GameStatistics_player_statistics_set, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_player_statistics_get", _wrap_GameStatistics_player_statistics_get, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_output_filename_set", _wrap_GameStatistics_output_filename_set, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_output_filename_get", _wrap_GameStatistics_output_filename_get, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_timeout_tags_set", _wrap_GameStatistics_timeout_tags_set, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_timeout_tags_get", _wrap_GameStatistics_timeout_tags_get, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_timeout_log_filenames_set", _wrap_GameStatistics_timeout_log_filenames_set, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_timeout_log_filenames_get", _wrap_GameStatistics_timeout_log_filenames_get, METH_VARARGS, NULL},
+	 { (char *)"new_GameStatistics", _wrap_new_GameStatistics, METH_VARARGS, NULL},
+	 { (char *)"delete_GameStatistics", _wrap_delete_GameStatistics, METH_VARARGS, NULL},
+	 { (char *)"GameStatistics_swigregister", GameStatistics_swigregister, METH_VARARGS, NULL},
+	 { (char *)"Location_x_set", _wrap_Location_x_set, METH_VARARGS, NULL},
+	 { (char *)"Location_x_get", _wrap_Location_x_get, METH_VARARGS, NULL},
+	 { (char *)"Location_y_set", _wrap_Location_y_set, METH_VARARGS, NULL},
+	 { (char *)"Location_y_get", _wrap_Location_y_get, METH_VARARGS, NULL},
+	 { (char *)"new_Location", _wrap_new_Location, METH_VARARGS, NULL},
+	 { (char *)"delete_Location", _wrap_delete_Location, METH_VARARGS, NULL},
+	 { (char *)"Location_swigregister", Location_swigregister, METH_VARARGS, NULL},
+	 { (char *)"__lt__", _wrap___lt__, METH_VARARGS, NULL},
+	 { (char *)"__eq__", _wrap___eq__, METH_VARARGS, NULL},
+	 { (char *)"Site_owner_set", _wrap_Site_owner_set, METH_VARARGS, NULL},
+	 { (char *)"Site_owner_get", _wrap_Site_owner_get, METH_VARARGS, NULL},
+	 { (char *)"Site_strength_set", _wrap_Site_strength_set, METH_VARARGS, NULL},
+	 { (char *)"Site_strength_get", _wrap_Site_strength_get, METH_VARARGS, NULL},
+	 { (char *)"Site_production_set", _wrap_Site_production_set, METH_VARARGS, NULL},
+	 { (char *)"Site_production_get", _wrap_Site_production_get, METH_VARARGS, NULL},
+	 { (char *)"new_Site", _wrap_new_Site, METH_VARARGS, NULL},
+	 { (char *)"delete_Site", _wrap_delete_Site, METH_VARARGS, NULL},
+	 { (char *)"Site_swigregister", Site_swigregister, METH_VARARGS, NULL},
+	 { (char *)"Map_contents_set", _wrap_Map_contents_set, METH_VARARGS, NULL},
+	 { (char *)"Map_contents_get", _wrap_Map_contents_get, METH_VARARGS, NULL},
+	 { (char *)"Map_width_set", _wrap_Map_width_set, METH_VARARGS, NULL},
+	 { (char *)"Map_width_get", _wrap_Map_width_get, METH_VARARGS, NULL},
+	 { (char *)"Map_height_set", _wrap_Map_height_set, METH_VARARGS, NULL},
+	 { (char *)"Map_height_get", _wrap_Map_height_get, METH_VARARGS, NULL},
+	 { (char *)"new_Map", _wrap_new_Map, METH_VARARGS, NULL},
+	 { (char *)"Map_inBounds", _wrap_Map_inBounds, METH_VARARGS, NULL},
+	 { (char *)"Map_getDistance", _wrap_Map_getDistance, METH_VARARGS, NULL},
+	 { (char *)"Map_getAngle", _wrap_Map_getAngle, METH_VARARGS, NULL},
+	 { (char *)"Map_getLocation", _wrap_Map_getLocation, METH_VARARGS, NULL},
+	 { (char *)"Map_getSite", _wrap_Map_getSite, METH_VARARGS, NULL},
+	 { (char *)"delete_Map", _wrap_delete_Map, METH_VARARGS, NULL},
+	 { (char *)"Map_swigregister", Map_swigregister, METH_VARARGS, NULL},
+	 { (char *)"ppmToMap", _wrap_ppmToMap, METH_VARARGS, NULL},
+	 { (char *)"UniConnection_read_set", _wrap_UniConnection_read_set, METH_VARARGS, NULL},
+	 { (char *)"UniConnection_read_get", _wrap_UniConnection_read_get, METH_VARARGS, NULL},
+	 { (char *)"UniConnection_write_set", _wrap_UniConnection_write_set, METH_VARARGS, NULL},
+	 { (char *)"UniConnection_write_get", _wrap_UniConnection_write_get, METH_VARARGS, NULL},
+	 { (char *)"new_UniConnection", _wrap_new_UniConnection, METH_VARARGS, NULL},
+	 { (char *)"delete_UniConnection", _wrap_delete_UniConnection, METH_VARARGS, NULL},
+	 { (char *)"UniConnection_swigregister", UniConnection_swigregister, METH_VARARGS, NULL},
+	 { (char *)"Networking_startAndConnectBot", _wrap_Networking_startAndConnectBot, METH_VARARGS, NULL},
+	 { (char *)"Networking_handleInitNetworking", _wrap_Networking_handleInitNetworking, METH_VARARGS, NULL},
+	 { (char *)"Networking_handleFrameNetworking", _wrap_Networking_handleFrameNetworking, METH_VARARGS, NULL},
+	 { (char *)"Networking_killPlayer", _wrap_Networking_killPlayer, METH_VARARGS, NULL},
+	 { (char *)"Networking_isProcessDead", _wrap_Networking_isProcessDead, METH_VARARGS, NULL},
+	 { (char *)"Networking_numberOfPlayers", _wrap_Networking_numberOfPlayers, METH_VARARGS, NULL},
+	 { (char *)"Networking_player_logs_set", _wrap_Networking_player_logs_set, METH_VARARGS, NULL},
+	 { (char *)"Networking_player_logs_get", _wrap_Networking_player_logs_get, METH_VARARGS, NULL},
+	 { (char *)"Networking_serializeMap", _wrap_Networking_serializeMap, METH_VARARGS, NULL},
+	 { (char *)"Networking_addLocalBot", _wrap_Networking_addLocalBot, METH_VARARGS, NULL},
+	 { (char *)"Networking_stopManagingProcesses", _wrap_Networking_stopManagingProcesses, METH_VARARGS, NULL},
+	 { (char *)"new_Networking", _wrap_new_Networking, METH_VARARGS, NULL},
+	 { (char *)"delete_Networking", _wrap_delete_Networking, METH_VARARGS, NULL},
+	 { (char *)"Networking_swigregister", Networking_swigregister, METH_VARARGS, NULL},
 	 { (char *)"UniConnectionVector_iterator", _wrap_UniConnectionVector_iterator, METH_VARARGS, NULL},
 	 { (char *)"UniConnectionVector___nonzero__", _wrap_UniConnectionVector___nonzero__, METH_VARARGS, NULL},
 	 { (char *)"UniConnectionVector___bool__", _wrap_UniConnectionVector___bool__, METH_VARARGS, NULL},
@@ -8953,66 +11946,118 @@ static PyMethodDef SwigMethods[] = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static swig_type_info _swigt__p_Color = {"_p_Color", "Color *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GameEndCallback = {"_p_GameEndCallback", "GameEndCallback *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GameStatistics = {"_p_GameStatistics", "GameStatistics *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Networking = {"_p_Networking", "Networking *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_PlayerStatistics = {"_p_PlayerStatistics", "PlayerStatistics *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_TimeoutCallback = {"_p_TimeoutCallback", "TimeoutCallback *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_UniConnection = {"_p_UniConnection", "std::vector< UniConnection >::value_type *|UniConnection *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_allocator_type = {"_p_allocator_type", "allocator_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_difference_type = {"_p_difference_type", "difference_type *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_hlt__Location = {"_p_hlt__Location", "hlt::Location *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_hlt__Map = {"_p_hlt__Map", "hlt::Map *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_hlt__Site = {"_p_hlt__Site", "hlt::Site *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_PyObject = {"_p_p_PyObject", "PyObject **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_size_type = {"_p_size_type", "size_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_UniConnection_t = {"_p_std__allocatorT_UniConnection_t", "std::vector< UniConnection >::allocator_type *|std::allocator< UniConnection > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__invalid_argument = {"_p_std__invalid_argument", "std::invalid_argument *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t = {"_p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t", "std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__setT_unsigned_short_t = {"_p_std__setT_unsigned_short_t", "std::set< unsigned short > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t = {"_p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t", "std::vector< PlayerStatistics,std::allocator< PlayerStatistics > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t = {"_p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t", "std::vector< UniConnection > *|std::vector< UniConnection,std::allocator< UniConnection > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t = {"_p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t", "std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_std__string_std__allocatorT_std__string_t_t = {"_p_std__vectorT_std__string_std__allocatorT_std__string_t_t", "std::vector< std::string,std::allocator< std::string > > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t = {"_p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t", "std::vector< std::vector< hlt::Site,std::allocator< hlt::Site > >,std::allocator< std::vector< hlt::Site,std::allocator< hlt::Site > > > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_swig__SwigPyIterator = {"_p_swig__SwigPyIterator", "swig::SwigPyIterator *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_Color,
   &_swigt__p_GameEndCallback,
   &_swigt__p_GameStatistics,
+  &_swigt__p_Networking,
+  &_swigt__p_PlayerStatistics,
   &_swigt__p_TimeoutCallback,
   &_swigt__p_UniConnection,
   &_swigt__p_allocator_type,
   &_swigt__p_char,
   &_swigt__p_difference_type,
+  &_swigt__p_hlt__Location,
+  &_swigt__p_hlt__Map,
+  &_swigt__p_hlt__Site,
   &_swigt__p_p_PyObject,
   &_swigt__p_size_type,
   &_swigt__p_std__allocatorT_UniConnection_t,
   &_swigt__p_std__invalid_argument,
+  &_swigt__p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t,
+  &_swigt__p_std__setT_unsigned_short_t,
+  &_swigt__p_std__string,
+  &_swigt__p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t,
   &_swigt__p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t,
+  &_swigt__p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t,
+  &_swigt__p_std__vectorT_std__string_std__allocatorT_std__string_t_t,
+  &_swigt__p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t,
   &_swigt__p_swig__SwigPyIterator,
   &_swigt__p_value_type,
 };
 
+static swig_cast_info _swigc__p_Color[] = {  {&_swigt__p_Color, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameEndCallback[] = {  {&_swigt__p_GameEndCallback, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameStatistics[] = {  {&_swigt__p_GameStatistics, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Networking[] = {  {&_swigt__p_Networking, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_PlayerStatistics[] = {  {&_swigt__p_PlayerStatistics, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_TimeoutCallback[] = {  {&_swigt__p_TimeoutCallback, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_UniConnection[] = {  {&_swigt__p_UniConnection, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_allocator_type[] = {  {&_swigt__p_allocator_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_difference_type[] = {  {&_swigt__p_difference_type, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_hlt__Location[] = {  {&_swigt__p_hlt__Location, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_hlt__Map[] = {  {&_swigt__p_hlt__Map, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_hlt__Site[] = {  {&_swigt__p_hlt__Site, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_PyObject[] = {  {&_swigt__p_p_PyObject, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_size_type[] = {  {&_swigt__p_size_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_UniConnection_t[] = {  {&_swigt__p_std__allocatorT_UniConnection_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__invalid_argument[] = {  {&_swigt__p_std__invalid_argument, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t[] = {  {&_swigt__p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__setT_unsigned_short_t[] = {  {&_swigt__p_std__setT_unsigned_short_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t[] = {  {&_swigt__p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t[] = {  {&_swigt__p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_std__string_std__allocatorT_std__string_t_t[] = {  {&_swigt__p_std__vectorT_std__string_std__allocatorT_std__string_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t[] = {  {&_swigt__p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_swig__SwigPyIterator[] = {  {&_swigt__p_swig__SwigPyIterator, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_Color,
   _swigc__p_GameEndCallback,
   _swigc__p_GameStatistics,
+  _swigc__p_Networking,
+  _swigc__p_PlayerStatistics,
   _swigc__p_TimeoutCallback,
   _swigc__p_UniConnection,
   _swigc__p_allocator_type,
   _swigc__p_char,
   _swigc__p_difference_type,
+  _swigc__p_hlt__Location,
+  _swigc__p_hlt__Map,
+  _swigc__p_hlt__Site,
   _swigc__p_p_PyObject,
   _swigc__p_size_type,
   _swigc__p_std__allocatorT_UniConnection_t,
   _swigc__p_std__invalid_argument,
+  _swigc__p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t,
+  _swigc__p_std__setT_unsigned_short_t,
+  _swigc__p_std__string,
+  _swigc__p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t,
   _swigc__p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t,
+  _swigc__p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t,
+  _swigc__p_std__vectorT_std__string_std__allocatorT_std__string_t_t,
+  _swigc__p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t,
   _swigc__p_swig__SwigPyIterator,
   _swigc__p_value_type,
 };
@@ -9711,6 +12756,11 @@ SWIG_init(void) {
   
   PyDict_SetItemString(md,(char*)"cvar", SWIG_globals());
   SWIG_addvarlink(SWIG_globals(),(char*)"quiet_output",Swig_var_quiet_output_get, Swig_var_quiet_output_set);
+  SWIG_Python_SetConstant(d, "STILL",SWIG_From_int(static_cast< int >(0)));
+  SWIG_Python_SetConstant(d, "NORTH",SWIG_From_int(static_cast< int >(1)));
+  SWIG_Python_SetConstant(d, "EAST",SWIG_From_int(static_cast< int >(2)));
+  SWIG_Python_SetConstant(d, "SOUTH",SWIG_From_int(static_cast< int >(3)));
+  SWIG_Python_SetConstant(d, "WEST",SWIG_From_int(static_cast< int >(4)));
 #if PY_VERSION_HEX >= 0x03000000
   return m;
 #else

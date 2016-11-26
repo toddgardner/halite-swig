@@ -32,39 +32,225 @@ typedef struct { void* array; intgo len; intgo cap; } _goslice_;
 typedef _gostring_ swig_type_1;
 typedef _gostring_ swig_type_2;
 typedef _gostring_ swig_type_3;
-typedef long long swig_type_4;
-typedef long long swig_type_5;
-typedef long long swig_type_6;
-typedef long long swig_type_7;
-extern void _wrap_Swig_free_halite_2007760261f40110(uintptr_t arg1);
-extern uintptr_t _wrap_Swig_malloc_halite_2007760261f40110(swig_intgo arg1);
-extern void _wrap_quiet_output_set_halite_2007760261f40110(_Bool arg1);
-extern _Bool _wrap_quiet_output_get_halite_2007760261f40110(void);
-extern swig_type_1 _wrap_randomMap_halite_2007760261f40110(short arg1, short arg2, char arg3, swig_intgo arg4);
-extern uintptr_t _wrap_rawRunGame_halite_2007760261f40110(swig_intgo arg1, short arg2, short arg3, swig_intgo arg4, _Bool arg5, uintptr_t arg6, uintptr_t arg7);
-extern uintptr_t _wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_2007760261f40110(int);
-extern void _wrap_DeleteDirectorGameEndCallback_halite_2007760261f40110(uintptr_t arg1);
-extern _Bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(uintptr_t, swig_intgo turn, swig_type_2 board);
-extern void _wrap_delete_GameEndCallback_halite_2007760261f40110(uintptr_t arg1);
-extern _Bool _wrap_GameEndCallback_run_halite_2007760261f40110(uintptr_t arg1, swig_intgo arg2, swig_type_2 arg3);
-extern uintptr_t _wrap_new_GameEndCallback_halite_2007760261f40110(void);
-extern uintptr_t _wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_2007760261f40110(int);
-extern void _wrap_DeleteDirectorTimeoutCallback_halite_2007760261f40110(uintptr_t arg1);
-extern void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(uintptr_t, swig_intgo playerTag, swig_type_3 playerName);
-extern void _wrap_delete_TimeoutCallback_halite_2007760261f40110(uintptr_t arg1);
-extern void _wrap_TimeoutCallback_run_halite_2007760261f40110(uintptr_t arg1, swig_intgo arg2, swig_type_3 arg3);
-extern uintptr_t _wrap_new_TimeoutCallback_halite_2007760261f40110(void);
-extern uintptr_t _wrap_new_UniConnectionVector__SWIG_0_halite_2007760261f40110(void);
-extern uintptr_t _wrap_new_UniConnectionVector__SWIG_1_halite_2007760261f40110(swig_type_4 arg1);
-extern swig_type_5 _wrap_UniConnectionVector_size_halite_2007760261f40110(uintptr_t arg1);
-extern swig_type_6 _wrap_UniConnectionVector_capacity_halite_2007760261f40110(uintptr_t arg1);
-extern void _wrap_UniConnectionVector_reserve_halite_2007760261f40110(uintptr_t arg1, swig_type_7 arg2);
-extern _Bool _wrap_UniConnectionVector_isEmpty_halite_2007760261f40110(uintptr_t arg1);
-extern void _wrap_UniConnectionVector_clear_halite_2007760261f40110(uintptr_t arg1);
-extern void _wrap_UniConnectionVector_add_halite_2007760261f40110(uintptr_t arg1, uintptr_t arg2);
-extern uintptr_t _wrap_UniConnectionVector_get_halite_2007760261f40110(uintptr_t arg1, swig_intgo arg2);
-extern void _wrap_UniConnectionVector_set_halite_2007760261f40110(uintptr_t arg1, swig_intgo arg2, uintptr_t arg3);
-extern void _wrap_delete_UniConnectionVector_halite_2007760261f40110(uintptr_t arg1);
+typedef _gostring_ swig_type_4;
+typedef _gostring_ swig_type_5;
+typedef _gostring_ swig_type_6;
+typedef _gostring_ swig_type_7;
+typedef _gostring_ swig_type_8;
+typedef long long swig_type_9;
+typedef long long swig_type_10;
+typedef long long swig_type_11;
+typedef long long swig_type_12;
+typedef long long swig_type_13;
+typedef long long swig_type_14;
+typedef long long swig_type_15;
+typedef long long swig_type_16;
+typedef long long swig_type_17;
+typedef long long swig_type_18;
+typedef long long swig_type_19;
+typedef long long swig_type_20;
+typedef long long swig_type_21;
+typedef long long swig_type_22;
+typedef long long swig_type_23;
+typedef long long swig_type_24;
+typedef long long swig_type_25;
+typedef long long swig_type_26;
+typedef long long swig_type_27;
+typedef long long swig_type_28;
+typedef _gostring_ swig_type_29;
+typedef _gostring_ swig_type_30;
+typedef _gostring_ swig_type_31;
+typedef long long swig_type_32;
+typedef long long swig_type_33;
+typedef long long swig_type_34;
+typedef long long swig_type_35;
+extern void _wrap_Swig_free_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_Swig_malloc_halite_47887523e5de5737(swig_intgo arg1);
+extern void _wrap_quiet_output_set_halite_47887523e5de5737(_Bool arg1);
+extern _Bool _wrap_quiet_output_get_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_randomMap_halite_47887523e5de5737(short arg1, short arg2, char arg3, swig_intgo arg4);
+extern swig_type_1 _wrap_randomMapString_halite_47887523e5de5737(short arg1, short arg2, char arg3, swig_intgo arg4);
+extern swig_intgo _wrap_randomSeed_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_blankMap_halite_47887523e5de5737(short arg1, short arg2);
+extern uintptr_t _wrap_wrappedRunGame_halite_47887523e5de5737(swig_intgo arg1, short arg2, short arg3, swig_intgo arg4, _Bool arg5, uintptr_t arg6, uintptr_t arg7);
+extern void _wrap_wrappedUpdateMap_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_47887523e5de5737(int);
+extern void _wrap_DeleteDirectorGameEndCallback_halite_47887523e5de5737(uintptr_t arg1);
+extern _Bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_47887523e5de5737(uintptr_t, swig_intgo turn, swig_type_2 board);
+extern void _wrap_delete_GameEndCallback_halite_47887523e5de5737(uintptr_t arg1);
+extern _Bool _wrap_GameEndCallback_run_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2, swig_type_2 arg3);
+extern uintptr_t _wrap_new_GameEndCallback_halite_47887523e5de5737(void);
+extern uintptr_t _wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_47887523e5de5737(int);
+extern void _wrap_DeleteDirectorTimeoutCallback_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_47887523e5de5737(uintptr_t, swig_intgo playerTag, swig_type_3 playerName);
+extern void _wrap_delete_TimeoutCallback_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_TimeoutCallback_run_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2, swig_type_3 arg3);
+extern uintptr_t _wrap_new_TimeoutCallback_halite_47887523e5de5737(void);
+extern void _wrap_Color_r_set_halite_47887523e5de5737(uintptr_t arg1, float arg2);
+extern float _wrap_Color_r_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Color_g_set_halite_47887523e5de5737(uintptr_t arg1, float arg2);
+extern float _wrap_Color_g_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Color_b_set_halite_47887523e5de5737(uintptr_t arg1, float arg2);
+extern float _wrap_Color_b_get_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_Color_halite_47887523e5de5737(void);
+extern void _wrap_delete_Color_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatistics_tag_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_PlayerStatistics_tag_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatistics_rank_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_PlayerStatistics_rank_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatistics_averageTerritoryCount_set_halite_47887523e5de5737(uintptr_t arg1, double arg2);
+extern double _wrap_PlayerStatistics_averageTerritoryCount_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatistics_averageStrengthCount_set_halite_47887523e5de5737(uintptr_t arg1, double arg2);
+extern double _wrap_PlayerStatistics_averageStrengthCount_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatistics_averageProductionCount_set_halite_47887523e5de5737(uintptr_t arg1, double arg2);
+extern double _wrap_PlayerStatistics_averageProductionCount_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatistics_stillPercentage_set_halite_47887523e5de5737(uintptr_t arg1, double arg2);
+extern double _wrap_PlayerStatistics_stillPercentage_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatistics_initResponseTime_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_PlayerStatistics_initResponseTime_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatistics_averageFrameResponseTime_set_halite_47887523e5de5737(uintptr_t arg1, double arg2);
+extern double _wrap_PlayerStatistics_averageFrameResponseTime_get_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_PlayerStatistics_halite_47887523e5de5737(void);
+extern void _wrap_delete_PlayerStatistics_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_GameStatistics_playerStatistics_set_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_GameStatistics_playerStatistics_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_GameStatistics_outputFilename_set_halite_47887523e5de5737(uintptr_t arg1, swig_type_4 arg2);
+extern swig_type_5 _wrap_GameStatistics_outputFilename_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_GameStatistics_timeoutTags_set_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_GameStatistics_timeoutTags_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_GameStatistics_timeoutLogFilenames_set_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_GameStatistics_timeoutLogFilenames_get_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_GameStatistics_halite_47887523e5de5737(void);
+extern void _wrap_delete_GameStatistics_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Location_x_set_halite_47887523e5de5737(uintptr_t arg1, short arg2);
+extern short _wrap_Location_x_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Location_y_set_halite_47887523e5de5737(uintptr_t arg1, short arg2);
+extern short _wrap_Location_y_get_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_Location_halite_47887523e5de5737(void);
+extern void _wrap_delete_Location_halite_47887523e5de5737(uintptr_t arg1);
+extern _Bool _wrap_LocationLess_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_LocationEquals_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_Site_owner_set_halite_47887523e5de5737(uintptr_t arg1, char arg2);
+extern char _wrap_Site_owner_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Site_strength_set_halite_47887523e5de5737(uintptr_t arg1, char arg2);
+extern char _wrap_Site_strength_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Site_production_set_halite_47887523e5de5737(uintptr_t arg1, char arg2);
+extern char _wrap_Site_production_get_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_Site_halite_47887523e5de5737(void);
+extern void _wrap_delete_Site_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Map_contents_set_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_Map_contents_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Map_width_set_halite_47887523e5de5737(uintptr_t arg1, short arg2);
+extern short _wrap_Map_width_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Map_height_set_halite_47887523e5de5737(uintptr_t arg1, short arg2);
+extern short _wrap_Map_height_get_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_Map__SWIG_0_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_new_Map__SWIG_1_halite_47887523e5de5737(short arg1, short arg2);
+extern uintptr_t _wrap_new_Map__SWIG_2_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_Map__SWIG_3_halite_47887523e5de5737(short arg1, short arg2, char arg3, swig_intgo arg4);
+extern _Bool _wrap_Map_inBounds_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern float _wrap_Map_getDistance_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3);
+extern float _wrap_Map_getAngle_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3);
+extern uintptr_t _wrap_Map_getLocation_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2, char arg3);
+extern uintptr_t _wrap_Map_getSite__SWIG_0_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2, char arg3);
+extern uintptr_t _wrap_Map_getSite__SWIG_1_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_delete_Map_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_ppmToMap_halite_47887523e5de5737(swig_type_6 arg1, swig_intgo arg2);
+extern void _wrap_UniConnection_read_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_UniConnection_read_get_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_UniConnection_write_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern swig_intgo _wrap_UniConnection_write_get_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_UniConnection_halite_47887523e5de5737(void);
+extern void _wrap_delete_UniConnection_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Networking_startAndConnectBot_halite_47887523e5de5737(uintptr_t arg1, swig_type_7 arg2);
+extern swig_intgo _wrap_Networking_handleInitNetworking_halite_47887523e5de5737(uintptr_t arg1, char arg2, uintptr_t arg3, _Bool arg4, swig_voidp arg5);
+extern swig_intgo _wrap_Networking_handleFrameNetworking_halite_47887523e5de5737(uintptr_t arg1, char arg2, short arg3, uintptr_t arg4, _Bool arg5, uintptr_t arg6);
+extern void _wrap_Networking_killPlayer_halite_47887523e5de5737(uintptr_t arg1, char arg2);
+extern _Bool _wrap_Networking_isProcessDead_halite_47887523e5de5737(uintptr_t arg1, char arg2);
+extern swig_intgo _wrap_Networking_numberOfPlayers_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Networking_player_logs_set_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_Networking_player_logs_get_halite_47887523e5de5737(uintptr_t arg1);
+extern swig_type_8 _wrap_Networking_serializeMap_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_Networking_addLocalBot_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_Networking_stopManagingProcesses_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_Networking_halite_47887523e5de5737(void);
+extern void _wrap_delete_Networking_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_UniConnectionVector__SWIG_0_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_new_UniConnectionVector__SWIG_1_halite_47887523e5de5737(swig_type_9 arg1);
+extern swig_type_10 _wrap_UniConnectionVector_size_halite_47887523e5de5737(uintptr_t arg1);
+extern swig_type_11 _wrap_UniConnectionVector_capacity_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_UniConnectionVector_reserve_halite_47887523e5de5737(uintptr_t arg1, swig_type_12 arg2);
+extern _Bool _wrap_UniConnectionVector_isEmpty_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_UniConnectionVector_clear_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_UniConnectionVector_add_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_UniConnectionVector_get_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_UniConnectionVector_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2, uintptr_t arg3);
+extern void _wrap_delete_UniConnectionVector_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_RowVector__SWIG_0_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_new_RowVector__SWIG_1_halite_47887523e5de5737(swig_type_13 arg1);
+extern swig_type_14 _wrap_RowVector_size_halite_47887523e5de5737(uintptr_t arg1);
+extern swig_type_15 _wrap_RowVector_capacity_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_RowVector_reserve_halite_47887523e5de5737(uintptr_t arg1, swig_type_16 arg2);
+extern _Bool _wrap_RowVector_isEmpty_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_RowVector_clear_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_RowVector_add_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_RowVector_get_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_RowVector_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2, uintptr_t arg3);
+extern void _wrap_delete_RowVector_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_BoardVector__SWIG_0_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_new_BoardVector__SWIG_1_halite_47887523e5de5737(swig_type_17 arg1);
+extern swig_type_18 _wrap_BoardVector_size_halite_47887523e5de5737(uintptr_t arg1);
+extern swig_type_19 _wrap_BoardVector_capacity_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_BoardVector_reserve_halite_47887523e5de5737(uintptr_t arg1, swig_type_20 arg2);
+extern _Bool _wrap_BoardVector_isEmpty_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_BoardVector_clear_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_BoardVector_add_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_BoardVector_get_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_BoardVector_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2, uintptr_t arg3);
+extern void _wrap_delete_BoardVector_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_PlayerStatisticsVector__SWIG_0_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_new_PlayerStatisticsVector__SWIG_1_halite_47887523e5de5737(swig_type_21 arg1);
+extern swig_type_22 _wrap_PlayerStatisticsVector_size_halite_47887523e5de5737(uintptr_t arg1);
+extern swig_type_23 _wrap_PlayerStatisticsVector_capacity_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatisticsVector_reserve_halite_47887523e5de5737(uintptr_t arg1, swig_type_24 arg2);
+extern _Bool _wrap_PlayerStatisticsVector_isEmpty_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatisticsVector_clear_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerStatisticsVector_add_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_PlayerStatisticsVector_get_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_PlayerStatisticsVector_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2, uintptr_t arg3);
+extern void _wrap_delete_PlayerStatisticsVector_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_StringVector__SWIG_0_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_new_StringVector__SWIG_1_halite_47887523e5de5737(swig_type_25 arg1);
+extern swig_type_26 _wrap_StringVector_size_halite_47887523e5de5737(uintptr_t arg1);
+extern swig_type_27 _wrap_StringVector_capacity_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_StringVector_reserve_halite_47887523e5de5737(uintptr_t arg1, swig_type_28 arg2);
+extern _Bool _wrap_StringVector_isEmpty_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_StringVector_clear_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_StringVector_add_halite_47887523e5de5737(uintptr_t arg1, swig_type_29 arg2);
+extern swig_type_30 _wrap_StringVector_get_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_StringVector_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2, swig_type_31 arg3);
+extern void _wrap_delete_StringVector_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_LocationToMoveMap__SWIG_0_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_new_LocationToMoveMap__SWIG_1_halite_47887523e5de5737(uintptr_t arg1);
+extern swig_intgo _wrap_LocationToMoveMap_size_halite_47887523e5de5737(uintptr_t arg1);
+extern _Bool _wrap_LocationToMoveMap_empty_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_LocationToMoveMap_clear_halite_47887523e5de5737(uintptr_t arg1);
+extern char _wrap_LocationToMoveMap_get_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_LocationToMoveMap_set_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2, char arg3);
+extern void _wrap_LocationToMoveMap_del_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern _Bool _wrap_LocationToMoveMap_has_key_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern void _wrap_delete_LocationToMoveMap_halite_47887523e5de5737(uintptr_t arg1);
+extern uintptr_t _wrap_new_PlayerMovesVector__SWIG_0_halite_47887523e5de5737(void);
+extern uintptr_t _wrap_new_PlayerMovesVector__SWIG_1_halite_47887523e5de5737(swig_type_32 arg1);
+extern swig_type_33 _wrap_PlayerMovesVector_size_halite_47887523e5de5737(uintptr_t arg1);
+extern swig_type_34 _wrap_PlayerMovesVector_capacity_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerMovesVector_reserve_halite_47887523e5de5737(uintptr_t arg1, swig_type_35 arg2);
+extern _Bool _wrap_PlayerMovesVector_isEmpty_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerMovesVector_clear_halite_47887523e5de5737(uintptr_t arg1);
+extern void _wrap_PlayerMovesVector_add_halite_47887523e5de5737(uintptr_t arg1, uintptr_t arg2);
+extern uintptr_t _wrap_PlayerMovesVector_get_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2);
+extern void _wrap_PlayerMovesVector_set_halite_47887523e5de5737(uintptr_t arg1, swig_intgo arg2, uintptr_t arg3);
+extern void _wrap_delete_PlayerMovesVector_halite_47887523e5de5737(uintptr_t arg1);
 #undef intgo
 */
 import "C"
@@ -97,41 +283,65 @@ func swigCopyString(s string) string {
 
 func Swig_free(arg1 uintptr) {
 	_swig_i_0 := arg1
-	C._wrap_Swig_free_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
+	C._wrap_Swig_free_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
 }
 
 func Swig_malloc(arg1 int) (_swig_ret uintptr) {
 	var swig_r uintptr
 	_swig_i_0 := arg1
-	swig_r = (uintptr)(C._wrap_Swig_malloc_halite_2007760261f40110(C.swig_intgo(_swig_i_0)))
+	swig_r = (uintptr)(C._wrap_Swig_malloc_halite_47887523e5de5737(C.swig_intgo(_swig_i_0)))
 	return swig_r
 }
 
 func SetQuiet_output(arg1 bool) {
 	_swig_i_0 := arg1
-	C._wrap_quiet_output_set_halite_2007760261f40110(C._Bool(_swig_i_0))
+	C._wrap_quiet_output_set_halite_47887523e5de5737(C._Bool(_swig_i_0))
 }
 
 func GetQuiet_output() (_swig_ret bool) {
 	var swig_r bool
-	swig_r = (bool)(C._wrap_quiet_output_get_halite_2007760261f40110())
+	swig_r = (bool)(C._wrap_quiet_output_get_halite_47887523e5de5737())
 	return swig_r
 }
 
-func RandomMap(arg1 int16, arg2 int16, arg3 byte, arg4 uint) (_swig_ret string) {
+func RandomMap(arg1 int16, arg2 int16, arg3 byte, arg4 uint) (_swig_ret Map) {
+	var swig_r Map
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	swig_r = (Map)(SwigcptrMap(C._wrap_randomMap_halite_47887523e5de5737(C.short(_swig_i_0), C.short(_swig_i_1), C.char(_swig_i_2), C.swig_intgo(_swig_i_3))))
+	return swig_r
+}
+
+func RandomMapString(arg1 int16, arg2 int16, arg3 byte, arg4 uint) (_swig_ret string) {
 	var swig_r string
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
 	_swig_i_3 := arg4
-	swig_r_p := C._wrap_randomMap_halite_2007760261f40110(C.short(_swig_i_0), C.short(_swig_i_1), C.char(_swig_i_2), C.swig_intgo(_swig_i_3))
+	swig_r_p := C._wrap_randomMapString_halite_47887523e5de5737(C.short(_swig_i_0), C.short(_swig_i_1), C.char(_swig_i_2), C.swig_intgo(_swig_i_3))
 	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
 	var swig_r_1 string
 	swig_r_1 = swigCopyString(swig_r)
 	return swig_r_1
 }
 
-func RawRunGame(arg1 uint, arg2 int16, arg3 int16, arg4 uint, arg5 bool, arg6 UniConnectionVector, arg7 GameEndCallback) (_swig_ret GameStatistics) {
+func RandomSeed() (_swig_ret uint) {
+	var swig_r uint
+	swig_r = (uint)(C._wrap_randomSeed_halite_47887523e5de5737())
+	return swig_r
+}
+
+func BlankMap(arg1 int16, arg2 int16) (_swig_ret Map) {
+	var swig_r Map
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (Map)(SwigcptrMap(C._wrap_blankMap_halite_47887523e5de5737(C.short(_swig_i_0), C.short(_swig_i_1))))
+	return swig_r
+}
+
+func WrappedRunGame(arg1 uint, arg2 int16, arg3 int16, arg4 uint, arg5 bool, arg6 UniConnectionVector, arg7 GameEndCallback) (_swig_ret GameStatistics) {
 	var swig_r GameStatistics
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
@@ -140,8 +350,14 @@ func RawRunGame(arg1 uint, arg2 int16, arg3 int16, arg4 uint, arg5 bool, arg6 Un
 	_swig_i_4 := arg5
 	_swig_i_5 := arg6.Swigcptr()
 	_swig_i_6 := arg7.Swigcptr()
-	swig_r = (GameStatistics)(SwigcptrGameStatistics(C._wrap_rawRunGame_halite_2007760261f40110(C.swig_intgo(_swig_i_0), C.short(_swig_i_1), C.short(_swig_i_2), C.swig_intgo(_swig_i_3), C._Bool(_swig_i_4), C.uintptr_t(_swig_i_5), C.uintptr_t(_swig_i_6))))
+	swig_r = (GameStatistics)(SwigcptrGameStatistics(C._wrap_wrappedRunGame_halite_47887523e5de5737(C.swig_intgo(_swig_i_0), C.short(_swig_i_1), C.short(_swig_i_2), C.swig_intgo(_swig_i_3), C._Bool(_swig_i_4), C.uintptr_t(_swig_i_5), C.uintptr_t(_swig_i_6))))
 	return swig_r
+}
+
+func WrappedUpdateMap(arg1 Map, arg2 PlayerMovesVector) {
+	_swig_i_0 := arg1.Swigcptr()
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_wrappedUpdateMap_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 type _swig_DirectorGameEndCallback struct {
@@ -162,17 +378,17 @@ func (p *_swig_DirectorGameEndCallback) DirectorInterface() interface{} {
 
 func NewDirectorGameEndCallback(v interface{}) GameEndCallback {
 	p := &_swig_DirectorGameEndCallback{0, v}
-	p.SwigcptrGameEndCallback = SwigcptrGameEndCallback(C._wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_2007760261f40110(C.int(swigDirectorAdd(p))))
+	p.SwigcptrGameEndCallback = SwigcptrGameEndCallback(C._wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_47887523e5de5737(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorGameEndCallback(arg1 GameEndCallback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorGameEndCallback_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorGameEndCallback_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_GameEndCallback_halite_2007760261f40110
-func Swiggo_DeleteDirector_GameEndCallback_halite_2007760261f40110(c int) {
+//export Swiggo_DeleteDirector_GameEndCallback_halite_47887523e5de5737
+func Swiggo_DeleteDirector_GameEndCallback_halite_47887523e5de5737(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorGameEndCallback).SwigcptrGameEndCallback = 0
 	swigDirectorDelete(c)
 }
@@ -188,7 +404,7 @@ func (swig_p *_swig_DirectorGameEndCallback) Run(turn int, board string) bool {
 	var swig_r bool
 	_swig_i_0 := turn
 	_swig_i_1 := board
-	swig_r = (bool)(C._wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(C.uintptr_t(swig_p.SwigcptrGameEndCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap__swig_DirectorGameEndCallback_upcall_Run_halite_47887523e5de5737(C.uintptr_t(swig_p.SwigcptrGameEndCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
@@ -199,15 +415,15 @@ func DirectorGameEndCallbackRun(p GameEndCallback, arg2 int, arg3 string) bool {
 	var swig_r bool
 	_swig_i_0 := arg2
 	_swig_i_1 := arg3
-	swig_r = (bool)(C._wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(C.uintptr_t(p.(*_swig_DirectorGameEndCallback).SwigcptrGameEndCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
+	swig_r = (bool)(C._wrap__swig_DirectorGameEndCallback_upcall_Run_halite_47887523e5de5737(C.uintptr_t(p.(*_swig_DirectorGameEndCallback).SwigcptrGameEndCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_1))))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
 	return swig_r
 }
 
-//export Swig_DirectorGameEndCallback_callback_run_halite_2007760261f40110
-func Swig_DirectorGameEndCallback_callback_run_halite_2007760261f40110(swig_c int, arg2 int, arg3 string) (swig_result bool) {
+//export Swig_DirectorGameEndCallback_callback_run_halite_47887523e5de5737
+func Swig_DirectorGameEndCallback_callback_run_halite_47887523e5de5737(swig_c int, arg2 int, arg3 string) (swig_result bool) {
 	var swig_r bool
 	var _swig_i_1 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorGameEndCallback)
@@ -231,7 +447,7 @@ func (p SwigcptrGameEndCallback) DirectorInterface() interface{} {
 
 func DeleteGameEndCallback(arg1 GameEndCallback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_GameEndCallback_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_GameEndCallback_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrGameEndCallback) Run(arg2 int, arg3 string) (_swig_ret bool) {
@@ -239,7 +455,7 @@ func (arg1 SwigcptrGameEndCallback) Run(arg2 int, arg3 string) (_swig_ret bool) 
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	swig_r = (bool)(C._wrap_GameEndCallback_run_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_2))))
+	swig_r = (bool)(C._wrap_GameEndCallback_run_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_2)(unsafe.Pointer(&_swig_i_2))))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -248,7 +464,7 @@ func (arg1 SwigcptrGameEndCallback) Run(arg2 int, arg3 string) (_swig_ret bool) 
 
 func NewGameEndCallback() (_swig_ret GameEndCallback) {
 	var swig_r GameEndCallback
-	swig_r = (GameEndCallback)(SwigcptrGameEndCallback(C._wrap_new_GameEndCallback_halite_2007760261f40110()))
+	swig_r = (GameEndCallback)(SwigcptrGameEndCallback(C._wrap_new_GameEndCallback_halite_47887523e5de5737()))
 	return swig_r
 }
 
@@ -277,17 +493,17 @@ func (p *_swig_DirectorTimeoutCallback) DirectorInterface() interface{} {
 
 func NewDirectorTimeoutCallback(v interface{}) TimeoutCallback {
 	p := &_swig_DirectorTimeoutCallback{0, v}
-	p.SwigcptrTimeoutCallback = SwigcptrTimeoutCallback(C._wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_2007760261f40110(C.int(swigDirectorAdd(p))))
+	p.SwigcptrTimeoutCallback = SwigcptrTimeoutCallback(C._wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_47887523e5de5737(C.int(swigDirectorAdd(p))))
 	return p
 }
 
 func DeleteDirectorTimeoutCallback(arg1 TimeoutCallback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_DeleteDirectorTimeoutCallback_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
+	C._wrap_DeleteDirectorTimeoutCallback_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
 }
 
-//export Swiggo_DeleteDirector_TimeoutCallback_halite_2007760261f40110
-func Swiggo_DeleteDirector_TimeoutCallback_halite_2007760261f40110(c int) {
+//export Swiggo_DeleteDirector_TimeoutCallback_halite_47887523e5de5737
+func Swiggo_DeleteDirector_TimeoutCallback_halite_47887523e5de5737(c int) {
 	swigDirectorLookup(c).(*_swig_DirectorTimeoutCallback).SwigcptrTimeoutCallback = 0
 	swigDirectorDelete(c)
 }
@@ -303,7 +519,7 @@ func (swig_p *_swig_DirectorTimeoutCallback) Run(playerTag int, playerName strin
 	}
 	_swig_i_0 := playerTag
 	_swig_i_1 := playerName
-	C._wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(C.uintptr_t(swig_p.SwigcptrTimeoutCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_47887523e5de5737(C.uintptr_t(swig_p.SwigcptrTimeoutCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
@@ -312,14 +528,14 @@ func (swig_p *_swig_DirectorTimeoutCallback) Run(playerTag int, playerName strin
 func DirectorTimeoutCallbackRun(p TimeoutCallback, arg2 int, arg3 string) {
 	_swig_i_0 := arg2
 	_swig_i_1 := arg3
-	C._wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(C.uintptr_t(p.(*_swig_DirectorTimeoutCallback).SwigcptrTimeoutCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))
+	C._wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_47887523e5de5737(C.uintptr_t(p.(*_swig_DirectorTimeoutCallback).SwigcptrTimeoutCallback), C.swig_intgo(_swig_i_0), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_1)))
 	if Swig_escape_always_false {
 		Swig_escape_val = _swig_i_1
 	}
 }
 
-//export Swig_DirectorTimeoutCallback_callback_run_halite_2007760261f40110
-func Swig_DirectorTimeoutCallback_callback_run_halite_2007760261f40110(swig_c int, arg2 int, arg3 string) {
+//export Swig_DirectorTimeoutCallback_callback_run_halite_47887523e5de5737
+func Swig_DirectorTimeoutCallback_callback_run_halite_47887523e5de5737(swig_c int, arg2 int, arg3 string) {
 	var _swig_i_1 string
 	swig_p := swigDirectorLookup(swig_c).(*_swig_DirectorTimeoutCallback)
 	_swig_i_1 = swigCopyString(arg3)
@@ -341,14 +557,14 @@ func (p SwigcptrTimeoutCallback) DirectorInterface() interface{} {
 
 func DeleteTimeoutCallback(arg1 TimeoutCallback) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_TimeoutCallback_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_TimeoutCallback_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrTimeoutCallback) Run(arg2 int, arg3 string) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3
-	C._wrap_TimeoutCallback_run_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_2)))
+	C._wrap_TimeoutCallback_run_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_3)(unsafe.Pointer(&_swig_i_2)))
 	if Swig_escape_always_false {
 		Swig_escape_val = arg3
 	}
@@ -356,7 +572,7 @@ func (arg1 SwigcptrTimeoutCallback) Run(arg2 int, arg3 string) {
 
 func NewTimeoutCallback() (_swig_ret TimeoutCallback) {
 	var swig_r TimeoutCallback
-	swig_r = (TimeoutCallback)(SwigcptrTimeoutCallback(C._wrap_new_TimeoutCallback_halite_2007760261f40110()))
+	swig_r = (TimeoutCallback)(SwigcptrTimeoutCallback(C._wrap_new_TimeoutCallback_halite_47887523e5de5737()))
 	return swig_r
 }
 
@@ -365,6 +581,827 @@ type TimeoutCallback interface {
 	SwigIsTimeoutCallback()
 	DirectorInterface() interface{}
 	Run(arg2 int, arg3 string)
+}
+
+const STILL int = 0
+const NORTH int = 1
+const EAST int = 2
+const SOUTH int = 3
+const WEST int = 4
+
+type SwigcptrColor uintptr
+
+func (p SwigcptrColor) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrColor) SwigIsColor() {
+}
+
+func (arg1 SwigcptrColor) SetR(arg2 float32) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Color_r_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.float(_swig_i_1))
+}
+
+func (arg1 SwigcptrColor) GetR() (_swig_ret float32) {
+	var swig_r float32
+	_swig_i_0 := arg1
+	swig_r = (float32)(C._wrap_Color_r_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrColor) SetG(arg2 float32) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Color_g_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.float(_swig_i_1))
+}
+
+func (arg1 SwigcptrColor) GetG() (_swig_ret float32) {
+	var swig_r float32
+	_swig_i_0 := arg1
+	swig_r = (float32)(C._wrap_Color_g_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrColor) SetB(arg2 float32) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Color_b_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.float(_swig_i_1))
+}
+
+func (arg1 SwigcptrColor) GetB() (_swig_ret float32) {
+	var swig_r float32
+	_swig_i_0 := arg1
+	swig_r = (float32)(C._wrap_Color_b_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func NewColor() (_swig_ret Color) {
+	var swig_r Color
+	swig_r = (Color)(SwigcptrColor(C._wrap_new_Color_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func DeleteColor(arg1 Color) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_Color_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type Color interface {
+	Swigcptr() uintptr
+	SwigIsColor()
+	SetR(arg2 float32)
+	GetR() (_swig_ret float32)
+	SetG(arg2 float32)
+	GetG() (_swig_ret float32)
+	SetB(arg2 float32)
+	GetB() (_swig_ret float32)
+}
+
+type SwigcptrPlayerStatistics uintptr
+
+func (p SwigcptrPlayerStatistics) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrPlayerStatistics) SwigIsPlayerStatistics() {
+}
+
+func (arg1 SwigcptrPlayerStatistics) SetTag(arg2 int) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatistics_tag_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatistics) GetTag() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_PlayerStatistics_tag_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatistics) SetRank(arg2 int) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatistics_rank_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatistics) GetRank() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_PlayerStatistics_rank_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatistics) SetAverageTerritoryCount(arg2 float64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatistics_averageTerritoryCount_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.double(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatistics) GetAverageTerritoryCount() (_swig_ret float64) {
+	var swig_r float64
+	_swig_i_0 := arg1
+	swig_r = (float64)(C._wrap_PlayerStatistics_averageTerritoryCount_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatistics) SetAverageStrengthCount(arg2 float64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatistics_averageStrengthCount_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.double(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatistics) GetAverageStrengthCount() (_swig_ret float64) {
+	var swig_r float64
+	_swig_i_0 := arg1
+	swig_r = (float64)(C._wrap_PlayerStatistics_averageStrengthCount_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatistics) SetAverageProductionCount(arg2 float64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatistics_averageProductionCount_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.double(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatistics) GetAverageProductionCount() (_swig_ret float64) {
+	var swig_r float64
+	_swig_i_0 := arg1
+	swig_r = (float64)(C._wrap_PlayerStatistics_averageProductionCount_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatistics) SetStillPercentage(arg2 float64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatistics_stillPercentage_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.double(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatistics) GetStillPercentage() (_swig_ret float64) {
+	var swig_r float64
+	_swig_i_0 := arg1
+	swig_r = (float64)(C._wrap_PlayerStatistics_stillPercentage_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatistics) SetInitResponseTime(arg2 int) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatistics_initResponseTime_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatistics) GetInitResponseTime() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_PlayerStatistics_initResponseTime_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatistics) SetAverageFrameResponseTime(arg2 float64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatistics_averageFrameResponseTime_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.double(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatistics) GetAverageFrameResponseTime() (_swig_ret float64) {
+	var swig_r float64
+	_swig_i_0 := arg1
+	swig_r = (float64)(C._wrap_PlayerStatistics_averageFrameResponseTime_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func NewPlayerStatistics() (_swig_ret PlayerStatistics) {
+	var swig_r PlayerStatistics
+	swig_r = (PlayerStatistics)(SwigcptrPlayerStatistics(C._wrap_new_PlayerStatistics_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func DeletePlayerStatistics(arg1 PlayerStatistics) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_PlayerStatistics_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type PlayerStatistics interface {
+	Swigcptr() uintptr
+	SwigIsPlayerStatistics()
+	SetTag(arg2 int)
+	GetTag() (_swig_ret int)
+	SetRank(arg2 int)
+	GetRank() (_swig_ret int)
+	SetAverageTerritoryCount(arg2 float64)
+	GetAverageTerritoryCount() (_swig_ret float64)
+	SetAverageStrengthCount(arg2 float64)
+	GetAverageStrengthCount() (_swig_ret float64)
+	SetAverageProductionCount(arg2 float64)
+	GetAverageProductionCount() (_swig_ret float64)
+	SetStillPercentage(arg2 float64)
+	GetStillPercentage() (_swig_ret float64)
+	SetInitResponseTime(arg2 int)
+	GetInitResponseTime() (_swig_ret int)
+	SetAverageFrameResponseTime(arg2 float64)
+	GetAverageFrameResponseTime() (_swig_ret float64)
+}
+
+type SwigcptrGameStatistics uintptr
+
+func (p SwigcptrGameStatistics) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrGameStatistics) SwigIsGameStatistics() {
+}
+
+func (arg1 SwigcptrGameStatistics) SetPlayerStatistics(arg2 PlayerStatisticsVector) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_GameStatistics_playerStatistics_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrGameStatistics) GetPlayerStatistics() (_swig_ret PlayerStatisticsVector) {
+	var swig_r PlayerStatisticsVector
+	_swig_i_0 := arg1
+	swig_r = (PlayerStatisticsVector)(SwigcptrPlayerStatisticsVector(C._wrap_GameStatistics_playerStatistics_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func (arg1 SwigcptrGameStatistics) SetOutputFilename(arg2 string) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_GameStatistics_outputFilename_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), *(*C.swig_type_4)(unsafe.Pointer(&_swig_i_1)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+}
+
+func (arg1 SwigcptrGameStatistics) GetOutputFilename() (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	swig_r_p := C._wrap_GameStatistics_outputFilename_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+	swig_r_1 = swigCopyString(swig_r)
+	return swig_r_1
+}
+
+func (arg1 SwigcptrGameStatistics) SetTimeoutTags(arg2 Std_set_Sl_unsigned_SS_short_Sg_) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_GameStatistics_timeoutTags_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrGameStatistics) GetTimeoutTags() (_swig_ret Std_set_Sl_unsigned_SS_short_Sg_) {
+	var swig_r Std_set_Sl_unsigned_SS_short_Sg_
+	_swig_i_0 := arg1
+	swig_r = (Std_set_Sl_unsigned_SS_short_Sg_)(SwigcptrStd_set_Sl_unsigned_SS_short_Sg_(C._wrap_GameStatistics_timeoutTags_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func (arg1 SwigcptrGameStatistics) SetTimeoutLogFilenames(arg2 StringVector) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_GameStatistics_timeoutLogFilenames_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrGameStatistics) GetTimeoutLogFilenames() (_swig_ret StringVector) {
+	var swig_r StringVector
+	_swig_i_0 := arg1
+	swig_r = (StringVector)(SwigcptrStringVector(C._wrap_GameStatistics_timeoutLogFilenames_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func NewGameStatistics() (_swig_ret GameStatistics) {
+	var swig_r GameStatistics
+	swig_r = (GameStatistics)(SwigcptrGameStatistics(C._wrap_new_GameStatistics_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func DeleteGameStatistics(arg1 GameStatistics) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_GameStatistics_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type GameStatistics interface {
+	Swigcptr() uintptr
+	SwigIsGameStatistics()
+	SetPlayerStatistics(arg2 PlayerStatisticsVector)
+	GetPlayerStatistics() (_swig_ret PlayerStatisticsVector)
+	SetOutputFilename(arg2 string)
+	GetOutputFilename() (_swig_ret string)
+	SetTimeoutTags(arg2 Std_set_Sl_unsigned_SS_short_Sg_)
+	GetTimeoutTags() (_swig_ret Std_set_Sl_unsigned_SS_short_Sg_)
+	SetTimeoutLogFilenames(arg2 StringVector)
+	GetTimeoutLogFilenames() (_swig_ret StringVector)
+}
+
+type SwigcptrLocation uintptr
+
+func (p SwigcptrLocation) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrLocation) SwigIsLocation() {
+}
+
+func (arg1 SwigcptrLocation) SetX(arg2 uint16) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Location_x_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.short(_swig_i_1))
+}
+
+func (arg1 SwigcptrLocation) GetX() (_swig_ret uint16) {
+	var swig_r uint16
+	_swig_i_0 := arg1
+	swig_r = (uint16)(C._wrap_Location_x_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrLocation) SetY(arg2 uint16) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Location_y_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.short(_swig_i_1))
+}
+
+func (arg1 SwigcptrLocation) GetY() (_swig_ret uint16) {
+	var swig_r uint16
+	_swig_i_0 := arg1
+	swig_r = (uint16)(C._wrap_Location_y_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func NewLocation() (_swig_ret Location) {
+	var swig_r Location
+	swig_r = (Location)(SwigcptrLocation(C._wrap_new_Location_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func DeleteLocation(arg1 Location) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_Location_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type Location interface {
+	Swigcptr() uintptr
+	SwigIsLocation()
+	SetX(arg2 uint16)
+	GetX() (_swig_ret uint16)
+	SetY(arg2 uint16)
+	GetY() (_swig_ret uint16)
+}
+
+func LocationLess(arg1 Location, arg2 Location) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1.Swigcptr()
+	_swig_i_1 := arg2.Swigcptr()
+	swig_r = (bool)(C._wrap_LocationLess_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	return swig_r
+}
+
+func LocationEquals(arg1 Location, arg2 Location) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1.Swigcptr()
+	_swig_i_1 := arg2.Swigcptr()
+	swig_r = (bool)(C._wrap_LocationEquals_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	return swig_r
+}
+
+type SwigcptrSite uintptr
+
+func (p SwigcptrSite) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrSite) SwigIsSite() {
+}
+
+func (arg1 SwigcptrSite) SetOwner(arg2 byte) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Site_owner_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.char(_swig_i_1))
+}
+
+func (arg1 SwigcptrSite) GetOwner() (_swig_ret byte) {
+	var swig_r byte
+	_swig_i_0 := arg1
+	swig_r = (byte)(C._wrap_Site_owner_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrSite) SetStrength(arg2 byte) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Site_strength_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.char(_swig_i_1))
+}
+
+func (arg1 SwigcptrSite) GetStrength() (_swig_ret byte) {
+	var swig_r byte
+	_swig_i_0 := arg1
+	swig_r = (byte)(C._wrap_Site_strength_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrSite) SetProduction(arg2 byte) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Site_production_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.char(_swig_i_1))
+}
+
+func (arg1 SwigcptrSite) GetProduction() (_swig_ret byte) {
+	var swig_r byte
+	_swig_i_0 := arg1
+	swig_r = (byte)(C._wrap_Site_production_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func NewSite() (_swig_ret Site) {
+	var swig_r Site
+	swig_r = (Site)(SwigcptrSite(C._wrap_new_Site_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func DeleteSite(arg1 Site) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_Site_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type Site interface {
+	Swigcptr() uintptr
+	SwigIsSite()
+	SetOwner(arg2 byte)
+	GetOwner() (_swig_ret byte)
+	SetStrength(arg2 byte)
+	GetStrength() (_swig_ret byte)
+	SetProduction(arg2 byte)
+	GetProduction() (_swig_ret byte)
+}
+
+type SwigcptrMap uintptr
+
+func (p SwigcptrMap) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrMap) SwigIsMap() {
+}
+
+func (arg1 SwigcptrMap) SetContents(arg2 BoardVector) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_Map_contents_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrMap) GetContents() (_swig_ret BoardVector) {
+	var swig_r BoardVector
+	_swig_i_0 := arg1
+	swig_r = (BoardVector)(SwigcptrBoardVector(C._wrap_Map_contents_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func (arg1 SwigcptrMap) SetWidth(arg2 uint16) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Map_width_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.short(_swig_i_1))
+}
+
+func (arg1 SwigcptrMap) GetWidth() (_swig_ret uint16) {
+	var swig_r uint16
+	_swig_i_0 := arg1
+	swig_r = (uint16)(C._wrap_Map_width_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrMap) SetHeight(arg2 uint16) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Map_height_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.short(_swig_i_1))
+}
+
+func (arg1 SwigcptrMap) GetHeight() (_swig_ret uint16) {
+	var swig_r uint16
+	_swig_i_0 := arg1
+	swig_r = (uint16)(C._wrap_Map_height_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func NewMap__SWIG_0() (_swig_ret Map) {
+	var swig_r Map
+	swig_r = (Map)(SwigcptrMap(C._wrap_new_Map__SWIG_0_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func NewMap__SWIG_1(arg1 int16, arg2 int16) (_swig_ret Map) {
+	var swig_r Map
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (Map)(SwigcptrMap(C._wrap_new_Map__SWIG_1_halite_47887523e5de5737(C.short(_swig_i_0), C.short(_swig_i_1))))
+	return swig_r
+}
+
+func NewMap__SWIG_2(arg1 Map) (_swig_ret Map) {
+	var swig_r Map
+	_swig_i_0 := arg1.Swigcptr()
+	swig_r = (Map)(SwigcptrMap(C._wrap_new_Map__SWIG_2_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func NewMap__SWIG_3(arg1 int16, arg2 int16, arg3 byte, arg4 uint) (_swig_ret Map) {
+	var swig_r Map
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4
+	swig_r = (Map)(SwigcptrMap(C._wrap_new_Map__SWIG_3_halite_47887523e5de5737(C.short(_swig_i_0), C.short(_swig_i_1), C.char(_swig_i_2), C.swig_intgo(_swig_i_3))))
+	return swig_r
+}
+
+func NewMap(a ...interface{}) Map {
+	argc := len(a)
+	if argc == 0 {
+		return NewMap__SWIG_0()
+	}
+	if argc == 1 {
+		return NewMap__SWIG_2(a[0].(Map))
+	}
+	if argc == 2 {
+		return NewMap__SWIG_1(a[0].(int16), a[1].(int16))
+	}
+	if argc == 4 {
+		return NewMap__SWIG_3(a[0].(int16), a[1].(int16), a[2].(byte), a[3].(uint))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrMap) InBounds(arg2 Location) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	swig_r = (bool)(C._wrap_Map_inBounds_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	return swig_r
+}
+
+func (arg1 SwigcptrMap) GetDistance(arg2 Location, arg3 Location) (_swig_ret float32) {
+	var swig_r float32
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	_swig_i_2 := arg3.Swigcptr()
+	swig_r = (float32)(C._wrap_Map_getDistance_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.uintptr_t(_swig_i_2)))
+	return swig_r
+}
+
+func (arg1 SwigcptrMap) GetAngle(arg2 Location, arg3 Location) (_swig_ret float32) {
+	var swig_r float32
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	_swig_i_2 := arg3.Swigcptr()
+	swig_r = (float32)(C._wrap_Map_getAngle_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.uintptr_t(_swig_i_2)))
+	return swig_r
+}
+
+func (arg1 SwigcptrMap) GetLocation(arg2 Location, arg3 byte) (_swig_ret Location) {
+	var swig_r Location
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	_swig_i_2 := arg3
+	swig_r = (Location)(SwigcptrLocation(C._wrap_Map_getLocation_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.char(_swig_i_2))))
+	return swig_r
+}
+
+func (arg1 SwigcptrMap) GetSite__SWIG_0(arg2 Location, arg3 byte) (_swig_ret Site) {
+	var swig_r Site
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	_swig_i_2 := arg3
+	swig_r = (Site)(SwigcptrSite(C._wrap_Map_getSite__SWIG_0_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.char(_swig_i_2))))
+	return swig_r
+}
+
+func (arg1 SwigcptrMap) GetSite__SWIG_1(arg2 Location) (_swig_ret Site) {
+	var swig_r Site
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	swig_r = (Site)(SwigcptrSite(C._wrap_Map_getSite__SWIG_1_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))))
+	return swig_r
+}
+
+func (p SwigcptrMap) GetSite(a ...interface{}) Site {
+	argc := len(a)
+	if argc == 1 {
+		return p.GetSite__SWIG_1(a[0].(Location))
+	}
+	if argc == 2 {
+		return p.GetSite__SWIG_0(a[0].(Location), a[1].(byte))
+	}
+	panic("No match for overloaded function call")
+}
+
+func DeleteMap(arg1 Map) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_Map_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type Map interface {
+	Swigcptr() uintptr
+	SwigIsMap()
+	SetContents(arg2 BoardVector)
+	GetContents() (_swig_ret BoardVector)
+	SetWidth(arg2 uint16)
+	GetWidth() (_swig_ret uint16)
+	SetHeight(arg2 uint16)
+	GetHeight() (_swig_ret uint16)
+	InBounds(arg2 Location) (_swig_ret bool)
+	GetDistance(arg2 Location, arg3 Location) (_swig_ret float32)
+	GetAngle(arg2 Location, arg3 Location) (_swig_ret float32)
+	GetLocation(arg2 Location, arg3 byte) (_swig_ret Location)
+	GetSite(a ...interface{}) Site
+}
+
+func PpmToMap(arg1 string, arg2 int) (_swig_ret Map) {
+	var swig_r Map
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (Map)(SwigcptrMap(C._wrap_ppmToMap_halite_47887523e5de5737(*(*C.swig_type_6)(unsafe.Pointer(&_swig_i_0)), C.swig_intgo(_swig_i_1))))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg1
+	}
+	return swig_r
+}
+
+type SwigcptrUniConnection uintptr
+
+func (p SwigcptrUniConnection) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrUniConnection) SwigIsUniConnection() {
+}
+
+func (arg1 SwigcptrUniConnection) SetRead(arg2 int) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_UniConnection_read_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+}
+
+func (arg1 SwigcptrUniConnection) GetRead() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_UniConnection_read_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrUniConnection) SetWrite(arg2 int) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_UniConnection_write_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+}
+
+func (arg1 SwigcptrUniConnection) GetWrite() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_UniConnection_write_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func NewUniConnection() (_swig_ret UniConnection) {
+	var swig_r UniConnection
+	swig_r = (UniConnection)(SwigcptrUniConnection(C._wrap_new_UniConnection_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func DeleteUniConnection(arg1 UniConnection) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_UniConnection_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type UniConnection interface {
+	Swigcptr() uintptr
+	SwigIsUniConnection()
+	SetRead(arg2 int)
+	GetRead() (_swig_ret int)
+	SetWrite(arg2 int)
+	GetWrite() (_swig_ret int)
+}
+
+type SwigcptrNetworking uintptr
+
+func (p SwigcptrNetworking) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrNetworking) SwigIsNetworking() {
+}
+
+func (arg1 SwigcptrNetworking) StartAndConnectBot(arg2 string) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Networking_startAndConnectBot_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), *(*C.swig_type_7)(unsafe.Pointer(&_swig_i_1)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+}
+
+func (arg1 SwigcptrNetworking) HandleInitNetworking(arg2 byte, arg3 Map, arg4 bool, arg5 *string) (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3.Swigcptr()
+	_swig_i_3 := arg4
+	_swig_i_4 := arg5
+	swig_r = (int)(C._wrap_Networking_handleInitNetworking_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.char(_swig_i_1), C.uintptr_t(_swig_i_2), C._Bool(_swig_i_3), C.swig_voidp(_swig_i_4)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNetworking) HandleFrameNetworking(arg2 byte, arg3 uint16, arg4 Map, arg5 bool, arg6 LocationToMoveMap) (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	_swig_i_3 := arg4.Swigcptr()
+	_swig_i_4 := arg5
+	_swig_i_5 := arg6.Swigcptr()
+	swig_r = (int)(C._wrap_Networking_handleFrameNetworking_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.char(_swig_i_1), C.short(_swig_i_2), C.uintptr_t(_swig_i_3), C._Bool(_swig_i_4), C.uintptr_t(_swig_i_5)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNetworking) KillPlayer(arg2 byte) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_Networking_killPlayer_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.char(_swig_i_1))
+}
+
+func (arg1 SwigcptrNetworking) IsProcessDead(arg2 byte) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (bool)(C._wrap_Networking_isProcessDead_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.char(_swig_i_1)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNetworking) NumberOfPlayers() (_swig_ret int) {
+	var swig_r int
+	_swig_i_0 := arg1
+	swig_r = (int)(C._wrap_Networking_numberOfPlayers_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrNetworking) SetPlayer_logs(arg2 StringVector) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_Networking_player_logs_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrNetworking) GetPlayer_logs() (_swig_ret StringVector) {
+	var swig_r StringVector
+	_swig_i_0 := arg1
+	swig_r = (StringVector)(SwigcptrStringVector(C._wrap_Networking_player_logs_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func NetworkingSerializeMap(arg1 Map) (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1.Swigcptr()
+	swig_r_p := C._wrap_Networking_serializeMap_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+	swig_r_1 = swigCopyString(swig_r)
+	return swig_r_1
+}
+
+func (arg1 SwigcptrNetworking) AddLocalBot(arg2 UniConnection) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_Networking_addLocalBot_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrNetworking) StopManagingProcesses() {
+	_swig_i_0 := arg1
+	C._wrap_Networking_stopManagingProcesses_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+func NewNetworking() (_swig_ret Networking) {
+	var swig_r Networking
+	swig_r = (Networking)(SwigcptrNetworking(C._wrap_new_Networking_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func DeleteNetworking(arg1 Networking) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_Networking_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type Networking interface {
+	Swigcptr() uintptr
+	SwigIsNetworking()
+	StartAndConnectBot(arg2 string)
+	HandleInitNetworking(arg2 byte, arg3 Map, arg4 bool, arg5 *string) (_swig_ret int)
+	HandleFrameNetworking(arg2 byte, arg3 uint16, arg4 Map, arg5 bool, arg6 LocationToMoveMap) (_swig_ret int)
+	KillPlayer(arg2 byte)
+	IsProcessDead(arg2 byte) (_swig_ret bool)
+	NumberOfPlayers() (_swig_ret int)
+	SetPlayer_logs(arg2 StringVector)
+	GetPlayer_logs() (_swig_ret StringVector)
+	AddLocalBot(arg2 UniConnection)
+	StopManagingProcesses()
 }
 
 type SwigcptrUniConnectionVector uintptr
@@ -378,14 +1415,14 @@ func (p SwigcptrUniConnectionVector) SwigIsUniConnectionVector() {
 
 func NewUniConnectionVector__SWIG_0() (_swig_ret UniConnectionVector) {
 	var swig_r UniConnectionVector
-	swig_r = (UniConnectionVector)(SwigcptrUniConnectionVector(C._wrap_new_UniConnectionVector__SWIG_0_halite_2007760261f40110()))
+	swig_r = (UniConnectionVector)(SwigcptrUniConnectionVector(C._wrap_new_UniConnectionVector__SWIG_0_halite_47887523e5de5737()))
 	return swig_r
 }
 
 func NewUniConnectionVector__SWIG_1(arg1 int64) (_swig_ret UniConnectionVector) {
 	var swig_r UniConnectionVector
 	_swig_i_0 := arg1
-	swig_r = (UniConnectionVector)(SwigcptrUniConnectionVector(C._wrap_new_UniConnectionVector__SWIG_1_halite_2007760261f40110(C.swig_type_4(_swig_i_0))))
+	swig_r = (UniConnectionVector)(SwigcptrUniConnectionVector(C._wrap_new_UniConnectionVector__SWIG_1_halite_47887523e5de5737(C.swig_type_9(_swig_i_0))))
 	return swig_r
 }
 
@@ -403,46 +1440,46 @@ func NewUniConnectionVector(a ...interface{}) UniConnectionVector {
 func (arg1 SwigcptrUniConnectionVector) Size() (_swig_ret int64) {
 	var swig_r int64
 	_swig_i_0 := arg1
-	swig_r = (int64)(C._wrap_UniConnectionVector_size_halite_2007760261f40110(C.uintptr_t(_swig_i_0)))
+	swig_r = (int64)(C._wrap_UniConnectionVector_size_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrUniConnectionVector) Capacity() (_swig_ret int64) {
 	var swig_r int64
 	_swig_i_0 := arg1
-	swig_r = (int64)(C._wrap_UniConnectionVector_capacity_halite_2007760261f40110(C.uintptr_t(_swig_i_0)))
+	swig_r = (int64)(C._wrap_UniConnectionVector_capacity_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrUniConnectionVector) Reserve(arg2 int64) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	C._wrap_UniConnectionVector_reserve_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_type_7(_swig_i_1))
+	C._wrap_UniConnectionVector_reserve_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_type_12(_swig_i_1))
 }
 
 func (arg1 SwigcptrUniConnectionVector) IsEmpty() (_swig_ret bool) {
 	var swig_r bool
 	_swig_i_0 := arg1
-	swig_r = (bool)(C._wrap_UniConnectionVector_isEmpty_halite_2007760261f40110(C.uintptr_t(_swig_i_0)))
+	swig_r = (bool)(C._wrap_UniConnectionVector_isEmpty_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
 	return swig_r
 }
 
 func (arg1 SwigcptrUniConnectionVector) Clear() {
 	_swig_i_0 := arg1
-	C._wrap_UniConnectionVector_clear_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
+	C._wrap_UniConnectionVector_clear_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
 }
 
 func (arg1 SwigcptrUniConnectionVector) Add(arg2 UniConnection) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2.Swigcptr()
-	C._wrap_UniConnectionVector_add_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+	C._wrap_UniConnectionVector_add_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
 }
 
 func (arg1 SwigcptrUniConnectionVector) Get(arg2 int) (_swig_ret UniConnection) {
 	var swig_r UniConnection
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
-	swig_r = (UniConnection)(SwigcptrUniConnection(C._wrap_UniConnectionVector_get_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))))
+	swig_r = (UniConnection)(SwigcptrUniConnection(C._wrap_UniConnectionVector_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))))
 	return swig_r
 }
 
@@ -450,12 +1487,12 @@ func (arg1 SwigcptrUniConnectionVector) Set(arg2 int, arg3 UniConnection) {
 	_swig_i_0 := arg1
 	_swig_i_1 := arg2
 	_swig_i_2 := arg3.Swigcptr()
-	C._wrap_UniConnectionVector_set_halite_2007760261f40110(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.uintptr_t(_swig_i_2))
+	C._wrap_UniConnectionVector_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.uintptr_t(_swig_i_2))
 }
 
 func DeleteUniConnectionVector(arg1 UniConnectionVector) {
 	_swig_i_0 := arg1.Swigcptr()
-	C._wrap_delete_UniConnectionVector_halite_2007760261f40110(C.uintptr_t(_swig_i_0))
+	C._wrap_delete_UniConnectionVector_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
 }
 
 type UniConnectionVector interface {
@@ -471,6 +1508,633 @@ type UniConnectionVector interface {
 	Set(arg2 int, arg3 UniConnection)
 }
 
+type SwigcptrRowVector uintptr
+
+func (p SwigcptrRowVector) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrRowVector) SwigIsRowVector() {
+}
+
+func NewRowVector__SWIG_0() (_swig_ret RowVector) {
+	var swig_r RowVector
+	swig_r = (RowVector)(SwigcptrRowVector(C._wrap_new_RowVector__SWIG_0_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func NewRowVector__SWIG_1(arg1 int64) (_swig_ret RowVector) {
+	var swig_r RowVector
+	_swig_i_0 := arg1
+	swig_r = (RowVector)(SwigcptrRowVector(C._wrap_new_RowVector__SWIG_1_halite_47887523e5de5737(C.swig_type_13(_swig_i_0))))
+	return swig_r
+}
+
+func NewRowVector(a ...interface{}) RowVector {
+	argc := len(a)
+	if argc == 0 {
+		return NewRowVector__SWIG_0()
+	}
+	if argc == 1 {
+		return NewRowVector__SWIG_1(a[0].(int64))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrRowVector) Size() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_RowVector_size_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrRowVector) Capacity() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_RowVector_capacity_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrRowVector) Reserve(arg2 int64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_RowVector_reserve_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_type_16(_swig_i_1))
+}
+
+func (arg1 SwigcptrRowVector) IsEmpty() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_RowVector_isEmpty_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrRowVector) Clear() {
+	_swig_i_0 := arg1
+	C._wrap_RowVector_clear_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrRowVector) Add(arg2 Site) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_RowVector_add_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrRowVector) Get(arg2 int) (_swig_ret Site) {
+	var swig_r Site
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (Site)(SwigcptrSite(C._wrap_RowVector_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))))
+	return swig_r
+}
+
+func (arg1 SwigcptrRowVector) Set(arg2 int, arg3 Site) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3.Swigcptr()
+	C._wrap_RowVector_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.uintptr_t(_swig_i_2))
+}
+
+func DeleteRowVector(arg1 RowVector) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_RowVector_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type RowVector interface {
+	Swigcptr() uintptr
+	SwigIsRowVector()
+	Size() (_swig_ret int64)
+	Capacity() (_swig_ret int64)
+	Reserve(arg2 int64)
+	IsEmpty() (_swig_ret bool)
+	Clear()
+	Add(arg2 Site)
+	Get(arg2 int) (_swig_ret Site)
+	Set(arg2 int, arg3 Site)
+}
+
+type SwigcptrBoardVector uintptr
+
+func (p SwigcptrBoardVector) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrBoardVector) SwigIsBoardVector() {
+}
+
+func NewBoardVector__SWIG_0() (_swig_ret BoardVector) {
+	var swig_r BoardVector
+	swig_r = (BoardVector)(SwigcptrBoardVector(C._wrap_new_BoardVector__SWIG_0_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func NewBoardVector__SWIG_1(arg1 int64) (_swig_ret BoardVector) {
+	var swig_r BoardVector
+	_swig_i_0 := arg1
+	swig_r = (BoardVector)(SwigcptrBoardVector(C._wrap_new_BoardVector__SWIG_1_halite_47887523e5de5737(C.swig_type_17(_swig_i_0))))
+	return swig_r
+}
+
+func NewBoardVector(a ...interface{}) BoardVector {
+	argc := len(a)
+	if argc == 0 {
+		return NewBoardVector__SWIG_0()
+	}
+	if argc == 1 {
+		return NewBoardVector__SWIG_1(a[0].(int64))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrBoardVector) Size() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_BoardVector_size_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrBoardVector) Capacity() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_BoardVector_capacity_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrBoardVector) Reserve(arg2 int64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_BoardVector_reserve_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_type_20(_swig_i_1))
+}
+
+func (arg1 SwigcptrBoardVector) IsEmpty() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_BoardVector_isEmpty_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrBoardVector) Clear() {
+	_swig_i_0 := arg1
+	C._wrap_BoardVector_clear_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrBoardVector) Add(arg2 RowVector) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_BoardVector_add_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrBoardVector) Get(arg2 int) (_swig_ret RowVector) {
+	var swig_r RowVector
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (RowVector)(SwigcptrRowVector(C._wrap_BoardVector_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))))
+	return swig_r
+}
+
+func (arg1 SwigcptrBoardVector) Set(arg2 int, arg3 RowVector) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3.Swigcptr()
+	C._wrap_BoardVector_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.uintptr_t(_swig_i_2))
+}
+
+func DeleteBoardVector(arg1 BoardVector) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_BoardVector_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type BoardVector interface {
+	Swigcptr() uintptr
+	SwigIsBoardVector()
+	Size() (_swig_ret int64)
+	Capacity() (_swig_ret int64)
+	Reserve(arg2 int64)
+	IsEmpty() (_swig_ret bool)
+	Clear()
+	Add(arg2 RowVector)
+	Get(arg2 int) (_swig_ret RowVector)
+	Set(arg2 int, arg3 RowVector)
+}
+
+type SwigcptrPlayerStatisticsVector uintptr
+
+func (p SwigcptrPlayerStatisticsVector) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrPlayerStatisticsVector) SwigIsPlayerStatisticsVector() {
+}
+
+func NewPlayerStatisticsVector__SWIG_0() (_swig_ret PlayerStatisticsVector) {
+	var swig_r PlayerStatisticsVector
+	swig_r = (PlayerStatisticsVector)(SwigcptrPlayerStatisticsVector(C._wrap_new_PlayerStatisticsVector__SWIG_0_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func NewPlayerStatisticsVector__SWIG_1(arg1 int64) (_swig_ret PlayerStatisticsVector) {
+	var swig_r PlayerStatisticsVector
+	_swig_i_0 := arg1
+	swig_r = (PlayerStatisticsVector)(SwigcptrPlayerStatisticsVector(C._wrap_new_PlayerStatisticsVector__SWIG_1_halite_47887523e5de5737(C.swig_type_21(_swig_i_0))))
+	return swig_r
+}
+
+func NewPlayerStatisticsVector(a ...interface{}) PlayerStatisticsVector {
+	argc := len(a)
+	if argc == 0 {
+		return NewPlayerStatisticsVector__SWIG_0()
+	}
+	if argc == 1 {
+		return NewPlayerStatisticsVector__SWIG_1(a[0].(int64))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrPlayerStatisticsVector) Size() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_PlayerStatisticsVector_size_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatisticsVector) Capacity() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_PlayerStatisticsVector_capacity_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatisticsVector) Reserve(arg2 int64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerStatisticsVector_reserve_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_type_24(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatisticsVector) IsEmpty() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_PlayerStatisticsVector_isEmpty_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatisticsVector) Clear() {
+	_swig_i_0 := arg1
+	C._wrap_PlayerStatisticsVector_clear_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrPlayerStatisticsVector) Add(arg2 PlayerStatistics) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_PlayerStatisticsVector_add_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerStatisticsVector) Get(arg2 int) (_swig_ret PlayerStatistics) {
+	var swig_r PlayerStatistics
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (PlayerStatistics)(SwigcptrPlayerStatistics(C._wrap_PlayerStatisticsVector_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerStatisticsVector) Set(arg2 int, arg3 PlayerStatistics) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3.Swigcptr()
+	C._wrap_PlayerStatisticsVector_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.uintptr_t(_swig_i_2))
+}
+
+func DeletePlayerStatisticsVector(arg1 PlayerStatisticsVector) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_PlayerStatisticsVector_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type PlayerStatisticsVector interface {
+	Swigcptr() uintptr
+	SwigIsPlayerStatisticsVector()
+	Size() (_swig_ret int64)
+	Capacity() (_swig_ret int64)
+	Reserve(arg2 int64)
+	IsEmpty() (_swig_ret bool)
+	Clear()
+	Add(arg2 PlayerStatistics)
+	Get(arg2 int) (_swig_ret PlayerStatistics)
+	Set(arg2 int, arg3 PlayerStatistics)
+}
+
+type SwigcptrStringVector uintptr
+
+func (p SwigcptrStringVector) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrStringVector) SwigIsStringVector() {
+}
+
+func NewStringVector__SWIG_0() (_swig_ret StringVector) {
+	var swig_r StringVector
+	swig_r = (StringVector)(SwigcptrStringVector(C._wrap_new_StringVector__SWIG_0_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func NewStringVector__SWIG_1(arg1 int64) (_swig_ret StringVector) {
+	var swig_r StringVector
+	_swig_i_0 := arg1
+	swig_r = (StringVector)(SwigcptrStringVector(C._wrap_new_StringVector__SWIG_1_halite_47887523e5de5737(C.swig_type_25(_swig_i_0))))
+	return swig_r
+}
+
+func NewStringVector(a ...interface{}) StringVector {
+	argc := len(a)
+	if argc == 0 {
+		return NewStringVector__SWIG_0()
+	}
+	if argc == 1 {
+		return NewStringVector__SWIG_1(a[0].(int64))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrStringVector) Size() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_StringVector_size_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrStringVector) Capacity() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_StringVector_capacity_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrStringVector) Reserve(arg2 int64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_StringVector_reserve_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_type_28(_swig_i_1))
+}
+
+func (arg1 SwigcptrStringVector) IsEmpty() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_StringVector_isEmpty_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrStringVector) Clear() {
+	_swig_i_0 := arg1
+	C._wrap_StringVector_clear_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrStringVector) Add(arg2 string) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_StringVector_add_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), *(*C.swig_type_29)(unsafe.Pointer(&_swig_i_1)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg2
+	}
+}
+
+func (arg1 SwigcptrStringVector) Get(arg2 int) (_swig_ret string) {
+	var swig_r string
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r_p := C._wrap_StringVector_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))
+	swig_r = *(*string)(unsafe.Pointer(&swig_r_p))
+	var swig_r_1 string
+	swig_r_1 = swigCopyString(swig_r)
+	return swig_r_1
+}
+
+func (arg1 SwigcptrStringVector) Set(arg2 int, arg3 string) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3
+	C._wrap_StringVector_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), *(*C.swig_type_31)(unsafe.Pointer(&_swig_i_2)))
+	if Swig_escape_always_false {
+		Swig_escape_val = arg3
+	}
+}
+
+func DeleteStringVector(arg1 StringVector) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_StringVector_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type StringVector interface {
+	Swigcptr() uintptr
+	SwigIsStringVector()
+	Size() (_swig_ret int64)
+	Capacity() (_swig_ret int64)
+	Reserve(arg2 int64)
+	IsEmpty() (_swig_ret bool)
+	Clear()
+	Add(arg2 string)
+	Get(arg2 int) (_swig_ret string)
+	Set(arg2 int, arg3 string)
+}
+
+type SwigcptrLocationToMoveMap uintptr
+
+func (p SwigcptrLocationToMoveMap) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrLocationToMoveMap) SwigIsLocationToMoveMap() {
+}
+
+func NewLocationToMoveMap__SWIG_0() (_swig_ret LocationToMoveMap) {
+	var swig_r LocationToMoveMap
+	swig_r = (LocationToMoveMap)(SwigcptrLocationToMoveMap(C._wrap_new_LocationToMoveMap__SWIG_0_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func NewLocationToMoveMap__SWIG_1(arg1 LocationToMoveMap) (_swig_ret LocationToMoveMap) {
+	var swig_r LocationToMoveMap
+	_swig_i_0 := arg1.Swigcptr()
+	swig_r = (LocationToMoveMap)(SwigcptrLocationToMoveMap(C._wrap_new_LocationToMoveMap__SWIG_1_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))))
+	return swig_r
+}
+
+func NewLocationToMoveMap(a ...interface{}) LocationToMoveMap {
+	argc := len(a)
+	if argc == 0 {
+		return NewLocationToMoveMap__SWIG_0()
+	}
+	if argc == 1 {
+		return NewLocationToMoveMap__SWIG_1(a[0].(LocationToMoveMap))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrLocationToMoveMap) Size() (_swig_ret uint) {
+	var swig_r uint
+	_swig_i_0 := arg1
+	swig_r = (uint)(C._wrap_LocationToMoveMap_size_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrLocationToMoveMap) Empty() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_LocationToMoveMap_empty_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrLocationToMoveMap) Clear() {
+	_swig_i_0 := arg1
+	C._wrap_LocationToMoveMap_clear_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrLocationToMoveMap) Get(arg2 Location) (_swig_ret byte) {
+	var swig_r byte
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	swig_r = (byte)(C._wrap_LocationToMoveMap_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	return swig_r
+}
+
+func (arg1 SwigcptrLocationToMoveMap) Set(arg2 Location, arg3 byte) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	_swig_i_2 := arg3
+	C._wrap_LocationToMoveMap_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1), C.char(_swig_i_2))
+}
+
+func (arg1 SwigcptrLocationToMoveMap) Del(arg2 Location) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_LocationToMoveMap_del_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrLocationToMoveMap) Has_key(arg2 Location) (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	swig_r = (bool)(C._wrap_LocationToMoveMap_has_key_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1)))
+	return swig_r
+}
+
+func DeleteLocationToMoveMap(arg1 LocationToMoveMap) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_LocationToMoveMap_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type LocationToMoveMap interface {
+	Swigcptr() uintptr
+	SwigIsLocationToMoveMap()
+	Size() (_swig_ret uint)
+	Empty() (_swig_ret bool)
+	Clear()
+	Get(arg2 Location) (_swig_ret byte)
+	Set(arg2 Location, arg3 byte)
+	Del(arg2 Location)
+	Has_key(arg2 Location) (_swig_ret bool)
+}
+
+type SwigcptrPlayerMovesVector uintptr
+
+func (p SwigcptrPlayerMovesVector) Swigcptr() uintptr {
+	return (uintptr)(p)
+}
+
+func (p SwigcptrPlayerMovesVector) SwigIsPlayerMovesVector() {
+}
+
+func NewPlayerMovesVector__SWIG_0() (_swig_ret PlayerMovesVector) {
+	var swig_r PlayerMovesVector
+	swig_r = (PlayerMovesVector)(SwigcptrPlayerMovesVector(C._wrap_new_PlayerMovesVector__SWIG_0_halite_47887523e5de5737()))
+	return swig_r
+}
+
+func NewPlayerMovesVector__SWIG_1(arg1 int64) (_swig_ret PlayerMovesVector) {
+	var swig_r PlayerMovesVector
+	_swig_i_0 := arg1
+	swig_r = (PlayerMovesVector)(SwigcptrPlayerMovesVector(C._wrap_new_PlayerMovesVector__SWIG_1_halite_47887523e5de5737(C.swig_type_32(_swig_i_0))))
+	return swig_r
+}
+
+func NewPlayerMovesVector(a ...interface{}) PlayerMovesVector {
+	argc := len(a)
+	if argc == 0 {
+		return NewPlayerMovesVector__SWIG_0()
+	}
+	if argc == 1 {
+		return NewPlayerMovesVector__SWIG_1(a[0].(int64))
+	}
+	panic("No match for overloaded function call")
+}
+
+func (arg1 SwigcptrPlayerMovesVector) Size() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_PlayerMovesVector_size_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerMovesVector) Capacity() (_swig_ret int64) {
+	var swig_r int64
+	_swig_i_0 := arg1
+	swig_r = (int64)(C._wrap_PlayerMovesVector_capacity_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerMovesVector) Reserve(arg2 int64) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	C._wrap_PlayerMovesVector_reserve_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_type_35(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerMovesVector) IsEmpty() (_swig_ret bool) {
+	var swig_r bool
+	_swig_i_0 := arg1
+	swig_r = (bool)(C._wrap_PlayerMovesVector_isEmpty_halite_47887523e5de5737(C.uintptr_t(_swig_i_0)))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerMovesVector) Clear() {
+	_swig_i_0 := arg1
+	C._wrap_PlayerMovesVector_clear_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+func (arg1 SwigcptrPlayerMovesVector) Add(arg2 LocationToMoveMap) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2.Swigcptr()
+	C._wrap_PlayerMovesVector_add_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.uintptr_t(_swig_i_1))
+}
+
+func (arg1 SwigcptrPlayerMovesVector) Get(arg2 int) (_swig_ret LocationToMoveMap) {
+	var swig_r LocationToMoveMap
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	swig_r = (LocationToMoveMap)(SwigcptrLocationToMoveMap(C._wrap_PlayerMovesVector_get_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1))))
+	return swig_r
+}
+
+func (arg1 SwigcptrPlayerMovesVector) Set(arg2 int, arg3 LocationToMoveMap) {
+	_swig_i_0 := arg1
+	_swig_i_1 := arg2
+	_swig_i_2 := arg3.Swigcptr()
+	C._wrap_PlayerMovesVector_set_halite_47887523e5de5737(C.uintptr_t(_swig_i_0), C.swig_intgo(_swig_i_1), C.uintptr_t(_swig_i_2))
+}
+
+func DeletePlayerMovesVector(arg1 PlayerMovesVector) {
+	_swig_i_0 := arg1.Swigcptr()
+	C._wrap_delete_PlayerMovesVector_halite_47887523e5de5737(C.uintptr_t(_swig_i_0))
+}
+
+type PlayerMovesVector interface {
+	Swigcptr() uintptr
+	SwigIsPlayerMovesVector()
+	Size() (_swig_ret int64)
+	Capacity() (_swig_ret int64)
+	Reserve(arg2 int64)
+	IsEmpty() (_swig_ret bool)
+	Clear()
+	Add(arg2 LocationToMoveMap)
+	Get(arg2 int) (_swig_ret LocationToMoveMap)
+	Set(arg2 int, arg3 LocationToMoveMap)
+}
+
 type GoGameEndCallback struct {
 	callback func(int, string) bool
 }
@@ -479,23 +2143,60 @@ func (p *GoGameEndCallback) Run(turn int, board string) bool {
 	return p.callback(turn, board)
 }
 
-func RunGame(id uint, width int16, height int16, seed uint, ignore_timeout bool, connections []UniConnection, gameEnd func(int, string) bool) GameStatistics {
+type Connection struct {
+	readFd  uintptr
+	writeFd uintptr
+}
+
+type Move struct {
+	X         int
+	Y         int
+	Direction int
+}
+
+func RunGame(id uint, width int16, height int16, seed uint, ignore_timeout bool, connections []Connection, gameEnd func(int, string) bool) GameStatistics {
 	cb := NewDirectorGameEndCallback(&GoGameEndCallback{callback: gameEnd})
 	defer DeleteDirectorGameEndCallback(cb)
 	vec := NewUniConnectionVector()
 	defer DeleteUniConnectionVector(vec)
+
 	for _, conn := range connections {
-		vec.Add(conn)
+		uniConn := NewUniConnection()
+		defer DeleteUniConnection(uniConn)
+		uniConn.SetWrite(int(conn.writeFd))
+		uniConn.SetRead(int(conn.readFd))
+		vec.Add(uniConn)
 	}
-	return RawRunGame(id, width, height, seed, ignore_timeout, vec, cb)
+	return WrappedRunGame(id, width, height, seed, ignore_timeout, vec, cb)
 }
 
-type SwigcptrGameStatistics uintptr
-type GameStatistics interface {
+func UpdateMap(gameMap Map, playerMoves [][]Move) {
+	vec := NewPlayerMovesVector()
+	defer DeletePlayerMovesVector(vec)
+
+	for _, playerMoves := range playerMoves {
+		moveMap := NewLocationToMoveMap()
+		defer DeleteLocationToMoveMap(moveMap)
+
+		for _, move := range playerMoves {
+			location := NewLocation()
+			defer DeleteLocation(location)
+			location.SetX(uint16(move.X))
+			location.SetY(uint16(move.Y))
+			moveMap.Set(location, byte(move.Direction))
+		}
+		vec.Add(moveMap)
+	}
+
+	WrappedUpdateMap(gameMap, vec)
+}
+
+type SwigcptrSwigDirector_TimeoutCallback uintptr
+type SwigDirector_TimeoutCallback interface {
 	Swigcptr() uintptr
 }
 
-func (p SwigcptrGameStatistics) Swigcptr() uintptr {
+func (p SwigcptrSwigDirector_TimeoutCallback) Swigcptr() uintptr {
 	return uintptr(p)
 }
 
@@ -508,21 +2209,12 @@ func (p SwigcptrSwigDirector_GameEndCallback) Swigcptr() uintptr {
 	return uintptr(p)
 }
 
-type SwigcptrSwigDirector_TimeoutCallback uintptr
-type SwigDirector_TimeoutCallback interface {
+type SwigcptrStd_set_Sl_unsigned_SS_short_Sg_ uintptr
+type Std_set_Sl_unsigned_SS_short_Sg_ interface {
 	Swigcptr() uintptr
 }
 
-func (p SwigcptrSwigDirector_TimeoutCallback) Swigcptr() uintptr {
-	return uintptr(p)
-}
-
-type SwigcptrUniConnection uintptr
-type UniConnection interface {
-	Swigcptr() uintptr
-}
-
-func (p SwigcptrUniConnection) Swigcptr() uintptr {
+func (p SwigcptrStd_set_Sl_unsigned_SS_short_Sg_) Swigcptr() uintptr {
 	return uintptr(p)
 }
 

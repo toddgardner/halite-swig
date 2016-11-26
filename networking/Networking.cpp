@@ -194,11 +194,13 @@ void Networking::addLocalBot(WinConnection connection) {
     connections.push_back(connection);
     // It's cool guys, 1 is a great pid.
     processes.push_back(1);
+    player_logs.push_back(std::string());
 }
 #else
 void Networking::addLocalBot(UniConnection connection) {
     connections.push_back(connection);
     processes.push_back(1);
+    player_logs.push_back(std::string());
 }
 #endif
 

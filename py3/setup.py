@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-setup.py file for SWIG example
+Halite engine warpped in SWIG
 """
 
 from distutils.core import setup, Extension

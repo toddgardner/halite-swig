@@ -5,42 +5,14 @@
 #define F_NEWLINE '\n'
 
 //Private Functions ------------------
-
-std::vector<bool> Halite::processNextFrame(std::vector<bool> alive) {
-
-    //Update alive frame counts
-    for(unsigned char a = 0; a < number_of_players; a++) if(alive[a]) alive_frame_count[a]++;
-
-    //Create threads to send/receive data to/from players. The threads should return a float of how much time passed between the end of their message being sent and the end of the AI's message being received.
-    std::vector< std::future<int> > frameThreads(std::count(alive.begin(), alive.end(), true));
-    unsigned char threadLocation = 0; //Represents place in frameThreads.
-
-    //Get the messages sent by bots this frame
-    for(unsigned char a = 0; a < number_of_players; a++) {
-        if(alive[a]) {
-            frameThreads[threadLocation] = std::async(&Networking::handleFrameNetworking, &networking, a + 1, turn_number, game_map, ignore_timeout, &player_moves[a]);
-            threadLocation++;
-        }
-    }
-
-    full_player_moves.push_back(std::vector< std::vector<int> >(game_map.map_height, std::vector<int>(game_map.map_width, 0)));
-
-    //Join threads. Figure out if the player responded in an allowable amount of time or if the player has timed out.
-    threadLocation = 0; //Represents place in frameThreads.
-    for(unsigned char a = 0; a < number_of_players; a++) {
-        if(alive[a]) {
-            int time = frameThreads[threadLocation].get();
-            if(time == -1) {
-                networking.killPlayer(a + 1);
-                timeout_tags.insert(a + 1);
-                //Give their pieces to the neutral player.
-                for(unsigned short b = 0; b < game_map.map_height; b++) for(unsigned short c = 0; c < game_map.map_width; c++) if(game_map.contents[b][c].owner == a + 1) game_map.contents[b][c].owner = 0;
-            }
-            else total_frame_response_times[a] += time;
-            threadLocation++;
-        }
-    }
-
+void Halite::updateMap(hlt::Map &game_map,
+                       const std::vector<bool>& alive,
+                       const std::vector< std::map<hlt::Location, unsigned char> > &player_moves,
+                       std::vector<unsigned int> *full_production_count,
+                       std::vector<unsigned int> *full_still_count,
+                       std::vector<unsigned int> *full_cardinal_count,
+                       std::vector< std::vector< std::vector<int> > > *full_player_moves) {
+    int number_of_players = alive.size();
     std::vector< std::map<hlt::Location, unsigned char> > pieces(number_of_players);
 
     //For each player, use their moves to create the pieces map.
@@ -51,15 +23,15 @@ std::vector<bool> Halite::processNextFrame(std::vector<bool> alive) {
                 if(game_map.getSite(b->first).strength + game_map.getSite(b->first).production <= 255) game_map.getSite(b->first).strength += game_map.getSite(b->first).production;
                 else game_map.getSite(b->first).strength = 255;
                 //Update full still count
-                full_still_count[a]++;
+                if (full_still_count) (*full_still_count)[a]++;
                 //Add to full production
-                full_production_count[a] += game_map.getSite(b->first).production;
+                if (full_production_count) (*full_production_count)[a] += game_map.getSite(b->first).production;
             }
             //Update full caridnal count.
-            else full_cardinal_count[a]++;
+            else if (full_cardinal_count) (*full_cardinal_count)[a]++;
 
             //Update moves
-            full_player_moves.back()[b->first.y][b->first.x] = b->second;
+            if(full_player_moves) full_player_moves->back()[b->first.y][b->first.x] = b->second;
 
             hlt::Location newLoc = game_map.getLocation(b->first, b->second);
             if(pieces[a].count(newLoc)) {
@@ -98,9 +70,9 @@ std::vector<bool> Halite::processNextFrame(std::vector<bool> alive) {
                 pieces[s.owner - 1].insert(std::pair<hlt::Location, unsigned char>(l, s.strength));
             }
             //Add to full production
-            full_production_count[s.owner - 1] += s.production;
+            if (full_production_count) (*full_production_count)[s.owner - 1] += s.production;
             //Update full still count
-            full_still_count[s.owner - 1]++;
+            if (full_still_count) (*full_still_count)[s.owner - 1]++;
             //Erase from game map.
             s.owner = 0;
             s.strength = 0;
@@ -183,6 +155,48 @@ std::vector<bool> Halite::processNextFrame(std::vector<bool> alive) {
             game_map.getSite(b->first).strength = b->second;
         }
     }
+}
+
+std::vector<bool> Halite::processNextFrame(std::vector<bool> alive) {
+
+    //Update alive frame counts
+    for(unsigned char a = 0; a < number_of_players; a++) if(alive[a]) alive_frame_count[a]++;
+
+    //Create threads to send/receive data to/from players. The threads should return a float of how much time passed between the end of their message being sent and the end of the AI's message being received.
+    std::vector< std::future<int> > frameThreads(std::count(alive.begin(), alive.end(), true));
+    unsigned char threadLocation = 0; //Represents place in frameThreads.
+
+    //Get the messages sent by bots this frame
+    for(unsigned char a = 0; a < number_of_players; a++) {
+        if(alive[a]) {
+            frameThreads[threadLocation] = std::async(&Networking::handleFrameNetworking, &networking, a + 1, turn_number, game_map, ignore_timeout, &player_moves[a]);
+            threadLocation++;
+        }
+    }
+
+    full_player_moves.push_back(std::vector< std::vector<int> >(game_map.map_height, std::vector<int>(game_map.map_width, 0)));
+
+    //Join threads. Figure out if the player responded in an allowable amount of time or if the player has timed out.
+    threadLocation = 0; //Represents place in frameThreads.
+    for(unsigned char a = 0; a < number_of_players; a++) {
+        if(alive[a]) {
+            int time = frameThreads[threadLocation].get();
+            if(time == -1) {
+                networking.killPlayer(a + 1);
+                timeout_tags.insert(a + 1);
+                //Give their pieces to the neutral player.
+                for(unsigned short b = 0; b < game_map.map_height; b++) for(unsigned short c = 0; c < game_map.map_width; c++) if(game_map.contents[b][c].owner == a + 1) game_map.contents[b][c].owner = 0;
+            }
+            else total_frame_response_times[a] += time;
+            threadLocation++;
+        }
+    }
+
+    updateMap(game_map, alive, player_moves,
+              &full_production_count,
+              &full_still_count,
+              &full_cardinal_count,
+              &full_player_moves);
 
     //Add to full game:
     full_frames.push_back(hlt::Map(game_map));
@@ -299,7 +313,7 @@ void Halite::output(std::string filename) {
     gameFile.close();
 }
 
-GameStatistics Halite::runGame(std::vector<std::string> * names_, unsigned int seed, unsigned int id, GameEndCallback* callback) {
+GameStatistics Halite::runGame(std::vector<std::string> * names_, unsigned int seed, unsigned int id, GameEndCallback* game_end_callback) {
     //For rankings
     std::vector<bool> result(number_of_players, true);
     std::vector<unsigned char> rankings;
@@ -325,7 +339,8 @@ GameStatistics Halite::runGame(std::vector<std::string> * names_, unsigned int s
         for(auto a = names_->begin(); a != names_->end(); a++) player_names.push_back(a->substr(0, 30));
     }
     const int maxTurnNumber = sqrt(game_map.map_width * game_map.map_height) * 10;
-    while(std::count(result.begin(), result.end(), true) > 1 && turn_number < maxTurnNumber && (!callback || callback->run(turn_number, Networking::serializeMap(game_map)))) {
+    while(std::count(result.begin(), result.end(), true) > 1 && turn_number < maxTurnNumber &&
+          (!game_end_callback || !game_end_callback->run(turn_number, Networking::serializeMap(game_map)))) {
         //Increment turn number:
         turn_number++;
         if(!quiet_output) std::cout << "Turn " << turn_number << "\n";

@@ -170,13 +170,29 @@ SwigPyIterator_swigregister = _halite.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
 
 
-def randomMap(width: 'short', height: 'short', numberOfPlayers: 'unsigned char', seed: 'unsigned int') -> "std::string":
+def randomMap(width: 'short', height: 'short', numberOfPlayers: 'unsigned char', seed: 'unsigned int') -> "hlt::Map":
     return _halite.randomMap(width, height, numberOfPlayers, seed)
 randomMap = _halite.randomMap
 
-def rawRunGame(id: 'unsigned int', width: 'short', height: 'short', seed: 'unsigned int', ignore_timeout: 'bool', connections: 'UniConnectionVector', callback: 'GameEndCallback') -> "GameStatistics":
-    return _halite.rawRunGame(id, width, height, seed, ignore_timeout, connections, callback)
-rawRunGame = _halite.rawRunGame
+def randomMapString(width: 'short', height: 'short', numberOfPlayers: 'unsigned char', seed: 'unsigned int') -> "std::string":
+    return _halite.randomMapString(width, height, numberOfPlayers, seed)
+randomMapString = _halite.randomMapString
+
+def randomSeed() -> "unsigned int":
+    return _halite.randomSeed()
+randomSeed = _halite.randomSeed
+
+def blankMap(width: 'short', height: 'short') -> "hlt::Map":
+    return _halite.blankMap(width, height)
+blankMap = _halite.blankMap
+
+def runGame(id: 'unsigned int', width: 'short', height: 'short', seed: 'unsigned int', ignore_timeout: 'bool', connections: 'UniConnectionVector', callback: 'GameEndCallback') -> "GameStatistics":
+    return _halite.runGame(id, width, height, seed, ignore_timeout, connections, callback)
+runGame = _halite.runGame
+
+def updateMap(game_map: 'Map', player_moves: 'std::vector< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > >,std::allocator< std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > > > const &') -> "void":
+    return _halite.updateMap(game_map, player_moves)
+updateMap = _halite.updateMap
 class GameEndCallback(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, GameEndCallback, name, value)
@@ -236,6 +252,318 @@ class TimeoutCallback(_object):
 TimeoutCallback_swigregister = _halite.TimeoutCallback_swigregister
 TimeoutCallback_swigregister(TimeoutCallback)
 
+STILL = _halite.STILL
+NORTH = _halite.NORTH
+EAST = _halite.EAST
+SOUTH = _halite.SOUTH
+WEST = _halite.WEST
+class Color(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Color, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Color, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["r"] = _halite.Color_r_set
+    __swig_getmethods__["r"] = _halite.Color_r_get
+    if _newclass:
+        r = _swig_property(_halite.Color_r_get, _halite.Color_r_set)
+    __swig_setmethods__["g"] = _halite.Color_g_set
+    __swig_getmethods__["g"] = _halite.Color_g_get
+    if _newclass:
+        g = _swig_property(_halite.Color_g_get, _halite.Color_g_set)
+    __swig_setmethods__["b"] = _halite.Color_b_set
+    __swig_getmethods__["b"] = _halite.Color_b_get
+    if _newclass:
+        b = _swig_property(_halite.Color_b_get, _halite.Color_b_set)
+
+    def __init__(self):
+        this = _halite.new_Color()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _halite.delete_Color
+    __del__ = lambda self: None
+Color_swigregister = _halite.Color_swigregister
+Color_swigregister(Color)
+
+class PlayerStatistics(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, PlayerStatistics, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, PlayerStatistics, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["tag"] = _halite.PlayerStatistics_tag_set
+    __swig_getmethods__["tag"] = _halite.PlayerStatistics_tag_get
+    if _newclass:
+        tag = _swig_property(_halite.PlayerStatistics_tag_get, _halite.PlayerStatistics_tag_set)
+    __swig_setmethods__["rank"] = _halite.PlayerStatistics_rank_set
+    __swig_getmethods__["rank"] = _halite.PlayerStatistics_rank_get
+    if _newclass:
+        rank = _swig_property(_halite.PlayerStatistics_rank_get, _halite.PlayerStatistics_rank_set)
+    __swig_setmethods__["average_territory_count"] = _halite.PlayerStatistics_average_territory_count_set
+    __swig_getmethods__["average_territory_count"] = _halite.PlayerStatistics_average_territory_count_get
+    if _newclass:
+        average_territory_count = _swig_property(_halite.PlayerStatistics_average_territory_count_get, _halite.PlayerStatistics_average_territory_count_set)
+    __swig_setmethods__["average_strength_count"] = _halite.PlayerStatistics_average_strength_count_set
+    __swig_getmethods__["average_strength_count"] = _halite.PlayerStatistics_average_strength_count_get
+    if _newclass:
+        average_strength_count = _swig_property(_halite.PlayerStatistics_average_strength_count_get, _halite.PlayerStatistics_average_strength_count_set)
+    __swig_setmethods__["average_production_count"] = _halite.PlayerStatistics_average_production_count_set
+    __swig_getmethods__["average_production_count"] = _halite.PlayerStatistics_average_production_count_get
+    if _newclass:
+        average_production_count = _swig_property(_halite.PlayerStatistics_average_production_count_get, _halite.PlayerStatistics_average_production_count_set)
+    __swig_setmethods__["still_percentage"] = _halite.PlayerStatistics_still_percentage_set
+    __swig_getmethods__["still_percentage"] = _halite.PlayerStatistics_still_percentage_get
+    if _newclass:
+        still_percentage = _swig_property(_halite.PlayerStatistics_still_percentage_get, _halite.PlayerStatistics_still_percentage_set)
+    __swig_setmethods__["init_response_time"] = _halite.PlayerStatistics_init_response_time_set
+    __swig_getmethods__["init_response_time"] = _halite.PlayerStatistics_init_response_time_get
+    if _newclass:
+        init_response_time = _swig_property(_halite.PlayerStatistics_init_response_time_get, _halite.PlayerStatistics_init_response_time_set)
+    __swig_setmethods__["average_frame_response_time"] = _halite.PlayerStatistics_average_frame_response_time_set
+    __swig_getmethods__["average_frame_response_time"] = _halite.PlayerStatistics_average_frame_response_time_get
+    if _newclass:
+        average_frame_response_time = _swig_property(_halite.PlayerStatistics_average_frame_response_time_get, _halite.PlayerStatistics_average_frame_response_time_set)
+
+    def __init__(self):
+        this = _halite.new_PlayerStatistics()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _halite.delete_PlayerStatistics
+    __del__ = lambda self: None
+PlayerStatistics_swigregister = _halite.PlayerStatistics_swigregister
+PlayerStatistics_swigregister(PlayerStatistics)
+
+class GameStatistics(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, GameStatistics, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, GameStatistics, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["player_statistics"] = _halite.GameStatistics_player_statistics_set
+    __swig_getmethods__["player_statistics"] = _halite.GameStatistics_player_statistics_get
+    if _newclass:
+        player_statistics = _swig_property(_halite.GameStatistics_player_statistics_get, _halite.GameStatistics_player_statistics_set)
+    __swig_setmethods__["output_filename"] = _halite.GameStatistics_output_filename_set
+    __swig_getmethods__["output_filename"] = _halite.GameStatistics_output_filename_get
+    if _newclass:
+        output_filename = _swig_property(_halite.GameStatistics_output_filename_get, _halite.GameStatistics_output_filename_set)
+    __swig_setmethods__["timeout_tags"] = _halite.GameStatistics_timeout_tags_set
+    __swig_getmethods__["timeout_tags"] = _halite.GameStatistics_timeout_tags_get
+    if _newclass:
+        timeout_tags = _swig_property(_halite.GameStatistics_timeout_tags_get, _halite.GameStatistics_timeout_tags_set)
+    __swig_setmethods__["timeout_log_filenames"] = _halite.GameStatistics_timeout_log_filenames_set
+    __swig_getmethods__["timeout_log_filenames"] = _halite.GameStatistics_timeout_log_filenames_get
+    if _newclass:
+        timeout_log_filenames = _swig_property(_halite.GameStatistics_timeout_log_filenames_get, _halite.GameStatistics_timeout_log_filenames_set)
+
+    def __init__(self):
+        this = _halite.new_GameStatistics()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _halite.delete_GameStatistics
+    __del__ = lambda self: None
+GameStatistics_swigregister = _halite.GameStatistics_swigregister
+GameStatistics_swigregister(GameStatistics)
+
+class Location(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Location, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Location, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["x"] = _halite.Location_x_set
+    __swig_getmethods__["x"] = _halite.Location_x_get
+    if _newclass:
+        x = _swig_property(_halite.Location_x_get, _halite.Location_x_set)
+    __swig_setmethods__["y"] = _halite.Location_y_set
+    __swig_getmethods__["y"] = _halite.Location_y_get
+    if _newclass:
+        y = _swig_property(_halite.Location_y_get, _halite.Location_y_set)
+
+    def __init__(self):
+        this = _halite.new_Location()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _halite.delete_Location
+    __del__ = lambda self: None
+Location_swigregister = _halite.Location_swigregister
+Location_swigregister(Location)
+
+
+def __lt__(l1: 'Location', l2: 'Location') -> "bool":
+    return _halite.__lt__(l1, l2)
+__lt__ = _halite.__lt__
+
+def __eq__(l1: 'Location', l2: 'Location') -> "bool":
+    return _halite.__eq__(l1, l2)
+__eq__ = _halite.__eq__
+class Site(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Site, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Site, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["owner"] = _halite.Site_owner_set
+    __swig_getmethods__["owner"] = _halite.Site_owner_get
+    if _newclass:
+        owner = _swig_property(_halite.Site_owner_get, _halite.Site_owner_set)
+    __swig_setmethods__["strength"] = _halite.Site_strength_set
+    __swig_getmethods__["strength"] = _halite.Site_strength_get
+    if _newclass:
+        strength = _swig_property(_halite.Site_strength_get, _halite.Site_strength_set)
+    __swig_setmethods__["production"] = _halite.Site_production_set
+    __swig_getmethods__["production"] = _halite.Site_production_get
+    if _newclass:
+        production = _swig_property(_halite.Site_production_get, _halite.Site_production_set)
+
+    def __init__(self):
+        this = _halite.new_Site()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _halite.delete_Site
+    __del__ = lambda self: None
+Site_swigregister = _halite.Site_swigregister
+Site_swigregister(Site)
+
+class Map(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Map, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Map, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["contents"] = _halite.Map_contents_set
+    __swig_getmethods__["contents"] = _halite.Map_contents_get
+    if _newclass:
+        contents = _swig_property(_halite.Map_contents_get, _halite.Map_contents_set)
+    __swig_setmethods__["width"] = _halite.Map_width_set
+    __swig_getmethods__["width"] = _halite.Map_width_get
+    if _newclass:
+        width = _swig_property(_halite.Map_width_get, _halite.Map_width_set)
+    __swig_setmethods__["height"] = _halite.Map_height_set
+    __swig_getmethods__["height"] = _halite.Map_height_get
+    if _newclass:
+        height = _swig_property(_halite.Map_height_get, _halite.Map_height_set)
+
+    def __init__(self, *args):
+        this = _halite.new_Map(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def inBounds(self, l: 'Location') -> "bool":
+        return _halite.Map_inBounds(self, l)
+
+    def getDistance(self, l1: 'Location', l2: 'Location') -> "float":
+        return _halite.Map_getDistance(self, l1, l2)
+
+    def getAngle(self, l1: 'Location', l2: 'Location') -> "float":
+        return _halite.Map_getAngle(self, l1, l2)
+
+    def getLocation(self, l: 'Location', direction: 'unsigned char') -> "hlt::Location":
+        return _halite.Map_getLocation(self, l, direction)
+
+    def getSite(self, l: 'Location', direction: 'unsigned char'=0) -> "hlt::Site &":
+        return _halite.Map_getSite(self, l, direction)
+    __swig_destroy__ = _halite.delete_Map
+    __del__ = lambda self: None
+Map_swigregister = _halite.Map_swigregister
+Map_swigregister(Map)
+
+
+def ppmToMap(filename: 'std::string', numplayers: 'int') -> "hlt::Map":
+    return _halite.ppmToMap(filename, numplayers)
+ppmToMap = _halite.ppmToMap
+class UniConnection(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, UniConnection, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, UniConnection, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["read"] = _halite.UniConnection_read_set
+    __swig_getmethods__["read"] = _halite.UniConnection_read_get
+    if _newclass:
+        read = _swig_property(_halite.UniConnection_read_get, _halite.UniConnection_read_set)
+    __swig_setmethods__["write"] = _halite.UniConnection_write_set
+    __swig_getmethods__["write"] = _halite.UniConnection_write_get
+    if _newclass:
+        write = _swig_property(_halite.UniConnection_write_get, _halite.UniConnection_write_set)
+
+    def __init__(self):
+        this = _halite.new_UniConnection()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _halite.delete_UniConnection
+    __del__ = lambda self: None
+UniConnection_swigregister = _halite.UniConnection_swigregister
+UniConnection_swigregister(UniConnection)
+
+class Networking(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Networking, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Networking, name)
+    __repr__ = _swig_repr
+
+    def startAndConnectBot(self, command: 'std::string') -> "void":
+        return _halite.Networking_startAndConnectBot(self, command)
+
+    def handleInitNetworking(self, playerTag: 'unsigned char', m: 'Map', ignoreTimeout: 'bool', playerName: 'std::string *') -> "int":
+        return _halite.Networking_handleInitNetworking(self, playerTag, m, ignoreTimeout, playerName)
+
+    def handleFrameNetworking(self, playerTag: 'unsigned char', turnNumber: 'unsigned short const &', m: 'Map', ignoreTimeout: 'bool', moves: 'std::map< hlt::Location,unsigned char,std::less< hlt::Location >,std::allocator< std::pair< hlt::Location const,unsigned char > > > *') -> "int":
+        return _halite.Networking_handleFrameNetworking(self, playerTag, turnNumber, m, ignoreTimeout, moves)
+
+    def killPlayer(self, playerTag: 'unsigned char') -> "void":
+        return _halite.Networking_killPlayer(self, playerTag)
+
+    def isProcessDead(self, playerTag: 'unsigned char') -> "bool":
+        return _halite.Networking_isProcessDead(self, playerTag)
+
+    def numberOfPlayers(self) -> "int":
+        return _halite.Networking_numberOfPlayers(self)
+    __swig_setmethods__["player_logs"] = _halite.Networking_player_logs_set
+    __swig_getmethods__["player_logs"] = _halite.Networking_player_logs_get
+    if _newclass:
+        player_logs = _swig_property(_halite.Networking_player_logs_get, _halite.Networking_player_logs_set)
+    if _newclass:
+        serializeMap = staticmethod(_halite.Networking_serializeMap)
+    else:
+        serializeMap = _halite.Networking_serializeMap
+
+    def addLocalBot(self, connection: 'UniConnection') -> "void":
+        return _halite.Networking_addLocalBot(self, connection)
+
+    def stopManagingProcesses(self) -> "void":
+        return _halite.Networking_stopManagingProcesses(self)
+
+    def __init__(self):
+        this = _halite.new_Networking()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _halite.delete_Networking
+    __del__ = lambda self: None
+Networking_swigregister = _halite.Networking_swigregister
+Networking_swigregister(Networking)
+
+def Networking_serializeMap(map: 'Map') -> "std::string":
+    return _halite.Networking_serializeMap(map)
+Networking_serializeMap = _halite.Networking_serializeMap
+
 class UniConnectionVector(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, UniConnectionVector, name, value)
@@ -278,7 +606,7 @@ class UniConnectionVector(_object):
     def pop(self) -> "std::vector< UniConnection >::value_type":
         return _halite.UniConnectionVector_pop(self)
 
-    def append(self, x: 'std::vector< UniConnection >::value_type const &') -> "void":
+    def append(self, x: 'UniConnection') -> "void":
         return _halite.UniConnectionVector_append(self, x)
 
     def empty(self) -> "bool":
@@ -321,7 +649,7 @@ class UniConnectionVector(_object):
         except __builtin__.Exception:
             self.this = this
 
-    def push_back(self, x: 'std::vector< UniConnection >::value_type const &') -> "void":
+    def push_back(self, x: 'UniConnection') -> "void":
         return _halite.UniConnectionVector_push_back(self, x)
 
     def front(self) -> "std::vector< UniConnection >::value_type const &":
@@ -330,7 +658,7 @@ class UniConnectionVector(_object):
     def back(self) -> "std::vector< UniConnection >::value_type const &":
         return _halite.UniConnectionVector_back(self)
 
-    def assign(self, n: 'std::vector< UniConnection >::size_type', x: 'std::vector< UniConnection >::value_type const &') -> "void":
+    def assign(self, n: 'std::vector< UniConnection >::size_type', x: 'UniConnection') -> "void":
         return _halite.UniConnectionVector_assign(self, n, x)
 
     def resize(self, *args) -> "void":

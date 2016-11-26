@@ -11,6 +11,7 @@ Currently only supports go & python, and a very limited interface, hoping to hac
 Install swig > 3.0, then run:
 
 ```shell
+cd go
 swig -v -go -cgo -c++ -intgosize 64 halite.i 
 ```
 
@@ -22,7 +23,14 @@ Then edit halite.go and add:
 
 To the big block comment before `import "C"`. Can't find a better way at the moment.
 
+Verify with tests:
+
+```shell
+go build -v && go test -v
+```
+
 ## Py3
+
 
 ```shell
 # build halite.py
@@ -34,7 +42,5 @@ python3 halite_test.py
 
 # Current things
 
-1. SWIG can't handle the callback interface well? `go vet` doesn't work
-1. Test RunGame
-1. Have a board updater so you can see the result of applying moves.
-
+1. SWIG can't handle the callback interface well? `go vet` doesn't work; maybe remove callback anyway.
+1. Plumb through timeout interface?

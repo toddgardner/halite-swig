@@ -1,6 +1,7 @@
 #pragma once
 
 #include <list>
+#include <set>
 #include <vector>
 #include <random>
 #include <functional>
@@ -19,6 +20,38 @@ extern bool quiet_output;
 struct Color {
     float r, g, b;
 };
+
+struct PlayerStatistics {
+    int tag;
+    int rank;
+    double average_territory_count;
+    double average_strength_count;
+    double average_production_count;
+    double still_percentage;
+    int init_response_time;
+    double average_frame_response_time;
+};
+static std::ostream & operator<<(std::ostream & o, const PlayerStatistics & p) {
+    o << p.tag << ' ' << p.rank;// << ' ' << p.average_territory_count << ' ' << p.average_strength_count << ' ' << p.average_production_count << ' ' << p.still_percentage << ' ' << p.average_response_time;
+    return o;
+}
+
+struct GameStatistics {
+    std::vector<PlayerStatistics> player_statistics;
+    std::string output_filename;
+    std::set<unsigned short> timeout_tags;
+    std::vector<std::string> timeout_log_filenames;
+};
+
+static std::ostream & operator<<(std::ostream & o, const GameStatistics & g) {
+    for(auto a = g.player_statistics.begin(); a != g.player_statistics.end(); a++) o << (*a) << std::endl;
+    for(auto a = g.timeout_tags.begin(); a != g.timeout_tags.end(); a++) o << (*a) << ' ';
+    if(g.timeout_tags.empty()) o << ' ';
+    std::cout << std::endl;
+    for(auto a = g.timeout_log_filenames.begin(); a != g.timeout_log_filenames.end(); a++) o << (*a) << ' ';
+    if(g.timeout_log_filenames.empty()) o << ' ';
+    return o;
+}
 
 namespace hlt{
     struct Location{
@@ -45,6 +78,12 @@ namespace hlt{
         Map() {
             map_width = 0;
             map_height = 0;
+            contents = std::vector< std::vector<Site> >(map_height, std::vector<Site>(map_width, { 0, 0 }));
+        }
+        // Added for blank map simulations.
+        Map(short width, short height) {
+            map_width = width;
+            map_height = height;
             contents = std::vector< std::vector<Site> >(map_height, std::vector<Site>(map_width, { 0, 0 }));
         }
         Map(const Map &otherMap) {

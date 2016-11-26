@@ -261,6 +261,14 @@ static void* Swig_malloc(int c) {
 #include <vector>
 #include <stdexcept>
 
+
+#include <stdexcept>
+
+
+#include <map>
+#include <algorithm>
+#include <stdexcept>
+
 SWIGINTERN std::vector< UniConnection >::const_reference std_vector_Sl_UniConnection_Sg__get(std::vector< UniConnection > *self,int i){
                 int size = int(self->size());
                 if (i>=0 && i<size)
@@ -269,6 +277,97 @@ SWIGINTERN std::vector< UniConnection >::const_reference std_vector_Sl_UniConnec
                     throw std::out_of_range("vector index out of range");
             }
 SWIGINTERN void std_vector_Sl_UniConnection_Sg__set(std::vector< UniConnection > *self,int i,std::vector< UniConnection >::value_type const &val){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    (*self)[i] = val;
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN std::vector< hlt::Site >::const_reference std_vector_Sl_hlt_Site_Sg__get(std::vector< hlt::Site > *self,int i){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    return (*self)[i];
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN void std_vector_Sl_hlt_Site_Sg__set(std::vector< hlt::Site > *self,int i,std::vector< hlt::Site >::value_type const &val){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    (*self)[i] = val;
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN std::vector< std::vector< hlt::Site > >::const_reference std_vector_Sl_std_vector_Sl_hlt_Site_Sg__Sg__get(std::vector< std::vector< hlt::Site > > *self,int i){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    return (*self)[i];
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN void std_vector_Sl_std_vector_Sl_hlt_Site_Sg__Sg__set(std::vector< std::vector< hlt::Site > > *self,int i,std::vector< std::vector< hlt::Site > >::value_type const &val){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    (*self)[i] = val;
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN std::vector< PlayerStatistics >::const_reference std_vector_Sl_PlayerStatistics_Sg__get(std::vector< PlayerStatistics > *self,int i){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    return (*self)[i];
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN void std_vector_Sl_PlayerStatistics_Sg__set(std::vector< PlayerStatistics > *self,int i,std::vector< PlayerStatistics >::value_type const &val){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    (*self)[i] = val;
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN std::vector< std::string >::const_reference std_vector_Sl_std_string_Sg__get(std::vector< std::string > *self,int i){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    return (*self)[i];
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN void std_vector_Sl_std_string_Sg__set(std::vector< std::string > *self,int i,std::vector< std::string >::value_type const &val){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    (*self)[i] = val;
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN unsigned char const &std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__get(std::map< hlt::Location,unsigned char > *self,hlt::Location const &key){
+                std::map<hlt::Location,unsigned char >::iterator i = self->find(key);
+                if (i != self->end())
+                    return i->second;
+                else
+                    throw std::out_of_range("key not found");
+            }
+SWIGINTERN void std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__set(std::map< hlt::Location,unsigned char > *self,hlt::Location const &key,unsigned char const &x){
+                (*self)[key] = x;
+            }
+SWIGINTERN void std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__del(std::map< hlt::Location,unsigned char > *self,hlt::Location const &key){
+                std::map<hlt::Location,unsigned char >::iterator i = self->find(key);
+                if (i != self->end())
+                    self->erase(i);
+                else
+                    throw std::out_of_range("key not found");
+            }
+SWIGINTERN bool std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__has_key(std::map< hlt::Location,unsigned char > *self,hlt::Location const &key){
+                std::map<hlt::Location,unsigned char >::iterator i = self->find(key);
+                return i != self->end();
+            }
+SWIGINTERN std::vector< std::map< hlt::Location,unsigned char > >::const_reference std_vector_Sl_std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__Sg__get(std::vector< std::map< hlt::Location,unsigned char > > *self,int i){
+                int size = int(self->size());
+                if (i>=0 && i<size)
+                    return (*self)[i];
+                else
+                    throw std::out_of_range("vector index out of range");
+            }
+SWIGINTERN void std_vector_Sl_std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__Sg__set(std::vector< std::map< hlt::Location,unsigned char > > *self,int i,std::vector< std::map< hlt::Location,unsigned char > >::value_type const &val){
                 int size = int(self->size());
                 if (i>=0 && i<size)
                     (*self)[i] = val;
@@ -350,14 +449,14 @@ SwigDirector_GameEndCallback::SwigDirector_GameEndCallback(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_GameEndCallback_halite_2007760261f40110(intgo);
+extern "C" void Swiggo_DeleteDirector_GameEndCallback_halite_47887523e5de5737(intgo);
 SwigDirector_GameEndCallback::~SwigDirector_GameEndCallback()
 {
-  Swiggo_DeleteDirector_GameEndCallback_halite_2007760261f40110(go_val);
+  Swiggo_DeleteDirector_GameEndCallback_halite_47887523e5de5737(go_val);
   delete swig_mem;
 }
 
-extern "C" bool Swig_DirectorGameEndCallback_callback_run_halite_2007760261f40110(int, intgo arg2, _gostring_ arg3);
+extern "C" bool Swig_DirectorGameEndCallback_callback_run_halite_47887523e5de5737(int, intgo arg2, _gostring_ arg3);
 bool SwigDirector_GameEndCallback::run(int turn, std::string board) {
   bool c_result;
   bool result;
@@ -366,7 +465,7 @@ bool SwigDirector_GameEndCallback::run(int turn, std::string board) {
   
   swig_arg2 = (int)turn; 
   swig_arg3 = Swig_AllocateString((&board)->data(), (&board)->length()); 
-  result = Swig_DirectorGameEndCallback_callback_run_halite_2007760261f40110(go_val, swig_arg2, swig_arg3);
+  result = Swig_DirectorGameEndCallback_callback_run_halite_47887523e5de5737(go_val, swig_arg2, swig_arg3);
   c_result = (bool)result; 
   return c_result;
 }
@@ -376,28 +475,28 @@ SwigDirector_TimeoutCallback::SwigDirector_TimeoutCallback(int swig_p)
       go_val(swig_p), swig_mem(0)
 { }
 
-extern "C" void Swiggo_DeleteDirector_TimeoutCallback_halite_2007760261f40110(intgo);
+extern "C" void Swiggo_DeleteDirector_TimeoutCallback_halite_47887523e5de5737(intgo);
 SwigDirector_TimeoutCallback::~SwigDirector_TimeoutCallback()
 {
-  Swiggo_DeleteDirector_TimeoutCallback_halite_2007760261f40110(go_val);
+  Swiggo_DeleteDirector_TimeoutCallback_halite_47887523e5de5737(go_val);
   delete swig_mem;
 }
 
-extern "C" void Swig_DirectorTimeoutCallback_callback_run_halite_2007760261f40110(int, intgo arg2, _gostring_ arg3);
+extern "C" void Swig_DirectorTimeoutCallback_callback_run_halite_47887523e5de5737(int, intgo arg2, _gostring_ arg3);
 void SwigDirector_TimeoutCallback::run(int playerTag, std::string playerName) {
   intgo swig_arg2;
   _gostring_ swig_arg3;
   
   swig_arg2 = (int)playerTag; 
   swig_arg3 = Swig_AllocateString((&playerName)->data(), (&playerName)->length()); 
-  Swig_DirectorTimeoutCallback_callback_run_halite_2007760261f40110(go_val, swig_arg2, swig_arg3);
+  Swig_DirectorTimeoutCallback_callback_run_halite_47887523e5de5737(go_val, swig_arg2, swig_arg3);
 }
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-void _wrap_Swig_free_halite_2007760261f40110(void *_swig_go_0) {
+void _wrap_Swig_free_halite_47887523e5de5737(void *_swig_go_0) {
   void *arg1 = (void *) 0 ;
   
   arg1 = *(void **)&_swig_go_0; 
@@ -407,7 +506,7 @@ void _wrap_Swig_free_halite_2007760261f40110(void *_swig_go_0) {
 }
 
 
-void *_wrap_Swig_malloc_halite_2007760261f40110(intgo _swig_go_0) {
+void *_wrap_Swig_malloc_halite_47887523e5de5737(intgo _swig_go_0) {
   int arg1 ;
   void *result = 0 ;
   void *_swig_go_result;
@@ -420,7 +519,7 @@ void *_wrap_Swig_malloc_halite_2007760261f40110(intgo _swig_go_0) {
 }
 
 
-void _wrap_quiet_output_set_halite_2007760261f40110(bool _swig_go_0) {
+void _wrap_quiet_output_set_halite_47887523e5de5737(bool _swig_go_0) {
   bool arg1 ;
   
   arg1 = (bool)_swig_go_0; 
@@ -430,7 +529,7 @@ void _wrap_quiet_output_set_halite_2007760261f40110(bool _swig_go_0) {
 }
 
 
-bool _wrap_quiet_output_get_halite_2007760261f40110() {
+bool _wrap_quiet_output_get_halite_47887523e5de5737() {
   bool result;
   bool _swig_go_result;
   
@@ -441,7 +540,26 @@ bool _wrap_quiet_output_get_halite_2007760261f40110() {
 }
 
 
-_gostring_ _wrap_randomMap_halite_2007760261f40110(short _swig_go_0, short _swig_go_1, char _swig_go_2, intgo _swig_go_3) {
+hlt::Map *_wrap_randomMap_halite_47887523e5de5737(short _swig_go_0, short _swig_go_1, char _swig_go_2, intgo _swig_go_3) {
+  short arg1 ;
+  short arg2 ;
+  unsigned char arg3 ;
+  unsigned int arg4 ;
+  hlt::Map result;
+  hlt::Map *_swig_go_result;
+  
+  arg1 = (short)_swig_go_0; 
+  arg2 = (short)_swig_go_1; 
+  arg3 = (unsigned char)_swig_go_2; 
+  arg4 = (unsigned int)_swig_go_3; 
+  
+  result = randomMap(arg1,arg2,arg3,arg4);
+  *(hlt::Map **)&_swig_go_result = new hlt::Map(result); 
+  return _swig_go_result;
+}
+
+
+_gostring_ _wrap_randomMapString_halite_47887523e5de5737(short _swig_go_0, short _swig_go_1, char _swig_go_2, intgo _swig_go_3) {
   short arg1 ;
   short arg2 ;
   unsigned char arg3 ;
@@ -454,13 +572,39 @@ _gostring_ _wrap_randomMap_halite_2007760261f40110(short _swig_go_0, short _swig
   arg3 = (unsigned char)_swig_go_2; 
   arg4 = (unsigned int)_swig_go_3; 
   
-  result = halite::randomMap(arg1,arg2,arg3,arg4);
+  result = randomMapString(arg1,arg2,arg3,arg4);
   _swig_go_result = Swig_AllocateString((&result)->data(), (&result)->length()); 
   return _swig_go_result;
 }
 
 
-GameStatistics *_wrap_rawRunGame_halite_2007760261f40110(intgo _swig_go_0, short _swig_go_1, short _swig_go_2, intgo _swig_go_3, bool _swig_go_4, std::vector< UniConnection > *_swig_go_5, GameEndCallback *_swig_go_6) {
+intgo _wrap_randomSeed_halite_47887523e5de5737() {
+  unsigned int result;
+  intgo _swig_go_result;
+  
+  
+  result = (unsigned int)randomSeed();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+hlt::Map *_wrap_blankMap_halite_47887523e5de5737(short _swig_go_0, short _swig_go_1) {
+  short arg1 ;
+  short arg2 ;
+  hlt::Map result;
+  hlt::Map *_swig_go_result;
+  
+  arg1 = (short)_swig_go_0; 
+  arg2 = (short)_swig_go_1; 
+  
+  result = blankMap(arg1,arg2);
+  *(hlt::Map **)&_swig_go_result = new hlt::Map(result); 
+  return _swig_go_result;
+}
+
+
+GameStatistics *_wrap_wrappedRunGame_halite_47887523e5de5737(intgo _swig_go_0, short _swig_go_1, short _swig_go_2, intgo _swig_go_3, bool _swig_go_4, std::vector< UniConnection > *_swig_go_5, GameEndCallback *_swig_go_6) {
   unsigned int arg1 ;
   short arg2 ;
   short arg3 ;
@@ -486,13 +630,25 @@ GameStatistics *_wrap_rawRunGame_halite_2007760261f40110(intgo _swig_go_0, short
   
   arg7 = *(GameEndCallback **)&_swig_go_6; 
   
-  result = halite::rawRunGame(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
+  result = runGame(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
   *(GameStatistics **)&_swig_go_result = new GameStatistics(result); 
   return _swig_go_result;
 }
 
 
-GameEndCallback *_wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_2007760261f40110(intgo _swig_go_0) {
+void _wrap_wrappedUpdateMap_halite_47887523e5de5737(hlt::Map *_swig_go_0, std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_1) {
+  hlt::Map *arg1 = 0 ;
+  std::vector< std::map< hlt::Location,unsigned char > > *arg2 = 0 ;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  arg2 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_1; 
+  
+  updateMap(*arg1,(std::vector< std::map< hlt::Location,unsigned char > > const &)*arg2);
+  
+}
+
+
+GameEndCallback *_wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_47887523e5de5737(intgo _swig_go_0) {
   int arg1 ;
   GameEndCallback *result = 0 ;
   GameEndCallback *_swig_go_result;
@@ -505,7 +661,7 @@ GameEndCallback *_wrap__swig_NewDirectorGameEndCallbackGameEndCallback_halite_20
 }
 
 
-void _wrap_DeleteDirectorGameEndCallback_halite_2007760261f40110(GameEndCallback *_swig_go_0) {
+void _wrap_DeleteDirectorGameEndCallback_halite_47887523e5de5737(GameEndCallback *_swig_go_0) {
   GameEndCallback *arg1 = (GameEndCallback *) 0 ;
   
   arg1 = *(GameEndCallback **)&_swig_go_0; 
@@ -515,7 +671,7 @@ void _wrap_DeleteDirectorGameEndCallback_halite_2007760261f40110(GameEndCallback
 }
 
 
-bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(SwigDirector_GameEndCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_47887523e5de5737(SwigDirector_GameEndCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   SwigDirector_GameEndCallback *arg1 = (SwigDirector_GameEndCallback *) 0 ;
   int arg2 ;
   std::string arg3 ;
@@ -532,7 +688,7 @@ bool _wrap__swig_DirectorGameEndCallback_upcall_Run_halite_2007760261f40110(Swig
 }
 
 
-void _wrap_delete_GameEndCallback_halite_2007760261f40110(GameEndCallback *_swig_go_0) {
+void _wrap_delete_GameEndCallback_halite_47887523e5de5737(GameEndCallback *_swig_go_0) {
   GameEndCallback *arg1 = (GameEndCallback *) 0 ;
   
   arg1 = *(GameEndCallback **)&_swig_go_0; 
@@ -542,7 +698,7 @@ void _wrap_delete_GameEndCallback_halite_2007760261f40110(GameEndCallback *_swig
 }
 
 
-bool _wrap_GameEndCallback_run_halite_2007760261f40110(GameEndCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+bool _wrap_GameEndCallback_run_halite_47887523e5de5737(GameEndCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   GameEndCallback *arg1 = (GameEndCallback *) 0 ;
   int arg2 ;
   std::string arg3 ;
@@ -559,7 +715,7 @@ bool _wrap_GameEndCallback_run_halite_2007760261f40110(GameEndCallback *_swig_go
 }
 
 
-GameEndCallback *_wrap_new_GameEndCallback_halite_2007760261f40110() {
+GameEndCallback *_wrap_new_GameEndCallback_halite_47887523e5de5737() {
   GameEndCallback *result = 0 ;
   GameEndCallback *_swig_go_result;
   
@@ -570,7 +726,7 @@ GameEndCallback *_wrap_new_GameEndCallback_halite_2007760261f40110() {
 }
 
 
-TimeoutCallback *_wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_2007760261f40110(intgo _swig_go_0) {
+TimeoutCallback *_wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_47887523e5de5737(intgo _swig_go_0) {
   int arg1 ;
   TimeoutCallback *result = 0 ;
   TimeoutCallback *_swig_go_result;
@@ -583,7 +739,7 @@ TimeoutCallback *_wrap__swig_NewDirectorTimeoutCallbackTimeoutCallback_halite_20
 }
 
 
-void _wrap_DeleteDirectorTimeoutCallback_halite_2007760261f40110(TimeoutCallback *_swig_go_0) {
+void _wrap_DeleteDirectorTimeoutCallback_halite_47887523e5de5737(TimeoutCallback *_swig_go_0) {
   TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
   
   arg1 = *(TimeoutCallback **)&_swig_go_0; 
@@ -593,7 +749,7 @@ void _wrap_DeleteDirectorTimeoutCallback_halite_2007760261f40110(TimeoutCallback
 }
 
 
-void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(SwigDirector_TimeoutCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_47887523e5de5737(SwigDirector_TimeoutCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   SwigDirector_TimeoutCallback *arg1 = (SwigDirector_TimeoutCallback *) 0 ;
   int arg2 ;
   std::string arg3 ;
@@ -607,7 +763,7 @@ void _wrap__swig_DirectorTimeoutCallback_upcall_Run_halite_2007760261f40110(Swig
 }
 
 
-void _wrap_delete_TimeoutCallback_halite_2007760261f40110(TimeoutCallback *_swig_go_0) {
+void _wrap_delete_TimeoutCallback_halite_47887523e5de5737(TimeoutCallback *_swig_go_0) {
   TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
   
   arg1 = *(TimeoutCallback **)&_swig_go_0; 
@@ -617,7 +773,7 @@ void _wrap_delete_TimeoutCallback_halite_2007760261f40110(TimeoutCallback *_swig
 }
 
 
-void _wrap_TimeoutCallback_run_halite_2007760261f40110(TimeoutCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+void _wrap_TimeoutCallback_run_halite_47887523e5de5737(TimeoutCallback *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
   TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
   int arg2 ;
   std::string arg3 ;
@@ -631,7 +787,7 @@ void _wrap_TimeoutCallback_run_halite_2007760261f40110(TimeoutCallback *_swig_go
 }
 
 
-TimeoutCallback *_wrap_new_TimeoutCallback_halite_2007760261f40110() {
+TimeoutCallback *_wrap_new_TimeoutCallback_halite_47887523e5de5737() {
   TimeoutCallback *result = 0 ;
   TimeoutCallback *_swig_go_result;
   
@@ -642,7 +798,1219 @@ TimeoutCallback *_wrap_new_TimeoutCallback_halite_2007760261f40110() {
 }
 
 
-std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_0_halite_2007760261f40110() {
+void _wrap_Color_r_set_halite_47887523e5de5737(Color *_swig_go_0, float _swig_go_1) {
+  Color *arg1 = (Color *) 0 ;
+  float arg2 ;
+  
+  arg1 = *(Color **)&_swig_go_0; 
+  arg2 = (float)_swig_go_1; 
+  
+  if (arg1) (arg1)->r = arg2;
+  
+}
+
+
+float _wrap_Color_r_get_halite_47887523e5de5737(Color *_swig_go_0) {
+  Color *arg1 = (Color *) 0 ;
+  float result;
+  float _swig_go_result;
+  
+  arg1 = *(Color **)&_swig_go_0; 
+  
+  result = (float) ((arg1)->r);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Color_g_set_halite_47887523e5de5737(Color *_swig_go_0, float _swig_go_1) {
+  Color *arg1 = (Color *) 0 ;
+  float arg2 ;
+  
+  arg1 = *(Color **)&_swig_go_0; 
+  arg2 = (float)_swig_go_1; 
+  
+  if (arg1) (arg1)->g = arg2;
+  
+}
+
+
+float _wrap_Color_g_get_halite_47887523e5de5737(Color *_swig_go_0) {
+  Color *arg1 = (Color *) 0 ;
+  float result;
+  float _swig_go_result;
+  
+  arg1 = *(Color **)&_swig_go_0; 
+  
+  result = (float) ((arg1)->g);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Color_b_set_halite_47887523e5de5737(Color *_swig_go_0, float _swig_go_1) {
+  Color *arg1 = (Color *) 0 ;
+  float arg2 ;
+  
+  arg1 = *(Color **)&_swig_go_0; 
+  arg2 = (float)_swig_go_1; 
+  
+  if (arg1) (arg1)->b = arg2;
+  
+}
+
+
+float _wrap_Color_b_get_halite_47887523e5de5737(Color *_swig_go_0) {
+  Color *arg1 = (Color *) 0 ;
+  float result;
+  float _swig_go_result;
+  
+  arg1 = *(Color **)&_swig_go_0; 
+  
+  result = (float) ((arg1)->b);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+Color *_wrap_new_Color_halite_47887523e5de5737() {
+  Color *result = 0 ;
+  Color *_swig_go_result;
+  
+  
+  result = (Color *)new Color();
+  *(Color **)&_swig_go_result = (Color *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_Color_halite_47887523e5de5737(Color *_swig_go_0) {
+  Color *arg1 = (Color *) 0 ;
+  
+  arg1 = *(Color **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+void _wrap_PlayerStatistics_tag_set_halite_47887523e5de5737(PlayerStatistics *_swig_go_0, intgo _swig_go_1) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int arg2 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  if (arg1) (arg1)->tag = arg2;
+  
+}
+
+
+intgo _wrap_PlayerStatistics_tag_get_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  result = (int) ((arg1)->tag);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatistics_rank_set_halite_47887523e5de5737(PlayerStatistics *_swig_go_0, intgo _swig_go_1) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int arg2 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  if (arg1) (arg1)->rank = arg2;
+  
+}
+
+
+intgo _wrap_PlayerStatistics_rank_get_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  result = (int) ((arg1)->rank);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatistics_averageTerritoryCount_set_halite_47887523e5de5737(PlayerStatistics *_swig_go_0, double _swig_go_1) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  arg2 = (double)_swig_go_1; 
+  
+  if (arg1) (arg1)->average_territory_count = arg2;
+  
+}
+
+
+double _wrap_PlayerStatistics_averageTerritoryCount_get_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double result;
+  double _swig_go_result;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  result = (double) ((arg1)->average_territory_count);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatistics_averageStrengthCount_set_halite_47887523e5de5737(PlayerStatistics *_swig_go_0, double _swig_go_1) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  arg2 = (double)_swig_go_1; 
+  
+  if (arg1) (arg1)->average_strength_count = arg2;
+  
+}
+
+
+double _wrap_PlayerStatistics_averageStrengthCount_get_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double result;
+  double _swig_go_result;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  result = (double) ((arg1)->average_strength_count);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatistics_averageProductionCount_set_halite_47887523e5de5737(PlayerStatistics *_swig_go_0, double _swig_go_1) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  arg2 = (double)_swig_go_1; 
+  
+  if (arg1) (arg1)->average_production_count = arg2;
+  
+}
+
+
+double _wrap_PlayerStatistics_averageProductionCount_get_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double result;
+  double _swig_go_result;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  result = (double) ((arg1)->average_production_count);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatistics_stillPercentage_set_halite_47887523e5de5737(PlayerStatistics *_swig_go_0, double _swig_go_1) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  arg2 = (double)_swig_go_1; 
+  
+  if (arg1) (arg1)->still_percentage = arg2;
+  
+}
+
+
+double _wrap_PlayerStatistics_stillPercentage_get_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double result;
+  double _swig_go_result;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  result = (double) ((arg1)->still_percentage);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatistics_initResponseTime_set_halite_47887523e5de5737(PlayerStatistics *_swig_go_0, intgo _swig_go_1) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int arg2 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  if (arg1) (arg1)->init_response_time = arg2;
+  
+}
+
+
+intgo _wrap_PlayerStatistics_initResponseTime_get_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  result = (int) ((arg1)->init_response_time);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatistics_averageFrameResponseTime_set_halite_47887523e5de5737(PlayerStatistics *_swig_go_0, double _swig_go_1) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double arg2 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  arg2 = (double)_swig_go_1; 
+  
+  if (arg1) (arg1)->average_frame_response_time = arg2;
+  
+}
+
+
+double _wrap_PlayerStatistics_averageFrameResponseTime_get_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  double result;
+  double _swig_go_result;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  result = (double) ((arg1)->average_frame_response_time);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+PlayerStatistics *_wrap_new_PlayerStatistics_halite_47887523e5de5737() {
+  PlayerStatistics *result = 0 ;
+  PlayerStatistics *_swig_go_result;
+  
+  
+  result = (PlayerStatistics *)new PlayerStatistics();
+  *(PlayerStatistics **)&_swig_go_result = (PlayerStatistics *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_PlayerStatistics_halite_47887523e5de5737(PlayerStatistics *_swig_go_0) {
+  PlayerStatistics *arg1 = (PlayerStatistics *) 0 ;
+  
+  arg1 = *(PlayerStatistics **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+void _wrap_GameStatistics_playerStatistics_set_halite_47887523e5de5737(GameStatistics *_swig_go_0, std::vector< PlayerStatistics > *_swig_go_1) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::vector< PlayerStatistics > *arg2 = (std::vector< PlayerStatistics > *) 0 ;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  arg2 = *(std::vector< PlayerStatistics > **)&_swig_go_1; 
+  
+  if (arg1) (arg1)->player_statistics = *arg2;
+  
+}
+
+
+std::vector< PlayerStatistics > *_wrap_GameStatistics_playerStatistics_get_halite_47887523e5de5737(GameStatistics *_swig_go_0) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::vector< PlayerStatistics > *result = 0 ;
+  std::vector< PlayerStatistics > *_swig_go_result;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  
+  result = (std::vector< PlayerStatistics > *)& ((arg1)->player_statistics);
+  *(std::vector< PlayerStatistics > **)&_swig_go_result = (std::vector< PlayerStatistics > *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_GameStatistics_outputFilename_set_halite_47887523e5de5737(GameStatistics *_swig_go_0, _gostring_ _swig_go_1) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::string *arg2 = 0 ;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  
+  std::string arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  if (arg1) (arg1)->output_filename = *arg2;
+  
+}
+
+
+_gostring_ _wrap_GameStatistics_outputFilename_get_halite_47887523e5de5737(GameStatistics *_swig_go_0) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::string *result = 0 ;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  
+  result = (std::string *) & ((arg1)->output_filename);
+  _swig_go_result = Swig_AllocateString((*result).data(), (*result).length()); 
+  return _swig_go_result;
+}
+
+
+void _wrap_GameStatistics_timeoutTags_set_halite_47887523e5de5737(GameStatistics *_swig_go_0, std::set< unsigned short > *_swig_go_1) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::set< unsigned short > arg2 ;
+  std::set< unsigned short > *argp2 ;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  
+  argp2 = (std::set< unsigned short > *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null std::set< unsigned short >");
+  }
+  arg2 = (std::set< unsigned short >)*argp2;
+  
+  
+  if (arg1) (arg1)->timeout_tags = arg2;
+  
+}
+
+
+std::set< unsigned short > *_wrap_GameStatistics_timeoutTags_get_halite_47887523e5de5737(GameStatistics *_swig_go_0) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::set< unsigned short > result;
+  std::set< unsigned short > *_swig_go_result;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  
+  result =  ((arg1)->timeout_tags);
+  *(std::set< unsigned short > **)&_swig_go_result = new std::set< unsigned short >(result); 
+  return _swig_go_result;
+}
+
+
+void _wrap_GameStatistics_timeoutLogFilenames_set_halite_47887523e5de5737(GameStatistics *_swig_go_0, std::vector< std::string > *_swig_go_1) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::vector< std::string > *arg2 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  arg2 = *(std::vector< std::string > **)&_swig_go_1; 
+  
+  if (arg1) (arg1)->timeout_log_filenames = *arg2;
+  
+}
+
+
+std::vector< std::string > *_wrap_GameStatistics_timeoutLogFilenames_get_halite_47887523e5de5737(GameStatistics *_swig_go_0) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  std::vector< std::string > *result = 0 ;
+  std::vector< std::string > *_swig_go_result;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  
+  result = (std::vector< std::string > *)& ((arg1)->timeout_log_filenames);
+  *(std::vector< std::string > **)&_swig_go_result = (std::vector< std::string > *)result; 
+  return _swig_go_result;
+}
+
+
+GameStatistics *_wrap_new_GameStatistics_halite_47887523e5de5737() {
+  GameStatistics *result = 0 ;
+  GameStatistics *_swig_go_result;
+  
+  
+  result = (GameStatistics *)new GameStatistics();
+  *(GameStatistics **)&_swig_go_result = (GameStatistics *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_GameStatistics_halite_47887523e5de5737(GameStatistics *_swig_go_0) {
+  GameStatistics *arg1 = (GameStatistics *) 0 ;
+  
+  arg1 = *(GameStatistics **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+void _wrap_Location_x_set_halite_47887523e5de5737(hlt::Location *_swig_go_0, short _swig_go_1) {
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  unsigned short arg2 ;
+  
+  arg1 = *(hlt::Location **)&_swig_go_0; 
+  arg2 = (unsigned short)_swig_go_1; 
+  
+  if (arg1) (arg1)->x = arg2;
+  
+}
+
+
+short _wrap_Location_x_get_halite_47887523e5de5737(hlt::Location *_swig_go_0) {
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  unsigned short result;
+  short _swig_go_result;
+  
+  arg1 = *(hlt::Location **)&_swig_go_0; 
+  
+  result = (unsigned short) ((arg1)->x);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Location_y_set_halite_47887523e5de5737(hlt::Location *_swig_go_0, short _swig_go_1) {
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  unsigned short arg2 ;
+  
+  arg1 = *(hlt::Location **)&_swig_go_0; 
+  arg2 = (unsigned short)_swig_go_1; 
+  
+  if (arg1) (arg1)->y = arg2;
+  
+}
+
+
+short _wrap_Location_y_get_halite_47887523e5de5737(hlt::Location *_swig_go_0) {
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  unsigned short result;
+  short _swig_go_result;
+  
+  arg1 = *(hlt::Location **)&_swig_go_0; 
+  
+  result = (unsigned short) ((arg1)->y);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+hlt::Location *_wrap_new_Location_halite_47887523e5de5737() {
+  hlt::Location *result = 0 ;
+  hlt::Location *_swig_go_result;
+  
+  
+  result = (hlt::Location *)new hlt::Location();
+  *(hlt::Location **)&_swig_go_result = (hlt::Location *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_Location_halite_47887523e5de5737(hlt::Location *_swig_go_0) {
+  hlt::Location *arg1 = (hlt::Location *) 0 ;
+  
+  arg1 = *(hlt::Location **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+bool _wrap_LocationLess_halite_47887523e5de5737(hlt::Location *_swig_go_0, hlt::Location *_swig_go_1) {
+  hlt::Location *arg1 = 0 ;
+  hlt::Location *arg2 = 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(hlt::Location **)&_swig_go_0; 
+  arg2 = *(hlt::Location **)&_swig_go_1; 
+  
+  result = (bool)hlt::operator <((hlt::Location const &)*arg1,(hlt::Location const &)*arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_LocationEquals_halite_47887523e5de5737(hlt::Location *_swig_go_0, hlt::Location *_swig_go_1) {
+  hlt::Location *arg1 = 0 ;
+  hlt::Location *arg2 = 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(hlt::Location **)&_swig_go_0; 
+  arg2 = *(hlt::Location **)&_swig_go_1; 
+  
+  result = (bool)hlt::operator ==((hlt::Location const &)*arg1,(hlt::Location const &)*arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Site_owner_set_halite_47887523e5de5737(hlt::Site *_swig_go_0, char _swig_go_1) {
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char arg2 ;
+  
+  arg1 = *(hlt::Site **)&_swig_go_0; 
+  arg2 = (unsigned char)_swig_go_1; 
+  
+  if (arg1) (arg1)->owner = arg2;
+  
+}
+
+
+char _wrap_Site_owner_get_halite_47887523e5de5737(hlt::Site *_swig_go_0) {
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char result;
+  char _swig_go_result;
+  
+  arg1 = *(hlt::Site **)&_swig_go_0; 
+  
+  result = (unsigned char) ((arg1)->owner);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Site_strength_set_halite_47887523e5de5737(hlt::Site *_swig_go_0, char _swig_go_1) {
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char arg2 ;
+  
+  arg1 = *(hlt::Site **)&_swig_go_0; 
+  arg2 = (unsigned char)_swig_go_1; 
+  
+  if (arg1) (arg1)->strength = arg2;
+  
+}
+
+
+char _wrap_Site_strength_get_halite_47887523e5de5737(hlt::Site *_swig_go_0) {
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char result;
+  char _swig_go_result;
+  
+  arg1 = *(hlt::Site **)&_swig_go_0; 
+  
+  result = (unsigned char) ((arg1)->strength);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Site_production_set_halite_47887523e5de5737(hlt::Site *_swig_go_0, char _swig_go_1) {
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char arg2 ;
+  
+  arg1 = *(hlt::Site **)&_swig_go_0; 
+  arg2 = (unsigned char)_swig_go_1; 
+  
+  if (arg1) (arg1)->production = arg2;
+  
+}
+
+
+char _wrap_Site_production_get_halite_47887523e5de5737(hlt::Site *_swig_go_0) {
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  unsigned char result;
+  char _swig_go_result;
+  
+  arg1 = *(hlt::Site **)&_swig_go_0; 
+  
+  result = (unsigned char) ((arg1)->production);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+hlt::Site *_wrap_new_Site_halite_47887523e5de5737() {
+  hlt::Site *result = 0 ;
+  hlt::Site *_swig_go_result;
+  
+  
+  result = (hlt::Site *)new hlt::Site();
+  *(hlt::Site **)&_swig_go_result = (hlt::Site *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_Site_halite_47887523e5de5737(hlt::Site *_swig_go_0) {
+  hlt::Site *arg1 = (hlt::Site *) 0 ;
+  
+  arg1 = *(hlt::Site **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+void _wrap_Map_contents_set_halite_47887523e5de5737(hlt::Map *_swig_go_0, std::vector< std::vector< hlt::Site > > *_swig_go_1) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  std::vector< std::vector< hlt::Site > > *arg2 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  arg2 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_1; 
+  
+  if (arg1) (arg1)->contents = *arg2;
+  
+}
+
+
+std::vector< std::vector< hlt::Site > > *_wrap_Map_contents_get_halite_47887523e5de5737(hlt::Map *_swig_go_0) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  std::vector< std::vector< hlt::Site > > *result = 0 ;
+  std::vector< std::vector< hlt::Site > > *_swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  result = (std::vector< std::vector< hlt::Site > > *)& ((arg1)->contents);
+  *(std::vector< std::vector< hlt::Site > > **)&_swig_go_result = (std::vector< std::vector< hlt::Site > > *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Map_width_set_halite_47887523e5de5737(hlt::Map *_swig_go_0, short _swig_go_1) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  unsigned short arg2 ;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  arg2 = (unsigned short)_swig_go_1; 
+  
+  if (arg1) (arg1)->map_width = arg2;
+  
+}
+
+
+short _wrap_Map_width_get_halite_47887523e5de5737(hlt::Map *_swig_go_0) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  unsigned short result;
+  short _swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  result = (unsigned short) ((arg1)->map_width);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Map_height_set_halite_47887523e5de5737(hlt::Map *_swig_go_0, short _swig_go_1) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  unsigned short arg2 ;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  arg2 = (unsigned short)_swig_go_1; 
+  
+  if (arg1) (arg1)->map_height = arg2;
+  
+}
+
+
+short _wrap_Map_height_get_halite_47887523e5de5737(hlt::Map *_swig_go_0) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  unsigned short result;
+  short _swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  result = (unsigned short) ((arg1)->map_height);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+hlt::Map *_wrap_new_Map__SWIG_0_halite_47887523e5de5737() {
+  hlt::Map *result = 0 ;
+  hlt::Map *_swig_go_result;
+  
+  
+  result = (hlt::Map *)new hlt::Map();
+  *(hlt::Map **)&_swig_go_result = (hlt::Map *)result; 
+  return _swig_go_result;
+}
+
+
+hlt::Map *_wrap_new_Map__SWIG_1_halite_47887523e5de5737(short _swig_go_0, short _swig_go_1) {
+  short arg1 ;
+  short arg2 ;
+  hlt::Map *result = 0 ;
+  hlt::Map *_swig_go_result;
+  
+  arg1 = (short)_swig_go_0; 
+  arg2 = (short)_swig_go_1; 
+  
+  result = (hlt::Map *)new hlt::Map(arg1,arg2);
+  *(hlt::Map **)&_swig_go_result = (hlt::Map *)result; 
+  return _swig_go_result;
+}
+
+
+hlt::Map *_wrap_new_Map__SWIG_2_halite_47887523e5de5737(hlt::Map *_swig_go_0) {
+  hlt::Map *arg1 = 0 ;
+  hlt::Map *result = 0 ;
+  hlt::Map *_swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  result = (hlt::Map *)new hlt::Map((hlt::Map const &)*arg1);
+  *(hlt::Map **)&_swig_go_result = (hlt::Map *)result; 
+  return _swig_go_result;
+}
+
+
+hlt::Map *_wrap_new_Map__SWIG_3_halite_47887523e5de5737(short _swig_go_0, short _swig_go_1, char _swig_go_2, intgo _swig_go_3) {
+  short arg1 ;
+  short arg2 ;
+  unsigned char arg3 ;
+  unsigned int arg4 ;
+  hlt::Map *result = 0 ;
+  hlt::Map *_swig_go_result;
+  
+  arg1 = (short)_swig_go_0; 
+  arg2 = (short)_swig_go_1; 
+  arg3 = (unsigned char)_swig_go_2; 
+  arg4 = (unsigned int)_swig_go_3; 
+  
+  result = (hlt::Map *)new hlt::Map(arg1,arg2,arg3,arg4);
+  *(hlt::Map **)&_swig_go_result = (hlt::Map *)result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_Map_inBounds_halite_47887523e5de5737(hlt::Map *_swig_go_0, hlt::Location *_swig_go_1) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  hlt::Location *argp2 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  argp2 = (hlt::Location *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null hlt::Location");
+  }
+  arg2 = (hlt::Location)*argp2;
+  
+  
+  result = (bool)((hlt::Map const *)arg1)->inBounds(arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+float _wrap_Map_getDistance_halite_47887523e5de5737(hlt::Map *_swig_go_0, hlt::Location *_swig_go_1, hlt::Location *_swig_go_2) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  hlt::Location arg3 ;
+  hlt::Location *argp2 ;
+  hlt::Location *argp3 ;
+  float result;
+  float _swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  argp2 = (hlt::Location *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null hlt::Location");
+  }
+  arg2 = (hlt::Location)*argp2;
+  
+  
+  argp3 = (hlt::Location *)_swig_go_2;
+  if (argp3 == NULL) {
+    _swig_gopanic("Attempt to dereference null hlt::Location");
+  }
+  arg3 = (hlt::Location)*argp3;
+  
+  
+  result = (float)((hlt::Map const *)arg1)->getDistance(arg2,arg3);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+float _wrap_Map_getAngle_halite_47887523e5de5737(hlt::Map *_swig_go_0, hlt::Location *_swig_go_1, hlt::Location *_swig_go_2) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  hlt::Location arg3 ;
+  hlt::Location *argp2 ;
+  hlt::Location *argp3 ;
+  float result;
+  float _swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  argp2 = (hlt::Location *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null hlt::Location");
+  }
+  arg2 = (hlt::Location)*argp2;
+  
+  
+  argp3 = (hlt::Location *)_swig_go_2;
+  if (argp3 == NULL) {
+    _swig_gopanic("Attempt to dereference null hlt::Location");
+  }
+  arg3 = (hlt::Location)*argp3;
+  
+  
+  result = (float)((hlt::Map const *)arg1)->getAngle(arg2,arg3);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+hlt::Location *_wrap_Map_getLocation_halite_47887523e5de5737(hlt::Map *_swig_go_0, hlt::Location *_swig_go_1, char _swig_go_2) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  unsigned char arg3 ;
+  hlt::Location *argp2 ;
+  hlt::Location result;
+  hlt::Location *_swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  argp2 = (hlt::Location *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null hlt::Location");
+  }
+  arg2 = (hlt::Location)*argp2;
+  
+  arg3 = (unsigned char)_swig_go_2; 
+  
+  result = ((hlt::Map const *)arg1)->getLocation(arg2,arg3);
+  *(hlt::Location **)&_swig_go_result = new hlt::Location(result); 
+  return _swig_go_result;
+}
+
+
+hlt::Site *_wrap_Map_getSite__SWIG_0_halite_47887523e5de5737(hlt::Map *_swig_go_0, hlt::Location *_swig_go_1, char _swig_go_2) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  unsigned char arg3 ;
+  hlt::Location *argp2 ;
+  hlt::Site *result = 0 ;
+  hlt::Site *_swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  argp2 = (hlt::Location *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null hlt::Location");
+  }
+  arg2 = (hlt::Location)*argp2;
+  
+  arg3 = (unsigned char)_swig_go_2; 
+  
+  result = (hlt::Site *) &(arg1)->getSite(arg2,arg3);
+  *(hlt::Site **)&_swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+hlt::Site *_wrap_Map_getSite__SWIG_1_halite_47887523e5de5737(hlt::Map *_swig_go_0, hlt::Location *_swig_go_1) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  hlt::Location arg2 ;
+  hlt::Location *argp2 ;
+  hlt::Site *result = 0 ;
+  hlt::Site *_swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  argp2 = (hlt::Location *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null hlt::Location");
+  }
+  arg2 = (hlt::Location)*argp2;
+  
+  
+  result = (hlt::Site *) &(arg1)->getSite(arg2);
+  *(hlt::Site **)&_swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_Map_halite_47887523e5de5737(hlt::Map *_swig_go_0) {
+  hlt::Map *arg1 = (hlt::Map *) 0 ;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+hlt::Map *_wrap_ppmToMap_halite_47887523e5de5737(_gostring_ _swig_go_0, intgo _swig_go_1) {
+  std::string arg1 ;
+  int arg2 ;
+  hlt::Map result;
+  hlt::Map *_swig_go_result;
+  
+  (&arg1)->assign(_swig_go_0.p, _swig_go_0.n); 
+  arg2 = (int)_swig_go_1; 
+  
+  result = hlt::ppmToMap(arg1,arg2);
+  *(hlt::Map **)&_swig_go_result = new hlt::Map(result); 
+  return _swig_go_result;
+}
+
+
+void _wrap_UniConnection_read_set_halite_47887523e5de5737(UniConnection *_swig_go_0, intgo _swig_go_1) {
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  int arg2 ;
+  
+  arg1 = *(UniConnection **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  if (arg1) (arg1)->read = arg2;
+  
+}
+
+
+intgo _wrap_UniConnection_read_get_halite_47887523e5de5737(UniConnection *_swig_go_0) {
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(UniConnection **)&_swig_go_0; 
+  
+  result = (int) ((arg1)->read);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_UniConnection_write_set_halite_47887523e5de5737(UniConnection *_swig_go_0, intgo _swig_go_1) {
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  int arg2 ;
+  
+  arg1 = *(UniConnection **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  if (arg1) (arg1)->write = arg2;
+  
+}
+
+
+intgo _wrap_UniConnection_write_get_halite_47887523e5de5737(UniConnection *_swig_go_0) {
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(UniConnection **)&_swig_go_0; 
+  
+  result = (int) ((arg1)->write);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+UniConnection *_wrap_new_UniConnection_halite_47887523e5de5737() {
+  UniConnection *result = 0 ;
+  UniConnection *_swig_go_result;
+  
+  
+  result = (UniConnection *)new UniConnection();
+  *(UniConnection **)&_swig_go_result = (UniConnection *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_UniConnection_halite_47887523e5de5737(UniConnection *_swig_go_0) {
+  UniConnection *arg1 = (UniConnection *) 0 ;
+  
+  arg1 = *(UniConnection **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+void _wrap_Networking_startAndConnectBot_halite_47887523e5de5737(Networking *_swig_go_0, _gostring_ _swig_go_1) {
+  Networking *arg1 = (Networking *) 0 ;
+  std::string arg2 ;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  (&arg2)->assign(_swig_go_1.p, _swig_go_1.n); 
+  
+  (arg1)->startAndConnectBot(arg2);
+  
+}
+
+
+intgo _wrap_Networking_handleInitNetworking_halite_47887523e5de5737(Networking *_swig_go_0, char _swig_go_1, hlt::Map *_swig_go_2, bool _swig_go_3, _gostring_* _swig_go_4) {
+  Networking *arg1 = (Networking *) 0 ;
+  unsigned char arg2 ;
+  hlt::Map *arg3 = 0 ;
+  bool arg4 ;
+  std::string *arg5 = (std::string *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  arg2 = (unsigned char)_swig_go_1; 
+  arg3 = *(hlt::Map **)&_swig_go_2; 
+  arg4 = (bool)_swig_go_3; 
+  arg5 = *(std::string **)&_swig_go_4; 
+  
+  result = (int)(arg1)->handleInitNetworking(arg2,(hlt::Map const &)*arg3,arg4,arg5);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_Networking_handleFrameNetworking_halite_47887523e5de5737(Networking *_swig_go_0, char _swig_go_1, short _swig_go_2, hlt::Map *_swig_go_3, bool _swig_go_4, std::map< hlt::Location,unsigned char > *_swig_go_5) {
+  Networking *arg1 = (Networking *) 0 ;
+  unsigned char arg2 ;
+  unsigned short *arg3 = 0 ;
+  hlt::Map *arg4 = 0 ;
+  bool arg5 ;
+  std::map< hlt::Location,unsigned char > *arg6 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  arg2 = (unsigned char)_swig_go_1; 
+  arg3 = (unsigned short *)&_swig_go_2; 
+  arg4 = *(hlt::Map **)&_swig_go_3; 
+  arg5 = (bool)_swig_go_4; 
+  arg6 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_5; 
+  
+  result = (int)(arg1)->handleFrameNetworking(arg2,(unsigned short const &)*arg3,(hlt::Map const &)*arg4,arg5,arg6);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Networking_killPlayer_halite_47887523e5de5737(Networking *_swig_go_0, char _swig_go_1) {
+  Networking *arg1 = (Networking *) 0 ;
+  unsigned char arg2 ;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  arg2 = (unsigned char)_swig_go_1; 
+  
+  (arg1)->killPlayer(arg2);
+  
+}
+
+
+bool _wrap_Networking_isProcessDead_halite_47887523e5de5737(Networking *_swig_go_0, char _swig_go_1) {
+  Networking *arg1 = (Networking *) 0 ;
+  unsigned char arg2 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  arg2 = (unsigned char)_swig_go_1; 
+  
+  result = (bool)(arg1)->isProcessDead(arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_Networking_numberOfPlayers_halite_47887523e5de5737(Networking *_swig_go_0) {
+  Networking *arg1 = (Networking *) 0 ;
+  int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  
+  result = (int)(arg1)->numberOfPlayers();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_Networking_player_logs_set_halite_47887523e5de5737(Networking *_swig_go_0, std::vector< std::string > *_swig_go_1) {
+  Networking *arg1 = (Networking *) 0 ;
+  std::vector< std::string > *arg2 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  arg2 = *(std::vector< std::string > **)&_swig_go_1; 
+  
+  if (arg1) (arg1)->player_logs = *arg2;
+  
+}
+
+
+std::vector< std::string > *_wrap_Networking_player_logs_get_halite_47887523e5de5737(Networking *_swig_go_0) {
+  Networking *arg1 = (Networking *) 0 ;
+  std::vector< std::string > *result = 0 ;
+  std::vector< std::string > *_swig_go_result;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  
+  result = (std::vector< std::string > *)& ((arg1)->player_logs);
+  *(std::vector< std::string > **)&_swig_go_result = (std::vector< std::string > *)result; 
+  return _swig_go_result;
+}
+
+
+_gostring_ _wrap_Networking_serializeMap_halite_47887523e5de5737(hlt::Map *_swig_go_0) {
+  hlt::Map *arg1 = 0 ;
+  std::string result;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(hlt::Map **)&_swig_go_0; 
+  
+  result = Networking::serializeMap((hlt::Map const &)*arg1);
+  _swig_go_result = Swig_AllocateString((&result)->data(), (&result)->length()); 
+  return _swig_go_result;
+}
+
+
+void _wrap_Networking_addLocalBot_halite_47887523e5de5737(Networking *_swig_go_0, UniConnection *_swig_go_1) {
+  Networking *arg1 = (Networking *) 0 ;
+  UniConnection arg2 ;
+  UniConnection *argp2 ;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  
+  argp2 = (UniConnection *)_swig_go_1;
+  if (argp2 == NULL) {
+    _swig_gopanic("Attempt to dereference null UniConnection");
+  }
+  arg2 = (UniConnection)*argp2;
+  
+  
+  (arg1)->addLocalBot(arg2);
+  
+}
+
+
+void _wrap_Networking_stopManagingProcesses_halite_47887523e5de5737(Networking *_swig_go_0) {
+  Networking *arg1 = (Networking *) 0 ;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  
+  (arg1)->stopManagingProcesses();
+  
+}
+
+
+Networking *_wrap_new_Networking_halite_47887523e5de5737() {
+  Networking *result = 0 ;
+  Networking *_swig_go_result;
+  
+  
+  result = (Networking *)new Networking();
+  *(Networking **)&_swig_go_result = (Networking *)result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_Networking_halite_47887523e5de5737(Networking *_swig_go_0) {
+  Networking *arg1 = (Networking *) 0 ;
+  
+  arg1 = *(Networking **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_0_halite_47887523e5de5737() {
   std::vector< UniConnection > *result = 0 ;
   std::vector< UniConnection > *_swig_go_result;
   
@@ -653,7 +2021,7 @@ std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_0_halite_20077
 }
 
 
-std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_1_halite_2007760261f40110(long long _swig_go_0) {
+std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_1_halite_47887523e5de5737(long long _swig_go_0) {
   std::vector< UniConnection >::size_type arg1 ;
   std::vector< UniConnection > *result = 0 ;
   std::vector< UniConnection > *_swig_go_result;
@@ -666,7 +2034,7 @@ std::vector< UniConnection > *_wrap_new_UniConnectionVector__SWIG_1_halite_20077
 }
 
 
-long long _wrap_UniConnectionVector_size_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
+long long _wrap_UniConnectionVector_size_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   std::vector< UniConnection >::size_type result;
   long long _swig_go_result;
@@ -679,7 +2047,7 @@ long long _wrap_UniConnectionVector_size_halite_2007760261f40110(std::vector< Un
 }
 
 
-long long _wrap_UniConnectionVector_capacity_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
+long long _wrap_UniConnectionVector_capacity_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   std::vector< UniConnection >::size_type result;
   long long _swig_go_result;
@@ -692,7 +2060,7 @@ long long _wrap_UniConnectionVector_capacity_halite_2007760261f40110(std::vector
 }
 
 
-void _wrap_UniConnectionVector_reserve_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0, long long _swig_go_1) {
+void _wrap_UniConnectionVector_reserve_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0, long long _swig_go_1) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   std::vector< UniConnection >::size_type arg2 ;
   
@@ -704,7 +2072,7 @@ void _wrap_UniConnectionVector_reserve_halite_2007760261f40110(std::vector< UniC
 }
 
 
-bool _wrap_UniConnectionVector_isEmpty_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
+bool _wrap_UniConnectionVector_isEmpty_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   bool result;
   bool _swig_go_result;
@@ -717,7 +2085,7 @@ bool _wrap_UniConnectionVector_isEmpty_halite_2007760261f40110(std::vector< UniC
 }
 
 
-void _wrap_UniConnectionVector_clear_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
+void _wrap_UniConnectionVector_clear_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   
   arg1 = *(std::vector< UniConnection > **)&_swig_go_0; 
@@ -727,7 +2095,7 @@ void _wrap_UniConnectionVector_clear_halite_2007760261f40110(std::vector< UniCon
 }
 
 
-void _wrap_UniConnectionVector_add_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0, UniConnection *_swig_go_1) {
+void _wrap_UniConnectionVector_add_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0, UniConnection *_swig_go_1) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   std::vector< UniConnection >::value_type *arg2 = 0 ;
   
@@ -739,7 +2107,7 @@ void _wrap_UniConnectionVector_add_halite_2007760261f40110(std::vector< UniConne
 }
 
 
-UniConnection *_wrap_UniConnectionVector_get_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0, intgo _swig_go_1) {
+UniConnection *_wrap_UniConnectionVector_get_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0, intgo _swig_go_1) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   int arg2 ;
   std::vector< UniConnection >::value_type *result = 0 ;
@@ -752,9 +2120,7 @@ UniConnection *_wrap_UniConnectionVector_get_halite_2007760261f40110(std::vector
     result = (std::vector< UniConnection >::value_type *) &std_vector_Sl_UniConnection_Sg__get(arg1,arg2);
   }
   catch(std::out_of_range &_e) {
-    (void)_e;
-    _swig_gopanic("C++ std::out_of_range exception thrown");
-    
+    _swig_gopanic((&_e)->what());
   }
   
   *(std::vector< UniConnection >::value_type **)&_swig_go_result = result; 
@@ -762,7 +2128,7 @@ UniConnection *_wrap_UniConnectionVector_get_halite_2007760261f40110(std::vector
 }
 
 
-void _wrap_UniConnectionVector_set_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0, intgo _swig_go_1, UniConnection *_swig_go_2) {
+void _wrap_UniConnectionVector_set_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0, intgo _swig_go_1, UniConnection *_swig_go_2) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   int arg2 ;
   std::vector< UniConnection >::value_type *arg3 = 0 ;
@@ -775,19 +2141,901 @@ void _wrap_UniConnectionVector_set_halite_2007760261f40110(std::vector< UniConne
     std_vector_Sl_UniConnection_Sg__set(arg1,arg2,(UniConnection const &)*arg3);
   }
   catch(std::out_of_range &_e) {
-    (void)_e;
-    _swig_gopanic("C++ std::out_of_range exception thrown");
-    
+    _swig_gopanic((&_e)->what());
   }
   
   
 }
 
 
-void _wrap_delete_UniConnectionVector_halite_2007760261f40110(std::vector< UniConnection > *_swig_go_0) {
+void _wrap_delete_UniConnectionVector_halite_47887523e5de5737(std::vector< UniConnection > *_swig_go_0) {
   std::vector< UniConnection > *arg1 = (std::vector< UniConnection > *) 0 ;
   
   arg1 = *(std::vector< UniConnection > **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+std::vector< hlt::Site > *_wrap_new_RowVector__SWIG_0_halite_47887523e5de5737() {
+  std::vector< hlt::Site > *result = 0 ;
+  std::vector< hlt::Site > *_swig_go_result;
+  
+  
+  result = (std::vector< hlt::Site > *)new std::vector< hlt::Site >();
+  *(std::vector< hlt::Site > **)&_swig_go_result = (std::vector< hlt::Site > *)result; 
+  return _swig_go_result;
+}
+
+
+std::vector< hlt::Site > *_wrap_new_RowVector__SWIG_1_halite_47887523e5de5737(long long _swig_go_0) {
+  std::vector< hlt::Site >::size_type arg1 ;
+  std::vector< hlt::Site > *result = 0 ;
+  std::vector< hlt::Site > *_swig_go_result;
+  
+  arg1 = (size_t)_swig_go_0; 
+  
+  result = (std::vector< hlt::Site > *)new std::vector< hlt::Site >(arg1);
+  *(std::vector< hlt::Site > **)&_swig_go_result = (std::vector< hlt::Site > *)result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_RowVector_size_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  std::vector< hlt::Site >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  
+  result = ((std::vector< hlt::Site > const *)arg1)->size();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_RowVector_capacity_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  std::vector< hlt::Site >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  
+  result = ((std::vector< hlt::Site > const *)arg1)->capacity();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_RowVector_reserve_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0, long long _swig_go_1) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  std::vector< hlt::Site >::size_type arg2 ;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  arg2 = (size_t)_swig_go_1; 
+  
+  (arg1)->reserve(arg2);
+  
+}
+
+
+bool _wrap_RowVector_isEmpty_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  
+  result = (bool)((std::vector< hlt::Site > const *)arg1)->empty();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_RowVector_clear_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  
+  (arg1)->clear();
+  
+}
+
+
+void _wrap_RowVector_add_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0, hlt::Site *_swig_go_1) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  std::vector< hlt::Site >::value_type *arg2 = 0 ;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  arg2 = *(std::vector< hlt::Site >::value_type **)&_swig_go_1; 
+  
+  (arg1)->push_back((std::vector< hlt::Site >::value_type const &)*arg2);
+  
+}
+
+
+hlt::Site *_wrap_RowVector_get_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0, intgo _swig_go_1) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  int arg2 ;
+  std::vector< hlt::Site >::value_type *result = 0 ;
+  hlt::Site *_swig_go_result;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  try {
+    result = (std::vector< hlt::Site >::value_type *) &std_vector_Sl_hlt_Site_Sg__get(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  *(std::vector< hlt::Site >::value_type **)&_swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_RowVector_set_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0, intgo _swig_go_1, hlt::Site *_swig_go_2) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  int arg2 ;
+  std::vector< hlt::Site >::value_type *arg3 = 0 ;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  arg3 = *(std::vector< hlt::Site >::value_type **)&_swig_go_2; 
+  
+  try {
+    std_vector_Sl_hlt_Site_Sg__set(arg1,arg2,(hlt::Site const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  
+}
+
+
+void _wrap_delete_RowVector_halite_47887523e5de5737(std::vector< hlt::Site > *_swig_go_0) {
+  std::vector< hlt::Site > *arg1 = (std::vector< hlt::Site > *) 0 ;
+  
+  arg1 = *(std::vector< hlt::Site > **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+std::vector< std::vector< hlt::Site > > *_wrap_new_BoardVector__SWIG_0_halite_47887523e5de5737() {
+  std::vector< std::vector< hlt::Site > > *result = 0 ;
+  std::vector< std::vector< hlt::Site > > *_swig_go_result;
+  
+  
+  result = (std::vector< std::vector< hlt::Site > > *)new std::vector< std::vector< hlt::Site > >();
+  *(std::vector< std::vector< hlt::Site > > **)&_swig_go_result = (std::vector< std::vector< hlt::Site > > *)result; 
+  return _swig_go_result;
+}
+
+
+std::vector< std::vector< hlt::Site > > *_wrap_new_BoardVector__SWIG_1_halite_47887523e5de5737(long long _swig_go_0) {
+  std::vector< std::vector< hlt::Site > >::size_type arg1 ;
+  std::vector< std::vector< hlt::Site > > *result = 0 ;
+  std::vector< std::vector< hlt::Site > > *_swig_go_result;
+  
+  arg1 = (size_t)_swig_go_0; 
+  
+  result = (std::vector< std::vector< hlt::Site > > *)new std::vector< std::vector< hlt::Site > >(arg1);
+  *(std::vector< std::vector< hlt::Site > > **)&_swig_go_result = (std::vector< std::vector< hlt::Site > > *)result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_BoardVector_size_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  std::vector< std::vector< hlt::Site > >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  
+  result = ((std::vector< std::vector< hlt::Site > > const *)arg1)->size();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_BoardVector_capacity_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  std::vector< std::vector< hlt::Site > >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  
+  result = ((std::vector< std::vector< hlt::Site > > const *)arg1)->capacity();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_BoardVector_reserve_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0, long long _swig_go_1) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  std::vector< std::vector< hlt::Site > >::size_type arg2 ;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  arg2 = (size_t)_swig_go_1; 
+  
+  (arg1)->reserve(arg2);
+  
+}
+
+
+bool _wrap_BoardVector_isEmpty_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  
+  result = (bool)((std::vector< std::vector< hlt::Site > > const *)arg1)->empty();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_BoardVector_clear_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  
+  (arg1)->clear();
+  
+}
+
+
+void _wrap_BoardVector_add_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0, std::vector< hlt::Site > *_swig_go_1) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  std::vector< std::vector< hlt::Site > >::value_type *arg2 = 0 ;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  arg2 = *(std::vector< std::vector< hlt::Site > >::value_type **)&_swig_go_1; 
+  
+  (arg1)->push_back((std::vector< std::vector< hlt::Site > >::value_type const &)*arg2);
+  
+}
+
+
+std::vector< hlt::Site > *_wrap_BoardVector_get_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0, intgo _swig_go_1) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  int arg2 ;
+  std::vector< std::vector< hlt::Site > >::value_type *result = 0 ;
+  std::vector< hlt::Site > *_swig_go_result;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  try {
+    result = (std::vector< std::vector< hlt::Site > >::value_type *) &std_vector_Sl_std_vector_Sl_hlt_Site_Sg__Sg__get(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  *(std::vector< std::vector< hlt::Site > >::value_type **)&_swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_BoardVector_set_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0, intgo _swig_go_1, std::vector< hlt::Site > *_swig_go_2) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  int arg2 ;
+  std::vector< std::vector< hlt::Site > >::value_type *arg3 = 0 ;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  arg3 = *(std::vector< std::vector< hlt::Site > >::value_type **)&_swig_go_2; 
+  
+  try {
+    std_vector_Sl_std_vector_Sl_hlt_Site_Sg__Sg__set(arg1,arg2,(std::vector< hlt::Site > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  
+}
+
+
+void _wrap_delete_BoardVector_halite_47887523e5de5737(std::vector< std::vector< hlt::Site > > *_swig_go_0) {
+  std::vector< std::vector< hlt::Site > > *arg1 = (std::vector< std::vector< hlt::Site > > *) 0 ;
+  
+  arg1 = *(std::vector< std::vector< hlt::Site > > **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+std::vector< PlayerStatistics > *_wrap_new_PlayerStatisticsVector__SWIG_0_halite_47887523e5de5737() {
+  std::vector< PlayerStatistics > *result = 0 ;
+  std::vector< PlayerStatistics > *_swig_go_result;
+  
+  
+  result = (std::vector< PlayerStatistics > *)new std::vector< PlayerStatistics >();
+  *(std::vector< PlayerStatistics > **)&_swig_go_result = (std::vector< PlayerStatistics > *)result; 
+  return _swig_go_result;
+}
+
+
+std::vector< PlayerStatistics > *_wrap_new_PlayerStatisticsVector__SWIG_1_halite_47887523e5de5737(long long _swig_go_0) {
+  std::vector< PlayerStatistics >::size_type arg1 ;
+  std::vector< PlayerStatistics > *result = 0 ;
+  std::vector< PlayerStatistics > *_swig_go_result;
+  
+  arg1 = (size_t)_swig_go_0; 
+  
+  result = (std::vector< PlayerStatistics > *)new std::vector< PlayerStatistics >(arg1);
+  *(std::vector< PlayerStatistics > **)&_swig_go_result = (std::vector< PlayerStatistics > *)result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_PlayerStatisticsVector_size_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  std::vector< PlayerStatistics >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  
+  result = ((std::vector< PlayerStatistics > const *)arg1)->size();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_PlayerStatisticsVector_capacity_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  std::vector< PlayerStatistics >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  
+  result = ((std::vector< PlayerStatistics > const *)arg1)->capacity();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatisticsVector_reserve_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0, long long _swig_go_1) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  std::vector< PlayerStatistics >::size_type arg2 ;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  arg2 = (size_t)_swig_go_1; 
+  
+  (arg1)->reserve(arg2);
+  
+}
+
+
+bool _wrap_PlayerStatisticsVector_isEmpty_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  
+  result = (bool)((std::vector< PlayerStatistics > const *)arg1)->empty();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatisticsVector_clear_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  
+  (arg1)->clear();
+  
+}
+
+
+void _wrap_PlayerStatisticsVector_add_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0, PlayerStatistics *_swig_go_1) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  std::vector< PlayerStatistics >::value_type *arg2 = 0 ;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  arg2 = *(std::vector< PlayerStatistics >::value_type **)&_swig_go_1; 
+  
+  (arg1)->push_back((std::vector< PlayerStatistics >::value_type const &)*arg2);
+  
+}
+
+
+PlayerStatistics *_wrap_PlayerStatisticsVector_get_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0, intgo _swig_go_1) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  int arg2 ;
+  std::vector< PlayerStatistics >::value_type *result = 0 ;
+  PlayerStatistics *_swig_go_result;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  try {
+    result = (std::vector< PlayerStatistics >::value_type *) &std_vector_Sl_PlayerStatistics_Sg__get(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  *(std::vector< PlayerStatistics >::value_type **)&_swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerStatisticsVector_set_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0, intgo _swig_go_1, PlayerStatistics *_swig_go_2) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  int arg2 ;
+  std::vector< PlayerStatistics >::value_type *arg3 = 0 ;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  arg3 = *(std::vector< PlayerStatistics >::value_type **)&_swig_go_2; 
+  
+  try {
+    std_vector_Sl_PlayerStatistics_Sg__set(arg1,arg2,(PlayerStatistics const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  
+}
+
+
+void _wrap_delete_PlayerStatisticsVector_halite_47887523e5de5737(std::vector< PlayerStatistics > *_swig_go_0) {
+  std::vector< PlayerStatistics > *arg1 = (std::vector< PlayerStatistics > *) 0 ;
+  
+  arg1 = *(std::vector< PlayerStatistics > **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+std::vector< std::string > *_wrap_new_StringVector__SWIG_0_halite_47887523e5de5737() {
+  std::vector< std::string > *result = 0 ;
+  std::vector< std::string > *_swig_go_result;
+  
+  
+  result = (std::vector< std::string > *)new std::vector< std::string >();
+  *(std::vector< std::string > **)&_swig_go_result = (std::vector< std::string > *)result; 
+  return _swig_go_result;
+}
+
+
+std::vector< std::string > *_wrap_new_StringVector__SWIG_1_halite_47887523e5de5737(long long _swig_go_0) {
+  std::vector< std::string >::size_type arg1 ;
+  std::vector< std::string > *result = 0 ;
+  std::vector< std::string > *_swig_go_result;
+  
+  arg1 = (size_t)_swig_go_0; 
+  
+  result = (std::vector< std::string > *)new std::vector< std::string >(arg1);
+  *(std::vector< std::string > **)&_swig_go_result = (std::vector< std::string > *)result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_StringVector_size_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  result = ((std::vector< std::string > const *)arg1)->size();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_StringVector_capacity_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  result = ((std::vector< std::string > const *)arg1)->capacity();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_StringVector_reserve_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0, long long _swig_go_1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::size_type arg2 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  arg2 = (size_t)_swig_go_1; 
+  
+  (arg1)->reserve(arg2);
+  
+}
+
+
+bool _wrap_StringVector_isEmpty_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  result = (bool)((std::vector< std::string > const *)arg1)->empty();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_StringVector_clear_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  (arg1)->clear();
+  
+}
+
+
+void _wrap_StringVector_add_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0, _gostring_ _swig_go_1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  std::vector< std::string >::value_type *arg2 = 0 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  std::vector< std::string >::value_type arg2_str(_swig_go_1.p, _swig_go_1.n);
+  arg2 = &arg2_str;
+  
+  
+  (arg1)->push_back((std::vector< std::string >::value_type const &)*arg2);
+  
+}
+
+
+_gostring_ _wrap_StringVector_get_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0, intgo _swig_go_1) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::vector< std::string >::value_type *result = 0 ;
+  _gostring_ _swig_go_result;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  try {
+    result = (std::vector< std::string >::value_type *) &std_vector_Sl_std_string_Sg__get(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  _swig_go_result = Swig_AllocateString((*result).data(), (*result).length()); 
+  return _swig_go_result;
+}
+
+
+void _wrap_StringVector_set_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0, intgo _swig_go_1, _gostring_ _swig_go_2) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  int arg2 ;
+  std::vector< std::string >::value_type *arg3 = 0 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  std::vector< std::string >::value_type arg3_str(_swig_go_2.p, _swig_go_2.n);
+  arg3 = &arg3_str;
+  
+  
+  try {
+    std_vector_Sl_std_string_Sg__set(arg1,arg2,(std::string const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  
+}
+
+
+void _wrap_delete_StringVector_halite_47887523e5de5737(std::vector< std::string > *_swig_go_0) {
+  std::vector< std::string > *arg1 = (std::vector< std::string > *) 0 ;
+  
+  arg1 = *(std::vector< std::string > **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+std::map< hlt::Location,unsigned char > *_wrap_new_LocationToMoveMap__SWIG_0_halite_47887523e5de5737() {
+  std::map< hlt::Location,unsigned char > *result = 0 ;
+  std::map< hlt::Location,unsigned char > *_swig_go_result;
+  
+  
+  result = (std::map< hlt::Location,unsigned char > *)new std::map< hlt::Location,unsigned char >();
+  *(std::map< hlt::Location,unsigned char > **)&_swig_go_result = (std::map< hlt::Location,unsigned char > *)result; 
+  return _swig_go_result;
+}
+
+
+std::map< hlt::Location,unsigned char > *_wrap_new_LocationToMoveMap__SWIG_1_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0) {
+  std::map< hlt::Location,unsigned char > *arg1 = 0 ;
+  std::map< hlt::Location,unsigned char > *result = 0 ;
+  std::map< hlt::Location,unsigned char > *_swig_go_result;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  
+  result = (std::map< hlt::Location,unsigned char > *)new std::map< hlt::Location,unsigned char >((std::map< hlt::Location,unsigned char > const &)*arg1);
+  *(std::map< hlt::Location,unsigned char > **)&_swig_go_result = (std::map< hlt::Location,unsigned char > *)result; 
+  return _swig_go_result;
+}
+
+
+intgo _wrap_LocationToMoveMap_size_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0) {
+  std::map< hlt::Location,unsigned char > *arg1 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  unsigned int result;
+  intgo _swig_go_result;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  
+  result = (unsigned int)((std::map< hlt::Location,unsigned char > const *)arg1)->size();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+bool _wrap_LocationToMoveMap_empty_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0) {
+  std::map< hlt::Location,unsigned char > *arg1 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  
+  result = (bool)((std::map< hlt::Location,unsigned char > const *)arg1)->empty();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_LocationToMoveMap_clear_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0) {
+  std::map< hlt::Location,unsigned char > *arg1 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  
+  (arg1)->clear();
+  
+}
+
+
+char _wrap_LocationToMoveMap_get_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0, hlt::Location *_swig_go_1) {
+  std::map< hlt::Location,unsigned char > *arg1 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  hlt::Location *arg2 = 0 ;
+  unsigned char *result = 0 ;
+  char _swig_go_result;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  arg2 = *(hlt::Location **)&_swig_go_1; 
+  
+  try {
+    result = (unsigned char *) &std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__get(arg1,(hlt::Location const &)*arg2);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  _swig_go_result = (unsigned char)*result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_LocationToMoveMap_set_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0, hlt::Location *_swig_go_1, char _swig_go_2) {
+  std::map< hlt::Location,unsigned char > *arg1 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  hlt::Location *arg2 = 0 ;
+  unsigned char *arg3 = 0 ;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  arg2 = *(hlt::Location **)&_swig_go_1; 
+  arg3 = (unsigned char *)&_swig_go_2; 
+  
+  std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__set(arg1,(hlt::Location const &)*arg2,(unsigned char const &)*arg3);
+  
+}
+
+
+void _wrap_LocationToMoveMap_del_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0, hlt::Location *_swig_go_1) {
+  std::map< hlt::Location,unsigned char > *arg1 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  hlt::Location *arg2 = 0 ;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  arg2 = *(hlt::Location **)&_swig_go_1; 
+  
+  try {
+    std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__del(arg1,(hlt::Location const &)*arg2);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  
+}
+
+
+bool _wrap_LocationToMoveMap_has_key_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0, hlt::Location *_swig_go_1) {
+  std::map< hlt::Location,unsigned char > *arg1 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  hlt::Location *arg2 = 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  arg2 = *(hlt::Location **)&_swig_go_1; 
+  
+  result = (bool)std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__has_key(arg1,(hlt::Location const &)*arg2);
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_delete_LocationToMoveMap_halite_47887523e5de5737(std::map< hlt::Location,unsigned char > *_swig_go_0) {
+  std::map< hlt::Location,unsigned char > *arg1 = (std::map< hlt::Location,unsigned char > *) 0 ;
+  
+  arg1 = *(std::map< hlt::Location,unsigned char > **)&_swig_go_0; 
+  
+  delete arg1;
+  
+}
+
+
+std::vector< std::map< hlt::Location,unsigned char > > *_wrap_new_PlayerMovesVector__SWIG_0_halite_47887523e5de5737() {
+  std::vector< std::map< hlt::Location,unsigned char > > *result = 0 ;
+  std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_result;
+  
+  
+  result = (std::vector< std::map< hlt::Location,unsigned char > > *)new std::vector< std::map< hlt::Location,unsigned char > >();
+  *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_result = (std::vector< std::map< hlt::Location,unsigned char > > *)result; 
+  return _swig_go_result;
+}
+
+
+std::vector< std::map< hlt::Location,unsigned char > > *_wrap_new_PlayerMovesVector__SWIG_1_halite_47887523e5de5737(long long _swig_go_0) {
+  std::vector< std::map< hlt::Location,unsigned char > >::size_type arg1 ;
+  std::vector< std::map< hlt::Location,unsigned char > > *result = 0 ;
+  std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_result;
+  
+  arg1 = (size_t)_swig_go_0; 
+  
+  result = (std::vector< std::map< hlt::Location,unsigned char > > *)new std::vector< std::map< hlt::Location,unsigned char > >(arg1);
+  *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_result = (std::vector< std::map< hlt::Location,unsigned char > > *)result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_PlayerMovesVector_size_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  std::vector< std::map< hlt::Location,unsigned char > >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
+  
+  result = ((std::vector< std::map< hlt::Location,unsigned char > > const *)arg1)->size();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+long long _wrap_PlayerMovesVector_capacity_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  std::vector< std::map< hlt::Location,unsigned char > >::size_type result;
+  long long _swig_go_result;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
+  
+  result = ((std::vector< std::map< hlt::Location,unsigned char > > const *)arg1)->capacity();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerMovesVector_reserve_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0, long long _swig_go_1) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  std::vector< std::map< hlt::Location,unsigned char > >::size_type arg2 ;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
+  arg2 = (size_t)_swig_go_1; 
+  
+  (arg1)->reserve(arg2);
+  
+}
+
+
+bool _wrap_PlayerMovesVector_isEmpty_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  bool result;
+  bool _swig_go_result;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
+  
+  result = (bool)((std::vector< std::map< hlt::Location,unsigned char > > const *)arg1)->empty();
+  _swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerMovesVector_clear_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
+  
+  (arg1)->clear();
+  
+}
+
+
+void _wrap_PlayerMovesVector_add_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0, std::map< hlt::Location,unsigned char > *_swig_go_1) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  std::vector< std::map< hlt::Location,unsigned char > >::value_type *arg2 = 0 ;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
+  arg2 = *(std::vector< std::map< hlt::Location,unsigned char > >::value_type **)&_swig_go_1; 
+  
+  (arg1)->push_back((std::vector< std::map< hlt::Location,unsigned char > >::value_type const &)*arg2);
+  
+}
+
+
+std::map< hlt::Location,unsigned char > *_wrap_PlayerMovesVector_get_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0, intgo _swig_go_1) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  int arg2 ;
+  std::vector< std::map< hlt::Location,unsigned char > >::value_type *result = 0 ;
+  std::map< hlt::Location,unsigned char > *_swig_go_result;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  
+  try {
+    result = (std::vector< std::map< hlt::Location,unsigned char > >::value_type *) &std_vector_Sl_std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__Sg__get(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  *(std::vector< std::map< hlt::Location,unsigned char > >::value_type **)&_swig_go_result = result; 
+  return _swig_go_result;
+}
+
+
+void _wrap_PlayerMovesVector_set_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0, intgo _swig_go_1, std::map< hlt::Location,unsigned char > *_swig_go_2) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  int arg2 ;
+  std::vector< std::map< hlt::Location,unsigned char > >::value_type *arg3 = 0 ;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
+  arg2 = (int)_swig_go_1; 
+  arg3 = *(std::vector< std::map< hlt::Location,unsigned char > >::value_type **)&_swig_go_2; 
+  
+  try {
+    std_vector_Sl_std_map_Sl_hlt_Location_Sc_unsigned_SS_char_Sg__Sg__set(arg1,arg2,(std::map< hlt::Location,unsigned char > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    _swig_gopanic((&_e)->what());
+  }
+  
+  
+}
+
+
+void _wrap_delete_PlayerMovesVector_halite_47887523e5de5737(std::vector< std::map< hlt::Location,unsigned char > > *_swig_go_0) {
+  std::vector< std::map< hlt::Location,unsigned char > > *arg1 = (std::vector< std::map< hlt::Location,unsigned char > > *) 0 ;
+  
+  arg1 = *(std::vector< std::map< hlt::Location,unsigned char > > **)&_swig_go_0; 
   
   delete arg1;
   
