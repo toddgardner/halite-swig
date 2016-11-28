@@ -1349,8 +1349,34 @@ randomSeed = _halite.randomSeed
 def blankMap(width: 'short', height: 'short') -> "hlt::Map":
     return _halite.blankMap(width, height)
 blankMap = _halite.blankMap
+class GameRun(_object):
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, GameRun, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, GameRun, name)
+    __repr__ = _swig_repr
 
-def runGame(id: 'unsigned int', width: 'short', height: 'short', seed: 'unsigned int', ignore_timeout: 'bool', connections: 'UniConnectionVector', callback: 'GameEndCallback') -> "GameStatistics":
+    def __init__(self):
+        this = _halite.new_GameRun()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _halite.delete_GameRun
+    __del__ = lambda self: None
+    __swig_setmethods__["stats"] = _halite.GameRun_stats_set
+    __swig_getmethods__["stats"] = _halite.GameRun_stats_get
+    if _newclass:
+        stats = _swig_property(_halite.GameRun_stats_get, _halite.GameRun_stats_set)
+    __swig_setmethods__["map"] = _halite.GameRun_map_set
+    __swig_getmethods__["map"] = _halite.GameRun_map_get
+    if _newclass:
+        map = _swig_property(_halite.GameRun_map_get, _halite.GameRun_map_set)
+GameRun_swigregister = _halite.GameRun_swigregister
+GameRun_swigregister(GameRun)
+
+
+def runGame(id: 'unsigned int', width: 'short', height: 'short', seed: 'unsigned int', ignore_timeout: 'bool', connections: 'UniConnectionVector', callback: 'GameEndCallback') -> "GameRun":
     return _halite.runGame(id, width, height, seed, ignore_timeout, connections, callback)
 runGame = _halite.runGame
 

@@ -26,7 +26,6 @@ private:
     unsigned short turn_number;
     unsigned short number_of_players;
     bool ignore_timeout;
-    hlt::Map game_map;
     std::vector<std::string> player_names;
     std::vector< std::map<hlt::Location, unsigned char> > player_moves;
 
@@ -52,6 +51,7 @@ private:
 public:
     Halite(unsigned short width_, unsigned short height_, unsigned int seed_, Networking networking_, bool shouldIgnoreTimeout);
 
+    hlt::Map game_map;
     GameStatistics runGame(std::vector<std::string> * names_, unsigned int seed, unsigned int id, GameEndCallback* callback);
     std::string getName(unsigned char playerTag);
 

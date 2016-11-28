@@ -137,19 +137,35 @@ func TestRunGame(t *testing.T) {
 2 2 1
 `)
 
-	gameStatistics := RunGame(
+	gameRun := RunGame(
 		24601, 4, 4, 107900974, true,
 		[]Connection{
 			Connection{bot1Read.Fd(), bot1Write.Fd()},
 			Connection{bot2Read.Fd(), bot2Write.Fd()},
 		},
 		func(int, string) bool { return false })
-	defer DeleteGameStatistics(gameStatistics)
+	defer DeleteGameRun(gameRun)
 
 	callString := "RunGame(...)"
-	if gameStatistics.GetOutputFilename() != "24601-107900974.hlt" {
-		t.Errorf("%s.GetOutputFilename() == %v, want %v",
-			callString, gameStatistics.GetOutputFilename(), "24601-107900974.hlt")
+	if gameRun.GetStats().GetOutputFilename() != "24601-107900974.hlt" {
+		t.Errorf("%s.GetStats().GetOutputFilename() == %v, want %v",
+			callString, gameRun.GetStats().GetOutputFilename(), "24601-107900974.hlt")
+	}
+
+	site := gameRun.GetMap().GetContents().Get(1).Get(2)
+	siteCallString := callString + ".GetMap().GetContents().Get(0).Get(2)"
+
+	if site.GetStrength() != 88 {
+		t.Errorf("%s.GetStrength() == %v, want %v",
+			siteCallString, site.GetStrength(), 88)
+	}
+	if site.GetOwner() != 2 {
+		t.Errorf("%s.GetOwner() == %v, want %v",
+			siteCallString, site.GetOwner(), 2)
+	}
+	if site.GetProduction() != 6 {
+		t.Errorf("%s.GetProduction() == %v, want %v",
+			siteCallString, site.GetProduction(), 6)
 	}
 }
 
@@ -162,11 +178,11 @@ func TestUpdateMap(t *testing.T) {
 	site := randomMap.GetContents().Get(0).Get(2)
 	if site.GetStrength() != 166 {
 		t.Errorf("%s.GetStrength() == %v, want %v",
-			siteCallString, site.GetStrength(), 21)
+			siteCallString, site.GetStrength(), 166)
 	}
 	if site.GetOwner() != 0 {
 		t.Errorf("%s.GetOwner() == %v, want %v",
-			siteCallString, site.GetOwner(), 1)
+			siteCallString, site.GetOwner(), 0)
 	}
 
 	UpdateMap(randomMap, [][]Move{

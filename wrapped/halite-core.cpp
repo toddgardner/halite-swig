@@ -1,3 +1,5 @@
+#include "halite-core.hpp"
+
 #include "core/hlt.hpp"
 #include "core/Halite.hpp"
 #include "networking/Networking.hpp"
@@ -20,14 +22,20 @@ hlt::Map blankMap(short width, short height) {
     return hlt::Map(width, height);
 }
 
-GameStatistics runGame(unsigned int id, short width, short height, unsigned int seed, bool ignore_timeout, std::vector<UniConnection> connections, GameEndCallback *callback) {
+GameRun::GameRun() {}
+GameRun::~GameRun() {}
+
+GameRun runGame(unsigned int id, short width, short height, unsigned int seed, bool ignore_timeout, std::vector<UniConnection> connections, GameEndCallback *callback) {
     Networking networking;
     networking.stopManagingProcesses();
     for(int i = 0; i < connections.size(); ++i) {
         networking.addLocalBot(connections[i]);
     }
     Halite halite(width, height, seed, networking, ignore_timeout);
-    return halite.runGame(NULL, seed, id, callback);
+    GameRun result;
+    result.stats = halite.runGame(NULL, seed, id, callback);
+    result.map = halite.game_map;
+    return result;
 }
 
 void updateMap(hlt::Map &game_map, const std::vector< std::map<hlt::Location, unsigned char> > &player_moves) {

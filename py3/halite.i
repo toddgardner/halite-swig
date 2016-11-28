@@ -1,3 +1,3 @@
 %module(directors="1") halite
 
-%include "../wrapped/halite-core.i"
+%include "wrapped/halite-core.i"

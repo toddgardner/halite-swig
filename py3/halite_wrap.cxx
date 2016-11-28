@@ -3454,43 +3454,44 @@ namespace Swig {
 
 #define SWIGTYPE_p_Color swig_types[0]
 #define SWIGTYPE_p_GameEndCallback swig_types[1]
-#define SWIGTYPE_p_GameStatistics swig_types[2]
-#define SWIGTYPE_p_Networking swig_types[3]
-#define SWIGTYPE_p_PlayerStatistics swig_types[4]
-#define SWIGTYPE_p_TimeoutCallback swig_types[5]
-#define SWIGTYPE_p_UniConnection swig_types[6]
-#define SWIGTYPE_p_allocator_type swig_types[7]
-#define SWIGTYPE_p_char swig_types[8]
-#define SWIGTYPE_p_difference_type swig_types[9]
-#define SWIGTYPE_p_hlt__Location swig_types[10]
-#define SWIGTYPE_p_hlt__Map swig_types[11]
-#define SWIGTYPE_p_hlt__Site swig_types[12]
-#define SWIGTYPE_p_key_type swig_types[13]
-#define SWIGTYPE_p_mapped_type swig_types[14]
-#define SWIGTYPE_p_p_PyObject swig_types[15]
-#define SWIGTYPE_p_size_type swig_types[16]
-#define SWIGTYPE_p_std__allocatorT_PlayerStatistics_t swig_types[17]
-#define SWIGTYPE_p_std__allocatorT_UniConnection_t swig_types[18]
-#define SWIGTYPE_p_std__allocatorT_hlt__Site_t swig_types[19]
-#define SWIGTYPE_p_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t swig_types[20]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t swig_types[21]
-#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[22]
-#define SWIGTYPE_p_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t swig_types[23]
-#define SWIGTYPE_p_std__invalid_argument swig_types[24]
-#define SWIGTYPE_p_std__lessT_hlt__Location_t swig_types[25]
-#define SWIGTYPE_p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t swig_types[26]
-#define SWIGTYPE_p_std__setT_unsigned_short_t swig_types[27]
-#define SWIGTYPE_p_std__string swig_types[28]
-#define SWIGTYPE_p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t swig_types[29]
-#define SWIGTYPE_p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t swig_types[30]
-#define SWIGTYPE_p_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t swig_types[31]
-#define SWIGTYPE_p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t swig_types[32]
-#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[33]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t swig_types[34]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[35]
-#define SWIGTYPE_p_value_type swig_types[36]
-static swig_type_info *swig_types[38];
-static swig_module_info swig_module = {swig_types, 37, 0, 0, 0, 0};
+#define SWIGTYPE_p_GameRun swig_types[2]
+#define SWIGTYPE_p_GameStatistics swig_types[3]
+#define SWIGTYPE_p_Networking swig_types[4]
+#define SWIGTYPE_p_PlayerStatistics swig_types[5]
+#define SWIGTYPE_p_TimeoutCallback swig_types[6]
+#define SWIGTYPE_p_UniConnection swig_types[7]
+#define SWIGTYPE_p_allocator_type swig_types[8]
+#define SWIGTYPE_p_char swig_types[9]
+#define SWIGTYPE_p_difference_type swig_types[10]
+#define SWIGTYPE_p_hlt__Location swig_types[11]
+#define SWIGTYPE_p_hlt__Map swig_types[12]
+#define SWIGTYPE_p_hlt__Site swig_types[13]
+#define SWIGTYPE_p_key_type swig_types[14]
+#define SWIGTYPE_p_mapped_type swig_types[15]
+#define SWIGTYPE_p_p_PyObject swig_types[16]
+#define SWIGTYPE_p_size_type swig_types[17]
+#define SWIGTYPE_p_std__allocatorT_PlayerStatistics_t swig_types[18]
+#define SWIGTYPE_p_std__allocatorT_UniConnection_t swig_types[19]
+#define SWIGTYPE_p_std__allocatorT_hlt__Site_t swig_types[20]
+#define SWIGTYPE_p_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t swig_types[21]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t swig_types[22]
+#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[23]
+#define SWIGTYPE_p_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t swig_types[24]
+#define SWIGTYPE_p_std__invalid_argument swig_types[25]
+#define SWIGTYPE_p_std__lessT_hlt__Location_t swig_types[26]
+#define SWIGTYPE_p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t swig_types[27]
+#define SWIGTYPE_p_std__setT_unsigned_short_t swig_types[28]
+#define SWIGTYPE_p_std__string swig_types[29]
+#define SWIGTYPE_p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t swig_types[30]
+#define SWIGTYPE_p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t swig_types[31]
+#define SWIGTYPE_p_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t swig_types[32]
+#define SWIGTYPE_p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t swig_types[33]
+#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[34]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t swig_types[35]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[36]
+#define SWIGTYPE_p_value_type swig_types[37]
+static swig_type_info *swig_types[39];
+static swig_module_info swig_module = {swig_types, 38, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -23523,6 +23524,151 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_new_GameRun(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameRun *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_GameRun")) SWIG_fail;
+  result = (GameRun *)new GameRun();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_GameRun, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_GameRun(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameRun *arg1 = (GameRun *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_GameRun",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameRun, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_GameRun" "', argument " "1"" of type '" "GameRun *""'"); 
+  }
+  arg1 = reinterpret_cast< GameRun * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameRun_stats_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameRun *arg1 = (GameRun *) 0 ;
+  GameStatistics *arg2 = (GameStatistics *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:GameRun_stats_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameRun, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameRun_stats_set" "', argument " "1"" of type '" "GameRun *""'"); 
+  }
+  arg1 = reinterpret_cast< GameRun * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_GameStatistics, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GameRun_stats_set" "', argument " "2"" of type '" "GameStatistics *""'"); 
+  }
+  arg2 = reinterpret_cast< GameStatistics * >(argp2);
+  if (arg1) (arg1)->stats = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameRun_stats_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameRun *arg1 = (GameRun *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  GameStatistics *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:GameRun_stats_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameRun, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameRun_stats_get" "', argument " "1"" of type '" "GameRun *""'"); 
+  }
+  arg1 = reinterpret_cast< GameRun * >(argp1);
+  result = (GameStatistics *)& ((arg1)->stats);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_GameStatistics, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameRun_map_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameRun *arg1 = (GameRun *) 0 ;
+  hlt::Map *arg2 = (hlt::Map *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:GameRun_map_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameRun, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameRun_map_set" "', argument " "1"" of type '" "GameRun *""'"); 
+  }
+  arg1 = reinterpret_cast< GameRun * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_hlt__Map, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GameRun_map_set" "', argument " "2"" of type '" "hlt::Map *""'"); 
+  }
+  arg2 = reinterpret_cast< hlt::Map * >(argp2);
+  if (arg1) (arg1)->map = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_GameRun_map_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameRun *arg1 = (GameRun *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  hlt::Map *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:GameRun_map_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameRun, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameRun_map_get" "', argument " "1"" of type '" "GameRun *""'"); 
+  }
+  arg1 = reinterpret_cast< GameRun * >(argp1);
+  result = (hlt::Map *)& ((arg1)->map);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_hlt__Map, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *GameRun_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_GameRun, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_runGame(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   unsigned int arg1 ;
@@ -23551,7 +23697,7 @@ SWIGINTERN PyObject *_wrap_runGame(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   PyObject * obj4 = 0 ;
   PyObject * obj5 = 0 ;
   PyObject * obj6 = 0 ;
-  GameStatistics result;
+  GameRun result;
   
   if (!PyArg_ParseTuple(args,(char *)"OOOOOOO:runGame",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5,&obj6)) SWIG_fail;
   ecode1 = SWIG_AsVal_unsigned_SS_int(obj0, &val1);
@@ -23594,7 +23740,7 @@ SWIGINTERN PyObject *_wrap_runGame(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   }
   arg7 = reinterpret_cast< GameEndCallback * >(argp7);
   result = runGame(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
-  resultobj = SWIG_NewPointerObj((new GameStatistics(static_cast< const GameStatistics& >(result))), SWIGTYPE_p_GameStatistics, SWIG_POINTER_OWN |  0 );
+  resultobj = SWIG_NewPointerObj((new GameRun(static_cast< const GameRun& >(result))), SWIGTYPE_p_GameRun, SWIG_POINTER_OWN |  0 );
   return resultobj;
 fail:
   return NULL;
@@ -24004,6 +24150,13 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"randomMapString", _wrap_randomMapString, METH_VARARGS, NULL},
 	 { (char *)"randomSeed", _wrap_randomSeed, METH_VARARGS, NULL},
 	 { (char *)"blankMap", _wrap_blankMap, METH_VARARGS, NULL},
+	 { (char *)"new_GameRun", _wrap_new_GameRun, METH_VARARGS, NULL},
+	 { (char *)"delete_GameRun", _wrap_delete_GameRun, METH_VARARGS, NULL},
+	 { (char *)"GameRun_stats_set", _wrap_GameRun_stats_set, METH_VARARGS, NULL},
+	 { (char *)"GameRun_stats_get", _wrap_GameRun_stats_get, METH_VARARGS, NULL},
+	 { (char *)"GameRun_map_set", _wrap_GameRun_map_set, METH_VARARGS, NULL},
+	 { (char *)"GameRun_map_get", _wrap_GameRun_map_get, METH_VARARGS, NULL},
+	 { (char *)"GameRun_swigregister", GameRun_swigregister, METH_VARARGS, NULL},
 	 { (char *)"runGame", _wrap_runGame, METH_VARARGS, NULL},
 	 { (char *)"updateMap", _wrap_updateMap, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
@@ -24014,6 +24167,7 @@ static PyMethodDef SwigMethods[] = {
 
 static swig_type_info _swigt__p_Color = {"_p_Color", "Color *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GameEndCallback = {"_p_GameEndCallback", "GameEndCallback *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_GameRun = {"_p_GameRun", "GameRun *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GameStatistics = {"_p_GameStatistics", "GameStatistics *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Networking = {"_p_Networking", "Networking *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_PlayerStatistics = {"_p_PlayerStatistics", "PlayerStatistics *|std::vector< PlayerStatistics >::value_type *", 0, 0, (void*)0, 0};
@@ -24053,6 +24207,7 @@ static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Color,
   &_swigt__p_GameEndCallback,
+  &_swigt__p_GameRun,
   &_swigt__p_GameStatistics,
   &_swigt__p_Networking,
   &_swigt__p_PlayerStatistics,
@@ -24092,6 +24247,7 @@ static swig_type_info *swig_type_initial[] = {
 
 static swig_cast_info _swigc__p_Color[] = {  {&_swigt__p_Color, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameEndCallback[] = {  {&_swigt__p_GameEndCallback, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_GameRun[] = {  {&_swigt__p_GameRun, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameStatistics[] = {  {&_swigt__p_GameStatistics, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Networking[] = {  {&_swigt__p_Networking, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_PlayerStatistics[] = {  {&_swigt__p_PlayerStatistics, 0, 0, 0},{0, 0, 0, 0}};
@@ -24131,6 +24287,7 @@ static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Color,
   _swigc__p_GameEndCallback,
+  _swigc__p_GameRun,
   _swigc__p_GameStatistics,
   _swigc__p_Networking,
   _swigc__p_PlayerStatistics,

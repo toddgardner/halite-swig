@@ -16,7 +16,15 @@ unsigned int randomSeed();
 
 hlt::Map blankMap(short width, short height);
 
-GameStatistics runGame(unsigned int id, short width, short height, unsigned int seed, bool ignore_timeout, std::vector<UniConnection> connections, GameEndCallback *callback);
+struct GameRun {
+public:
+    GameRun();
+    ~GameRun();
+    GameStatistics stats;
+    hlt::Map map;
+};
+
+GameRun runGame(unsigned int id, short width, short height, unsigned int seed, bool ignore_timeout, std::vector<UniConnection> connections, GameEndCallback *callback);
 
 void updateMap(hlt::Map &game_map, const std::vector< std::map<hlt::Location, unsigned char> > &player_moves);
 

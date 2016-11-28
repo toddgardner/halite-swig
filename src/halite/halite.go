@@ -25,7 +25,7 @@ type Move struct {
 	Direction int
 }
 
-func RunGame(id uint, width int16, height int16, seed uint, ignore_timeout bool, connections []Connection, gameEnd func(int, string) bool) GameStatistics {
+func RunGame(id uint, width int16, height int16, seed uint, ignore_timeout bool, connections []Connection, gameEnd func(int, string) bool) GameRun {
 	cb := NewDirectorGameEndCallback(&GoGameEndCallback{callback: gameEnd})
 	defer DeleteDirectorGameEndCallback(cb)
 	vec := NewUniConnectionVector()
