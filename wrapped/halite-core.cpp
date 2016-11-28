@@ -4,7 +4,11 @@
 #include "core/Halite.hpp"
 #include "networking/Networking.hpp"
 
-bool quiet_output = false;
+bool quiet_output = true;
+
+void setQuietOutput(bool quiet_output_) {
+    quiet_output = quiet_output_;
+}
 
 hlt::Map randomMap(short width, short height, unsigned char numberOfPlayers, unsigned int seed) {
     return hlt::Map(width, height, numberOfPlayers, seed);
@@ -25,7 +29,7 @@ hlt::Map blankMap(short width, short height) {
 GameRun::GameRun() {}
 GameRun::~GameRun() {}
 
-GameRun runGame(unsigned int id, short width, short height, unsigned int seed, bool ignore_timeout, std::vector<UniConnection> connections, GameEndCallback *callback) {
+GameRun runGame(unsigned int id, short width, short height, unsigned int seed, bool ignore_timeout, std::vector<UniConnection> connections, GameCallback *callback) {
     Networking networking;
     networking.stopManagingProcesses();
     for(int i = 0; i < connections.size(); ++i) {

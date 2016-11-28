@@ -3453,45 +3453,44 @@ namespace Swig {
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_Color swig_types[0]
-#define SWIGTYPE_p_GameEndCallback swig_types[1]
+#define SWIGTYPE_p_GameCallback swig_types[1]
 #define SWIGTYPE_p_GameRun swig_types[2]
 #define SWIGTYPE_p_GameStatistics swig_types[3]
 #define SWIGTYPE_p_Networking swig_types[4]
 #define SWIGTYPE_p_PlayerStatistics swig_types[5]
-#define SWIGTYPE_p_TimeoutCallback swig_types[6]
-#define SWIGTYPE_p_UniConnection swig_types[7]
-#define SWIGTYPE_p_allocator_type swig_types[8]
-#define SWIGTYPE_p_char swig_types[9]
-#define SWIGTYPE_p_difference_type swig_types[10]
-#define SWIGTYPE_p_hlt__Location swig_types[11]
-#define SWIGTYPE_p_hlt__Map swig_types[12]
-#define SWIGTYPE_p_hlt__Site swig_types[13]
-#define SWIGTYPE_p_key_type swig_types[14]
-#define SWIGTYPE_p_mapped_type swig_types[15]
-#define SWIGTYPE_p_p_PyObject swig_types[16]
-#define SWIGTYPE_p_size_type swig_types[17]
-#define SWIGTYPE_p_std__allocatorT_PlayerStatistics_t swig_types[18]
-#define SWIGTYPE_p_std__allocatorT_UniConnection_t swig_types[19]
-#define SWIGTYPE_p_std__allocatorT_hlt__Site_t swig_types[20]
-#define SWIGTYPE_p_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t swig_types[21]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t swig_types[22]
-#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[23]
-#define SWIGTYPE_p_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t swig_types[24]
-#define SWIGTYPE_p_std__invalid_argument swig_types[25]
-#define SWIGTYPE_p_std__lessT_hlt__Location_t swig_types[26]
-#define SWIGTYPE_p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t swig_types[27]
-#define SWIGTYPE_p_std__setT_unsigned_short_t swig_types[28]
-#define SWIGTYPE_p_std__string swig_types[29]
-#define SWIGTYPE_p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t swig_types[30]
-#define SWIGTYPE_p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t swig_types[31]
-#define SWIGTYPE_p_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t swig_types[32]
-#define SWIGTYPE_p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t swig_types[33]
-#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[34]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t swig_types[35]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[36]
-#define SWIGTYPE_p_value_type swig_types[37]
-static swig_type_info *swig_types[39];
-static swig_module_info swig_module = {swig_types, 38, 0, 0, 0, 0};
+#define SWIGTYPE_p_UniConnection swig_types[6]
+#define SWIGTYPE_p_allocator_type swig_types[7]
+#define SWIGTYPE_p_char swig_types[8]
+#define SWIGTYPE_p_difference_type swig_types[9]
+#define SWIGTYPE_p_hlt__Location swig_types[10]
+#define SWIGTYPE_p_hlt__Map swig_types[11]
+#define SWIGTYPE_p_hlt__Site swig_types[12]
+#define SWIGTYPE_p_key_type swig_types[13]
+#define SWIGTYPE_p_mapped_type swig_types[14]
+#define SWIGTYPE_p_p_PyObject swig_types[15]
+#define SWIGTYPE_p_size_type swig_types[16]
+#define SWIGTYPE_p_std__allocatorT_PlayerStatistics_t swig_types[17]
+#define SWIGTYPE_p_std__allocatorT_UniConnection_t swig_types[18]
+#define SWIGTYPE_p_std__allocatorT_hlt__Site_t swig_types[19]
+#define SWIGTYPE_p_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t swig_types[20]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t swig_types[21]
+#define SWIGTYPE_p_std__allocatorT_std__string_t swig_types[22]
+#define SWIGTYPE_p_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t swig_types[23]
+#define SWIGTYPE_p_std__invalid_argument swig_types[24]
+#define SWIGTYPE_p_std__lessT_hlt__Location_t swig_types[25]
+#define SWIGTYPE_p_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t swig_types[26]
+#define SWIGTYPE_p_std__setT_unsigned_short_t swig_types[27]
+#define SWIGTYPE_p_std__string swig_types[28]
+#define SWIGTYPE_p_std__vectorT_PlayerStatistics_std__allocatorT_PlayerStatistics_t_t swig_types[29]
+#define SWIGTYPE_p_std__vectorT_UniConnection_std__allocatorT_UniConnection_t_t swig_types[30]
+#define SWIGTYPE_p_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t swig_types[31]
+#define SWIGTYPE_p_std__vectorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_std__allocatorT_std__mapT_hlt__Location_unsigned_char_std__lessT_hlt__Location_t_std__allocatorT_std__pairT_hlt__Location_const_unsigned_char_t_t_t_t_t swig_types[32]
+#define SWIGTYPE_p_std__vectorT_std__string_std__allocatorT_std__string_t_t swig_types[33]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_std__allocatorT_std__vectorT_hlt__Site_std__allocatorT_hlt__Site_t_t_t_t swig_types[34]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[35]
+#define SWIGTYPE_p_value_type swig_types[36]
+static swig_type_info *swig_types[38];
+static swig_module_info swig_module = {swig_types, 37, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -6738,37 +6737,37 @@ SWIGINTERNINLINE PyObject*
 
 #include "halite_wrap.h"
 
-SwigDirector_GameEndCallback::SwigDirector_GameEndCallback(PyObject *self): GameEndCallback(), Swig::Director(self) {
-  SWIG_DIRECTOR_RGTR((GameEndCallback *)this, this); 
+SwigDirector_GameCallback::SwigDirector_GameCallback(PyObject *self): GameCallback(), Swig::Director(self) {
+  SWIG_DIRECTOR_RGTR((GameCallback *)this, this); 
 }
 
 
 
 
-SwigDirector_GameEndCallback::~SwigDirector_GameEndCallback() {
+SwigDirector_GameCallback::~SwigDirector_GameCallback() {
 }
 
-bool SwigDirector_GameEndCallback::run(int turn, std::string board) {
+bool SwigDirector_GameCallback::endGame(int turn, hlt::Map const &board) {
   bool c_result;
   swig::SwigVar_PyObject obj0;
   obj0 = SWIG_From_int(static_cast< int >(turn));
   swig::SwigVar_PyObject obj1;
-  obj1 = SWIG_From_std_string(static_cast< std::string >(board));
+  obj1 = SWIG_NewPointerObj(SWIG_as_voidptr(&board), SWIGTYPE_p_hlt__Map,  0 );
   if (!swig_get_self()) {
-    Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call GameEndCallback.__init__.");
+    Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call GameCallback.__init__.");
   }
 #if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
   const size_t swig_method_index = 0;
-  const char * const swig_method_name = "run";
+  const char * const swig_method_name = "endGame";
   PyObject* method = swig_get_method(swig_method_index, swig_method_name);
   swig::SwigVar_PyObject result = PyObject_CallFunction(method, (char *)"(OO)" ,(PyObject *)obj0,(PyObject *)obj1);
 #else
-  swig::SwigVar_PyObject result = PyObject_CallMethod(swig_get_self(), (char *)"run", (char *)"(OO)" ,(PyObject *)obj0,(PyObject *)obj1);
+  swig::SwigVar_PyObject result = PyObject_CallMethod(swig_get_self(), (char *)"endGame", (char *)"(OO)" ,(PyObject *)obj0,(PyObject *)obj1);
 #endif
   if (!result) {
     PyObject *error = PyErr_Occurred();
     if (error) {
-      Swig::DirectorMethodException::raise("Error detected when calling 'GameEndCallback.run'");
+      Swig::DirectorMethodException::raise("Error detected when calling 'GameCallback.endGame'");
     }
   }
   bool swig_val;
@@ -6781,36 +6780,47 @@ bool SwigDirector_GameEndCallback::run(int turn, std::string board) {
 }
 
 
-SwigDirector_TimeoutCallback::SwigDirector_TimeoutCallback(PyObject *self): TimeoutCallback(), Swig::Director(self) {
-  SWIG_DIRECTOR_RGTR((TimeoutCallback *)this, this); 
-}
-
-
-
-
-SwigDirector_TimeoutCallback::~SwigDirector_TimeoutCallback() {
-}
-
-void SwigDirector_TimeoutCallback::run(int playerTag, std::string playerName) {
+void SwigDirector_GameCallback::playerInitTimeout(unsigned char playerTag) {
   swig::SwigVar_PyObject obj0;
-  obj0 = SWIG_From_int(static_cast< int >(playerTag));
-  swig::SwigVar_PyObject obj1;
-  obj1 = SWIG_From_std_string(static_cast< std::string >(playerName));
+  obj0 = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(playerTag));
   if (!swig_get_self()) {
-    Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call TimeoutCallback.__init__.");
+    Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call GameCallback.__init__.");
   }
 #if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
-  const size_t swig_method_index = 0;
-  const char * const swig_method_name = "run";
+  const size_t swig_method_index = 1;
+  const char * const swig_method_name = "playerInitTimeout";
   PyObject* method = swig_get_method(swig_method_index, swig_method_name);
-  swig::SwigVar_PyObject result = PyObject_CallFunction(method, (char *)"(OO)" ,(PyObject *)obj0,(PyObject *)obj1);
+  swig::SwigVar_PyObject result = PyObject_CallFunction(method, (char *)"(O)" ,(PyObject *)obj0);
 #else
-  swig::SwigVar_PyObject result = PyObject_CallMethod(swig_get_self(), (char *)"run", (char *)"(OO)" ,(PyObject *)obj0,(PyObject *)obj1);
+  swig::SwigVar_PyObject result = PyObject_CallMethod(swig_get_self(), (char *)"playerInitTimeout", (char *)"(O)" ,(PyObject *)obj0);
 #endif
   if (!result) {
     PyObject *error = PyErr_Occurred();
     if (error) {
-      Swig::DirectorMethodException::raise("Error detected when calling 'TimeoutCallback.run'");
+      Swig::DirectorMethodException::raise("Error detected when calling 'GameCallback.playerInitTimeout'");
+    }
+  }
+}
+
+
+void SwigDirector_GameCallback::playerFrameTimeout(unsigned char playerTag) {
+  swig::SwigVar_PyObject obj0;
+  obj0 = SWIG_From_unsigned_SS_char(static_cast< unsigned char >(playerTag));
+  if (!swig_get_self()) {
+    Swig::DirectorException::raise("'self' uninitialized, maybe you forgot to call GameCallback.__init__.");
+  }
+#if defined(SWIG_PYTHON_DIRECTOR_VTABLE)
+  const size_t swig_method_index = 2;
+  const char * const swig_method_name = "playerFrameTimeout";
+  PyObject* method = swig_get_method(swig_method_index, swig_method_name);
+  swig::SwigVar_PyObject result = PyObject_CallFunction(method, (char *)"(O)" ,(PyObject *)obj0);
+#else
+  swig::SwigVar_PyObject result = PyObject_CallMethod(swig_get_self(), (char *)"playerFrameTimeout", (char *)"(O)" ,(PyObject *)obj0);
+#endif
+  if (!result) {
+    PyObject *error = PyErr_Occurred();
+    if (error) {
+      Swig::DirectorMethodException::raise("Error detected when calling 'GameCallback.playerFrameTimeout'");
     }
   }
 }
@@ -20444,19 +20454,19 @@ SWIGINTERN PyObject *PlayerMovesVector_swigregister(PyObject *SWIGUNUSEDPARM(sel
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_delete_GameEndCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_delete_GameCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  GameEndCallback *arg1 = (GameEndCallback *) 0 ;
+  GameCallback *arg1 = (GameCallback *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_GameEndCallback",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameEndCallback, SWIG_POINTER_DISOWN |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_GameCallback",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameCallback, SWIG_POINTER_DISOWN |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_GameEndCallback" "', argument " "1"" of type '" "GameEndCallback *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_GameCallback" "', argument " "1"" of type '" "GameCallback *""'"); 
   }
-  arg1 = reinterpret_cast< GameEndCallback * >(argp1);
+  arg1 = reinterpret_cast< GameCallback * >(argp1);
   delete arg1;
   resultobj = SWIG_Py_Void();
   return resultobj;
@@ -20465,15 +20475,17 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_GameEndCallback_run(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameCallback_endGame(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  GameEndCallback *arg1 = (GameEndCallback *) 0 ;
+  GameCallback *arg1 = (GameCallback *) 0 ;
   int arg2 ;
-  std::string arg3 ;
+  hlt::Map *arg3 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
@@ -20481,33 +20493,32 @@ SWIGINTERN PyObject *_wrap_GameEndCallback_run(PyObject *SWIGUNUSEDPARM(self), P
   bool upcall = false;
   bool result;
   
-  if (!PyArg_ParseTuple(args,(char *)"OOO:GameEndCallback_run",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameEndCallback, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OOO:GameCallback_endGame",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameCallback, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameEndCallback_run" "', argument " "1"" of type '" "GameEndCallback *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameCallback_endGame" "', argument " "1"" of type '" "GameCallback *""'"); 
   }
-  arg1 = reinterpret_cast< GameEndCallback * >(argp1);
+  arg1 = reinterpret_cast< GameCallback * >(argp1);
   ecode2 = SWIG_AsVal_int(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "GameEndCallback_run" "', argument " "2"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "GameCallback_endGame" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = static_cast< int >(val2);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "GameEndCallback_run" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_hlt__Map,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "GameCallback_endGame" "', argument " "3"" of type '" "hlt::Map const &""'"); 
   }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GameCallback_endGame" "', argument " "3"" of type '" "hlt::Map const &""'"); 
+  }
+  arg3 = reinterpret_cast< hlt::Map * >(argp3);
   director = SWIG_DIRECTOR_CAST(arg1);
   upcall = (director && (director->swig_get_self()==obj0));
   try {
     if (upcall) {
-      result = (bool)(arg1)->GameEndCallback::run(arg2,arg3);
+      result = (bool)(arg1)->GameCallback::endGame(arg2,(hlt::Map const &)*arg3);
     } else {
-      result = (bool)(arg1)->run(arg2,arg3);
+      result = (bool)(arg1)->endGame(arg2,(hlt::Map const &)*arg3);
     }
   } catch (Swig::DirectorException&) {
     SWIG_fail;
@@ -20519,123 +20530,37 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_GameEndCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameCallback_playerInitTimeout(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  PyObject *arg1 = (PyObject *) 0 ;
-  PyObject * obj0 = 0 ;
-  GameEndCallback *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:new_GameEndCallback",&obj0)) SWIG_fail;
-  arg1 = obj0;
-  if ( arg1 != Py_None ) {
-    /* subclassed */
-    result = (GameEndCallback *)new SwigDirector_GameEndCallback(arg1); 
-  } else {
-    result = (GameEndCallback *)new GameEndCallback(); 
-  }
-  
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_GameEndCallback, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_disown_GameEndCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  GameEndCallback *arg1 = (GameEndCallback *) 0 ;
+  GameCallback *arg1 = (GameCallback *) 0 ;
+  unsigned char arg2 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:disown_GameEndCallback",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameEndCallback, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "disown_GameEndCallback" "', argument " "1"" of type '" "GameEndCallback *""'"); 
-  }
-  arg1 = reinterpret_cast< GameEndCallback * >(argp1);
-  {
-    Swig::Director *director = SWIG_DIRECTOR_CAST(arg1);
-    if (director) director->swig_disown();
-  }
-  
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *GameEndCallback_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_GameEndCallback, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_delete_TimeoutCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_TimeoutCallback",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TimeoutCallback, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_TimeoutCallback" "', argument " "1"" of type '" "TimeoutCallback *""'"); 
-  }
-  arg1 = reinterpret_cast< TimeoutCallback * >(argp1);
-  delete arg1;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_TimeoutCallback_run(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
-  int arg2 ;
-  std::string arg3 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  int val2 ;
+  unsigned char val2 ;
   int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
   Swig::Director *director = 0;
   bool upcall = false;
   
-  if (!PyArg_ParseTuple(args,(char *)"OOO:TimeoutCallback_run",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TimeoutCallback, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"OO:GameCallback_playerInitTimeout",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameCallback, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "TimeoutCallback_run" "', argument " "1"" of type '" "TimeoutCallback *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameCallback_playerInitTimeout" "', argument " "1"" of type '" "GameCallback *""'"); 
   }
-  arg1 = reinterpret_cast< TimeoutCallback * >(argp1);
-  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  arg1 = reinterpret_cast< GameCallback * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
   if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "TimeoutCallback_run" "', argument " "2"" of type '" "int""'");
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "GameCallback_playerInitTimeout" "', argument " "2"" of type '" "unsigned char""'");
   } 
-  arg2 = static_cast< int >(val2);
-  {
-    std::string *ptr = (std::string *)0;
-    int res = SWIG_AsPtr_std_string(obj2, &ptr);
-    if (!SWIG_IsOK(res) || !ptr) {
-      SWIG_exception_fail(SWIG_ArgError((ptr ? res : SWIG_TypeError)), "in method '" "TimeoutCallback_run" "', argument " "3"" of type '" "std::string""'"); 
-    }
-    arg3 = *ptr;
-    if (SWIG_IsNewObj(res)) delete ptr;
-  }
+  arg2 = static_cast< unsigned char >(val2);
   director = SWIG_DIRECTOR_CAST(arg1);
   upcall = (director && (director->swig_get_self()==obj0));
   try {
     if (upcall) {
-      (arg1)->TimeoutCallback::run(arg2,arg3);
+      (arg1)->GameCallback::playerInitTimeout(arg2);
     } else {
-      (arg1)->run(arg2,arg3);
+      (arg1)->playerInitTimeout(arg2);
     }
   } catch (Swig::DirectorException&) {
     SWIG_fail;
@@ -20647,41 +20572,83 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_new_TimeoutCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_GameCallback_playerFrameTimeout(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  PyObject *arg1 = (PyObject *) 0 ;
+  GameCallback *arg1 = (GameCallback *) 0 ;
+  unsigned char arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  unsigned char val2 ;
+  int ecode2 = 0 ;
   PyObject * obj0 = 0 ;
-  TimeoutCallback *result = 0 ;
+  PyObject * obj1 = 0 ;
+  Swig::Director *director = 0;
+  bool upcall = false;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:new_TimeoutCallback",&obj0)) SWIG_fail;
-  arg1 = obj0;
-  if ( arg1 != Py_None ) {
-    /* subclassed */
-    result = (TimeoutCallback *)new SwigDirector_TimeoutCallback(arg1); 
-  } else {
-    result = (TimeoutCallback *)new TimeoutCallback(); 
+  if (!PyArg_ParseTuple(args,(char *)"OO:GameCallback_playerFrameTimeout",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameCallback, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GameCallback_playerFrameTimeout" "', argument " "1"" of type '" "GameCallback *""'"); 
   }
-  
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_TimeoutCallback, SWIG_POINTER_NEW |  0 );
+  arg1 = reinterpret_cast< GameCallback * >(argp1);
+  ecode2 = SWIG_AsVal_unsigned_SS_char(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "GameCallback_playerFrameTimeout" "', argument " "2"" of type '" "unsigned char""'");
+  } 
+  arg2 = static_cast< unsigned char >(val2);
+  director = SWIG_DIRECTOR_CAST(arg1);
+  upcall = (director && (director->swig_get_self()==obj0));
+  try {
+    if (upcall) {
+      (arg1)->GameCallback::playerFrameTimeout(arg2);
+    } else {
+      (arg1)->playerFrameTimeout(arg2);
+    }
+  } catch (Swig::DirectorException&) {
+    SWIG_fail;
+  }
+  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
 }
 
 
-SWIGINTERN PyObject *_wrap_disown_TimeoutCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *_wrap_new_GameCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  TimeoutCallback *arg1 = (TimeoutCallback *) 0 ;
+  PyObject *arg1 = (PyObject *) 0 ;
+  PyObject * obj0 = 0 ;
+  GameCallback *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:new_GameCallback",&obj0)) SWIG_fail;
+  arg1 = obj0;
+  if ( arg1 != Py_None ) {
+    /* subclassed */
+    result = (GameCallback *)new SwigDirector_GameCallback(arg1); 
+  } else {
+    result = (GameCallback *)new GameCallback(); 
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_GameCallback, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_disown_GameCallback(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  GameCallback *arg1 = (GameCallback *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   PyObject * obj0 = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)"O:disown_TimeoutCallback",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_TimeoutCallback, 0 |  0 );
+  if (!PyArg_ParseTuple(args,(char *)"O:disown_GameCallback",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_GameCallback, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "disown_TimeoutCallback" "', argument " "1"" of type '" "TimeoutCallback *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "disown_GameCallback" "', argument " "1"" of type '" "GameCallback *""'"); 
   }
-  arg1 = reinterpret_cast< TimeoutCallback * >(argp1);
+  arg1 = reinterpret_cast< GameCallback * >(argp1);
   {
     Swig::Director *director = SWIG_DIRECTOR_CAST(arg1);
     if (director) director->swig_disown();
@@ -20694,10 +20661,10 @@ fail:
 }
 
 
-SWIGINTERN PyObject *TimeoutCallback_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+SWIGINTERN PyObject *GameCallback_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_TimeoutCallback, SWIG_NewClientData(obj));
+  SWIG_TypeNewClientData(SWIGTYPE_p_GameCallback, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -23382,6 +23349,27 @@ SWIGINTERN PyObject *Networking_swigregister(PyObject *SWIGUNUSEDPARM(self), PyO
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_setQuietOutput(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  bool arg1 ;
+  bool val1 ;
+  int ecode1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:setQuietOutput",&obj0)) SWIG_fail;
+  ecode1 = SWIG_AsVal_bool(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "setQuietOutput" "', argument " "1"" of type '" "bool""'");
+  } 
+  arg1 = static_cast< bool >(val1);
+  setQuietOutput(arg1);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_randomMap(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   short arg1 ;
@@ -23677,7 +23665,7 @@ SWIGINTERN PyObject *_wrap_runGame(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
   unsigned int arg4 ;
   bool arg5 ;
   std::vector< UniConnection,std::allocator< UniConnection > > arg6 ;
-  GameEndCallback *arg7 = (GameEndCallback *) 0 ;
+  GameCallback *arg7 = (GameCallback *) 0 ;
   unsigned int val1 ;
   int ecode1 = 0 ;
   short val2 ;
@@ -23734,11 +23722,11 @@ SWIGINTERN PyObject *_wrap_runGame(PyObject *SWIGUNUSEDPARM(self), PyObject *arg
     arg6 = *ptr;
     if (SWIG_IsNewObj(res)) delete ptr;
   }
-  res7 = SWIG_ConvertPtr(obj6, &argp7,SWIGTYPE_p_GameEndCallback, 0 |  0 );
+  res7 = SWIG_ConvertPtr(obj6, &argp7,SWIGTYPE_p_GameCallback, 0 |  0 );
   if (!SWIG_IsOK(res7)) {
-    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "runGame" "', argument " "7"" of type '" "GameEndCallback *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res7), "in method '" "runGame" "', argument " "7"" of type '" "GameCallback *""'"); 
   }
-  arg7 = reinterpret_cast< GameEndCallback * >(argp7);
+  arg7 = reinterpret_cast< GameCallback * >(argp7);
   result = runGame(arg1,arg2,arg3,arg4,arg5,arg6,arg7);
   resultobj = SWIG_NewPointerObj((new GameRun(static_cast< const GameRun& >(result))), SWIGTYPE_p_GameRun, SWIG_POINTER_OWN |  0 );
   return resultobj;
@@ -24043,16 +24031,13 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"PlayerMovesVector_capacity", _wrap_PlayerMovesVector_capacity, METH_VARARGS, NULL},
 	 { (char *)"delete_PlayerMovesVector", _wrap_delete_PlayerMovesVector, METH_VARARGS, NULL},
 	 { (char *)"PlayerMovesVector_swigregister", PlayerMovesVector_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_GameEndCallback", _wrap_delete_GameEndCallback, METH_VARARGS, NULL},
-	 { (char *)"GameEndCallback_run", _wrap_GameEndCallback_run, METH_VARARGS, NULL},
-	 { (char *)"new_GameEndCallback", _wrap_new_GameEndCallback, METH_VARARGS, NULL},
-	 { (char *)"disown_GameEndCallback", _wrap_disown_GameEndCallback, METH_VARARGS, NULL},
-	 { (char *)"GameEndCallback_swigregister", GameEndCallback_swigregister, METH_VARARGS, NULL},
-	 { (char *)"delete_TimeoutCallback", _wrap_delete_TimeoutCallback, METH_VARARGS, NULL},
-	 { (char *)"TimeoutCallback_run", _wrap_TimeoutCallback_run, METH_VARARGS, NULL},
-	 { (char *)"new_TimeoutCallback", _wrap_new_TimeoutCallback, METH_VARARGS, NULL},
-	 { (char *)"disown_TimeoutCallback", _wrap_disown_TimeoutCallback, METH_VARARGS, NULL},
-	 { (char *)"TimeoutCallback_swigregister", TimeoutCallback_swigregister, METH_VARARGS, NULL},
+	 { (char *)"delete_GameCallback", _wrap_delete_GameCallback, METH_VARARGS, NULL},
+	 { (char *)"GameCallback_endGame", _wrap_GameCallback_endGame, METH_VARARGS, NULL},
+	 { (char *)"GameCallback_playerInitTimeout", _wrap_GameCallback_playerInitTimeout, METH_VARARGS, NULL},
+	 { (char *)"GameCallback_playerFrameTimeout", _wrap_GameCallback_playerFrameTimeout, METH_VARARGS, NULL},
+	 { (char *)"new_GameCallback", _wrap_new_GameCallback, METH_VARARGS, NULL},
+	 { (char *)"disown_GameCallback", _wrap_disown_GameCallback, METH_VARARGS, NULL},
+	 { (char *)"GameCallback_swigregister", GameCallback_swigregister, METH_VARARGS, NULL},
 	 { (char *)"Color_r_set", _wrap_Color_r_set, METH_VARARGS, NULL},
 	 { (char *)"Color_r_get", _wrap_Color_r_get, METH_VARARGS, NULL},
 	 { (char *)"Color_g_set", _wrap_Color_g_set, METH_VARARGS, NULL},
@@ -24146,6 +24131,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"new_Networking", _wrap_new_Networking, METH_VARARGS, NULL},
 	 { (char *)"delete_Networking", _wrap_delete_Networking, METH_VARARGS, NULL},
 	 { (char *)"Networking_swigregister", Networking_swigregister, METH_VARARGS, NULL},
+	 { (char *)"setQuietOutput", _wrap_setQuietOutput, METH_VARARGS, NULL},
 	 { (char *)"randomMap", _wrap_randomMap, METH_VARARGS, NULL},
 	 { (char *)"randomMapString", _wrap_randomMapString, METH_VARARGS, NULL},
 	 { (char *)"randomSeed", _wrap_randomSeed, METH_VARARGS, NULL},
@@ -24166,12 +24152,11 @@ static PyMethodDef SwigMethods[] = {
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_Color = {"_p_Color", "Color *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_GameEndCallback = {"_p_GameEndCallback", "GameEndCallback *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_GameCallback = {"_p_GameCallback", "GameCallback *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GameRun = {"_p_GameRun", "GameRun *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GameStatistics = {"_p_GameStatistics", "GameStatistics *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Networking = {"_p_Networking", "Networking *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_PlayerStatistics = {"_p_PlayerStatistics", "PlayerStatistics *|std::vector< PlayerStatistics >::value_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_TimeoutCallback = {"_p_TimeoutCallback", "TimeoutCallback *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_UniConnection = {"_p_UniConnection", "std::vector< UniConnection >::value_type *|UniConnection *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_allocator_type = {"_p_allocator_type", "allocator_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
@@ -24206,12 +24191,11 @@ static swig_type_info _swigt__p_value_type = {"_p_value_type", "value_type *", 0
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Color,
-  &_swigt__p_GameEndCallback,
+  &_swigt__p_GameCallback,
   &_swigt__p_GameRun,
   &_swigt__p_GameStatistics,
   &_swigt__p_Networking,
   &_swigt__p_PlayerStatistics,
-  &_swigt__p_TimeoutCallback,
   &_swigt__p_UniConnection,
   &_swigt__p_allocator_type,
   &_swigt__p_char,
@@ -24246,12 +24230,11 @@ static swig_type_info *swig_type_initial[] = {
 };
 
 static swig_cast_info _swigc__p_Color[] = {  {&_swigt__p_Color, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_GameEndCallback[] = {  {&_swigt__p_GameEndCallback, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_GameCallback[] = {  {&_swigt__p_GameCallback, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameRun[] = {  {&_swigt__p_GameRun, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GameStatistics[] = {  {&_swigt__p_GameStatistics, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Networking[] = {  {&_swigt__p_Networking, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_PlayerStatistics[] = {  {&_swigt__p_PlayerStatistics, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_TimeoutCallback[] = {  {&_swigt__p_TimeoutCallback, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_UniConnection[] = {  {&_swigt__p_UniConnection, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_allocator_type[] = {  {&_swigt__p_allocator_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
@@ -24286,12 +24269,11 @@ static swig_cast_info _swigc__p_value_type[] = {  {&_swigt__p_value_type, 0, 0, 
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Color,
-  _swigc__p_GameEndCallback,
+  _swigc__p_GameCallback,
   _swigc__p_GameRun,
   _swigc__p_GameStatistics,
   _swigc__p_Networking,
   _swigc__p_PlayerStatistics,
-  _swigc__p_TimeoutCallback,
   _swigc__p_UniConnection,
   _swigc__p_allocator_type,
   _swigc__p_char,

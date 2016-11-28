@@ -8,6 +8,8 @@
 #include "core/Halite.hpp"
 #include "networking/Networking.hpp"
 
+void setQuietOutput(bool quiet_output);
+
 hlt::Map randomMap(short width, short height, unsigned char numberOfPlayers, unsigned int seed);
 
 std::string randomMapString(short width, short height, unsigned char numberOfPlayers, unsigned int seed);
@@ -24,7 +26,7 @@ public:
     hlt::Map map;
 };
 
-GameRun runGame(unsigned int id, short width, short height, unsigned int seed, bool ignore_timeout, std::vector<UniConnection> connections, GameEndCallback *callback);
+GameRun runGame(unsigned int id, short width, short height, unsigned int seed, bool ignore_timeout, std::vector<UniConnection> connections, GameCallback *callback);
 
 void updateMap(hlt::Map &game_map, const std::vector< std::map<hlt::Location, unsigned char> > &player_moves);
 

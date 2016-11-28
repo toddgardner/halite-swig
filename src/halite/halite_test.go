@@ -3,7 +3,7 @@ package halite
 import (
 	"fmt"
 	"io"
-	"os"
+	"reflect"
 	"testing"
 )
 
@@ -87,7 +87,7 @@ func TestBlankMap(t *testing.T) {
 
 	for y := 0; y < 7; y++ {
 		row := contents.Get(y)
-		rowCallString := fmt.Sprint("%s.Get(%d)", contentsCallString, y)
+		rowCallString := fmt.Sprintf("%s.Get(%d)", contentsCallString, y)
 
 		if row.Size() != 5 {
 			t.Errorf("%s.Size() == %v, want %v",
@@ -96,7 +96,7 @@ func TestBlankMap(t *testing.T) {
 
 		for x := 0; x < 5; x++ {
 			site := row.Get(x)
-			siteCallString := fmt.Sprint("%s.Get(%d)", rowCallString, x)
+			siteCallString := fmt.Sprintf("%s.Get(%d)", rowCallString, x)
 
 			if site.GetOwner() != 0 {
 				t.Errorf("%s.GetOwner() == %v, want %v",
@@ -116,40 +116,61 @@ func TestBlankMap(t *testing.T) {
 	}
 }
 
+type RunGameCallback struct {
+	deadInitPlayers  []int
+	deadFramePlayers []int
+	turnLimit        int
+}
+
+func (c *RunGameCallback) EndGame(turn int, gameMap Map) bool {
+	return turn >= c.turnLimit
+}
+
+func (c *RunGameCallback) PlayerInitTimeout(playerTag byte) {
+	c.deadInitPlayers = append(c.deadInitPlayers, int(playerTag))
+}
+
+func (c *RunGameCallback) PlayerFrameTimeout(playerTag byte) {
+	c.deadFramePlayers = append(c.deadFramePlayers, int(playerTag))
+}
+
 func TestRunGame(t *testing.T) {
-	bot1Read, bot1Write, err := os.Pipe()
+	game, err := NewGame(2)
 	if err != nil {
-		t.Errorf("RunGame -> Can't open bot1 pipe: %q", err)
+		panic(err)
 	}
-	io.WriteString(bot1Write, `Achilles
+	defer game.Close()
+	io.WriteString(game.Bots[0].OutputWrite, `Achilles
 2 1 1 
 2 0 3 
 
 `)
-	bot2Read, bot2Write, err := os.Pipe()
-	if err != nil {
-		t.Errorf("RunGame -> Can't open bot1 pipe: %q", err)
-	}
-
-	io.WriteString(bot2Write, `Alexander
+	io.WriteString(game.Bots[1].OutputWrite, `Alexander
 2 2 2 
 3 2 4 
 2 2 1
 `)
 
-	gameRun := RunGame(
+	gameCallback := RunGameCallback{turnLimit: 50}
+	gameRun := game.Run(
 		24601, 4, 4, 107900974, true,
-		[]Connection{
-			Connection{bot1Read.Fd(), bot1Write.Fd()},
-			Connection{bot2Read.Fd(), bot2Write.Fd()},
-		},
-		func(int, string) bool { return false })
+		&gameCallback,
+	)
 	defer DeleteGameRun(gameRun)
 
 	callString := "RunGame(...)"
 	if gameRun.GetStats().GetOutputFilename() != "24601-107900974.hlt" {
 		t.Errorf("%s.GetStats().GetOutputFilename() == %v, want %v",
 			callString, gameRun.GetStats().GetOutputFilename(), "24601-107900974.hlt")
+	}
+
+	if gameCallback.deadInitPlayers != nil {
+		t.Errorf("%s init should kill no players but got == %v",
+			callString, gameCallback.deadInitPlayers)
+	}
+	if gameCallback.deadFramePlayers != nil {
+		t.Errorf("%s frame should kill no players but got == %v",
+			callString, gameCallback.deadFramePlayers)
 	}
 
 	site := gameRun.GetMap().GetContents().Get(1).Get(2)
@@ -193,6 +214,117 @@ func TestUpdateMap(t *testing.T) {
 	callString = "UpdateMap(RandomMap(4, 4, 2, 107900974), {moves})"
 	siteCallString = callString + ".GetContents().Get(0).Get(2)"
 	site = randomMap.GetContents().Get(0).Get(2)
+	if site.GetStrength() != 21 {
+		t.Errorf("%s.GetStrength() == %v, want %v",
+			siteCallString, site.GetStrength(), 21)
+	}
+	if site.GetOwner() != 1 {
+		t.Errorf("%s.GetOwner() == %v, want %v",
+			siteCallString, site.GetOwner(), 1)
+	}
+}
+
+func TestRunGamePlayerInitTimeout(t *testing.T) {
+	game, err := NewGame(2)
+	if err != nil {
+		panic(err)
+	}
+	defer game.Close()
+	io.WriteString(game.Bots[0].OutputWrite, `Achilles
+2 1 1 
+2 0 3 
+
+`)
+
+	gameCallback := RunGameCallback{turnLimit: 50}
+	gameRun := game.Run(
+		24602, 4, 4, 107900974, false,
+		&gameCallback,
+	)
+	defer DeleteGameRun(gameRun)
+
+	if gameCallback.deadFramePlayers != nil {
+		t.Errorf("Should frame should kill no players but got == %v",
+			gameCallback.deadFramePlayers)
+	}
+
+	if !reflect.DeepEqual(gameCallback.deadInitPlayers, []int{2}) {
+		t.Errorf("Should init kill only player2 but got == %v",
+			gameCallback.deadInitPlayers)
+	}
+}
+
+func TestRunGamePlayerFrameTimeout(t *testing.T) {
+	game, err := NewGame(2)
+	if err != nil {
+		panic(err)
+	}
+	defer game.Close()
+	io.WriteString(game.Bots[0].OutputWrite, `Achilles
+2 1 1 
+2 0 3 
+
+`)
+	io.WriteString(game.Bots[1].OutputWrite, `Alexander
+2 2 2 
+3 2 4 
+`)
+
+	gameCallback := RunGameCallback{turnLimit: 50}
+	gameRun := game.Run(
+		24602, 4, 4, 107900974, false,
+		&gameCallback,
+	)
+	defer DeleteGameRun(gameRun)
+
+	if gameCallback.deadInitPlayers != nil {
+		t.Errorf("Should init should kill no players but got == %v",
+			gameCallback.deadInitPlayers)
+	}
+
+	if !reflect.DeepEqual(gameCallback.deadFramePlayers, []int{2}) {
+		t.Errorf("Should frame kill only player2 but got == %v",
+			gameCallback.deadFramePlayers)
+	}
+}
+
+func TestRunGameGameEndTurnLimit(t *testing.T) {
+	game, err := NewGame(2)
+	if err != nil {
+		panic(err)
+	}
+	defer game.Close()
+	io.WriteString(game.Bots[0].OutputWrite, `Achilles
+2 1 1 
+2 0 3 
+
+`)
+	io.WriteString(game.Bots[1].OutputWrite, `Alexander
+2 2 2 
+3 2 4 
+2 2 1
+`)
+
+	gameCallback := RunGameCallback{turnLimit: 1}
+	gameRun := game.Run(
+		24601, 4, 4, 107900974, true,
+		&gameCallback,
+	)
+	defer DeleteGameRun(gameRun)
+
+	callString := "RunGame(...)"
+	if gameCallback.deadInitPlayers != nil {
+		t.Errorf("%s init should kill no players but got == %v",
+			callString, gameCallback.deadInitPlayers)
+	}
+	if gameCallback.deadFramePlayers != nil {
+		t.Errorf("%s frame should kill no players but got == %v",
+			callString, gameCallback.deadFramePlayers)
+	}
+
+	site := gameRun.GetMap().GetContents().Get(0).Get(2)
+	siteCallString := callString + ".GetMap().GetContents().Get(0).Get(2)"
+
 	if site.GetStrength() != 21 {
 		t.Errorf("%s.GetStrength() == %v, want %v",
 			siteCallString, site.GetStrength(), 21)

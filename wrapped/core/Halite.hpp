@@ -46,13 +46,13 @@ private:
     std::vector< std::vector< std::vector<int> > > full_player_moves; //Each inner 2d array represents the moves across the map for the corresponding frame
                                                                       //and is guaranteed to have an outer size of map_height and an inner size of map_width
 
-    std::vector<bool> processNextFrame(std::vector<bool> alive);
+    std::vector<bool> processNextFrame(std::vector<bool> alive, GameCallback* game_callback);
     void output(std::string filename);
 public:
     Halite(unsigned short width_, unsigned short height_, unsigned int seed_, Networking networking_, bool shouldIgnoreTimeout);
 
     hlt::Map game_map;
-    GameStatistics runGame(std::vector<std::string> * names_, unsigned int seed, unsigned int id, GameEndCallback* callback);
+    GameStatistics runGame(std::vector<std::string> * names_, unsigned int seed, unsigned int id, GameCallback* game_callback);
     std::string getName(unsigned char playerTag);
 
     ~Halite();

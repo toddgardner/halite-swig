@@ -157,7 +157,7 @@ void Halite::updateMap(hlt::Map &game_map,
     }
 }
 
-std::vector<bool> Halite::processNextFrame(std::vector<bool> alive) {
+std::vector<bool> Halite::processNextFrame(std::vector<bool> alive, GameCallback* game_callback) {
 
     //Update alive frame counts
     for(unsigned char a = 0; a < number_of_players; a++) if(alive[a]) alive_frame_count[a]++;
@@ -182,6 +182,7 @@ std::vector<bool> Halite::processNextFrame(std::vector<bool> alive) {
         if(alive[a]) {
             int time = frameThreads[threadLocation].get();
             if(time == -1) {
+                if (game_callback) { game_callback->playerFrameTimeout(a+1); }
                 networking.killPlayer(a + 1);
                 timeout_tags.insert(a + 1);
                 //Give their pieces to the neutral player.
@@ -313,7 +314,7 @@ void Halite::output(std::string filename) {
     gameFile.close();
 }
 
-GameStatistics Halite::runGame(std::vector<std::string> * names_, unsigned int seed, unsigned int id, GameEndCallback* game_end_callback) {
+GameStatistics Halite::runGame(std::vector<std::string> * names_, unsigned int seed, unsigned int id, GameCallback* game_callback) {
     //For rankings
     std::vector<bool> result(number_of_players, true);
     std::vector<unsigned char> rankings;
@@ -325,6 +326,7 @@ GameStatistics Halite::runGame(std::vector<std::string> * names_, unsigned int s
     for(unsigned char a = 0; a < number_of_players; a++) {
         int time = initThreads[a].get();
         if(time == -1) {
+            if (game_callback) { game_callback->playerInitTimeout(a+1); }
             networking.killPlayer(a + 1);
             timeout_tags.insert(a + 1);
             result[a] = false;
@@ -340,12 +342,12 @@ GameStatistics Halite::runGame(std::vector<std::string> * names_, unsigned int s
     }
     const int maxTurnNumber = sqrt(game_map.map_width * game_map.map_height) * 10;
     while(std::count(result.begin(), result.end(), true) > 1 && turn_number < maxTurnNumber &&
-          (!game_end_callback || !game_end_callback->run(turn_number, Networking::serializeMap(game_map)))) {
+          (!game_callback || !game_callback->endGame(turn_number, game_map))) {
         //Increment turn number:
         turn_number++;
         if(!quiet_output) std::cout << "Turn " << turn_number << "\n";
         //Frame logic.
-        std::vector<bool> newResult = processNextFrame(result);
+        std::vector<bool> newResult = processNextFrame(result, game_callback);
         //Add to vector of players that should be dead.
         std::vector<unsigned int> newRankings;
         for(unsigned char a = 0; a < number_of_players; a++) if(result[a] && !newResult[a]) {
@@ -394,7 +396,7 @@ GameStatistics Halite::runGame(std::vector<std::string> * names_, unsigned int s
         output(stats.output_filename);
     }
     if(!quiet_output) std::cout << "Map seed was " << seed << std::endl << "Opening a file at " << stats.output_filename << std::endl;
-    else std::cout << stats.output_filename << ' ' << seed << std::endl;
+
     //Output logs for players that timed out or errored.
     int timeoutIndex = 0;
     for(auto a = timeout_tags.begin(); a != timeout_tags.end(); a++) {

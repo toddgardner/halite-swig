@@ -3,16 +3,14 @@
 
 #include <string>
 
-class GameEndCallback {
-public:
-	virtual ~GameEndCallback() { }
-	virtual bool run(int turn, std::string board) { return false; }
-};
+#include "hlt.hpp"
 
-class TimeoutCallback {
+class GameCallback {
 public:
-	virtual ~TimeoutCallback() { }
-	virtual void run(int playerTag, std::string playerName) { }
+	virtual ~GameCallback() { }
+	virtual bool endGame(int turn, const hlt::Map& board) { return false; }
+	virtual void playerInitTimeout(unsigned char playerTag) { }
+	virtual void playerFrameTimeout(unsigned char playerTag) { }
 };
 
 #endif

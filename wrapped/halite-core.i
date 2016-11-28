@@ -24,8 +24,7 @@
 %ignore operator<<(std::ostream &, const PlayerStatistics &);
 %ignore operator<<(std::ostream &, const GameStatistics &);
 
-%feature("director") GameEndCallback;
-%feature("director") TimeoutCallback;
+%feature("director") GameCallback;
 %include "core/Callbacks.hpp"
 %include "core/hlt.hpp"
 %include "networking/Networking.hpp"

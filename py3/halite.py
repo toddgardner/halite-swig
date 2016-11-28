@@ -962,63 +962,40 @@ class PlayerMovesVector(_object):
 PlayerMovesVector_swigregister = _halite.PlayerMovesVector_swigregister
 PlayerMovesVector_swigregister(PlayerMovesVector)
 
-class GameEndCallback(_object):
+class GameCallback(_object):
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, GameEndCallback, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, GameCallback, name, value)
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, GameEndCallback, name)
+    __getattr__ = lambda self, name: _swig_getattr(self, GameCallback, name)
     __repr__ = _swig_repr
-    __swig_destroy__ = _halite.delete_GameEndCallback
+    __swig_destroy__ = _halite.delete_GameCallback
     __del__ = lambda self: None
 
-    def run(self, turn: 'int', board: 'std::string') -> "bool":
-        return _halite.GameEndCallback_run(self, turn, board)
+    def endGame(self, turn: 'int', board: 'Map') -> "bool":
+        return _halite.GameCallback_endGame(self, turn, board)
+
+    def playerInitTimeout(self, playerTag: 'unsigned char') -> "void":
+        return _halite.GameCallback_playerInitTimeout(self, playerTag)
+
+    def playerFrameTimeout(self, playerTag: 'unsigned char') -> "void":
+        return _halite.GameCallback_playerFrameTimeout(self, playerTag)
 
     def __init__(self):
-        if self.__class__ == GameEndCallback:
+        if self.__class__ == GameCallback:
             _self = None
         else:
             _self = self
-        this = _halite.new_GameEndCallback(_self, )
+        this = _halite.new_GameCallback(_self, )
         try:
             self.this.append(this)
         except __builtin__.Exception:
             self.this = this
     def __disown__(self):
         self.this.disown()
-        _halite.disown_GameEndCallback(self)
+        _halite.disown_GameCallback(self)
         return weakref_proxy(self)
-GameEndCallback_swigregister = _halite.GameEndCallback_swigregister
-GameEndCallback_swigregister(GameEndCallback)
-
-class TimeoutCallback(_object):
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, TimeoutCallback, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, TimeoutCallback, name)
-    __repr__ = _swig_repr
-    __swig_destroy__ = _halite.delete_TimeoutCallback
-    __del__ = lambda self: None
-
-    def run(self, playerTag: 'int', playerName: 'std::string') -> "void":
-        return _halite.TimeoutCallback_run(self, playerTag, playerName)
-
-    def __init__(self):
-        if self.__class__ == TimeoutCallback:
-            _self = None
-        else:
-            _self = self
-        this = _halite.new_TimeoutCallback(_self, )
-        try:
-            self.this.append(this)
-        except __builtin__.Exception:
-            self.this = this
-    def __disown__(self):
-        self.this.disown()
-        _halite.disown_TimeoutCallback(self)
-        return weakref_proxy(self)
-TimeoutCallback_swigregister = _halite.TimeoutCallback_swigregister
-TimeoutCallback_swigregister(TimeoutCallback)
+GameCallback_swigregister = _halite.GameCallback_swigregister
+GameCallback_swigregister(GameCallback)
 
 STILL = _halite.STILL
 NORTH = _halite.NORTH
@@ -1334,6 +1311,10 @@ def Networking_serializeMap(map: 'Map') -> "std::string":
 Networking_serializeMap = _halite.Networking_serializeMap
 
 
+def setQuietOutput(quiet_output: 'bool') -> "void":
+    return _halite.setQuietOutput(quiet_output)
+setQuietOutput = _halite.setQuietOutput
+
 def randomMap(width: 'short', height: 'short', numberOfPlayers: 'unsigned char', seed: 'unsigned int') -> "hlt::Map":
     return _halite.randomMap(width, height, numberOfPlayers, seed)
 randomMap = _halite.randomMap
@@ -1376,7 +1357,7 @@ GameRun_swigregister = _halite.GameRun_swigregister
 GameRun_swigregister(GameRun)
 
 
-def runGame(id: 'unsigned int', width: 'short', height: 'short', seed: 'unsigned int', ignore_timeout: 'bool', connections: 'UniConnectionVector', callback: 'GameEndCallback') -> "GameRun":
+def runGame(id: 'unsigned int', width: 'short', height: 'short', seed: 'unsigned int', ignore_timeout: 'bool', connections: 'UniConnectionVector', callback: 'GameCallback') -> "GameRun":
     return _halite.runGame(id, width, height, seed, ignore_timeout, connections, callback)
 runGame = _halite.runGame
 
